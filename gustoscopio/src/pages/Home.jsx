@@ -21,7 +21,17 @@ export default function Home() {
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase();
-    return FOODS.filter((f) => f.name.toLowerCase().includes(q)).slice(0, 6);
+
+    const foodMatches = FOODS.filter((f) => f.name.toLowerCase().includes(q))
+      .map((f) => ({ type: 'food', id: f.id, emoji: f.emoji, label: f.name, meta: `${f.kcal} kcal / 100 g` }));
+
+    const recipeMatches = RECIPES.filter((r) => r.name.toLowerCase().includes(q))
+      .map((r) => ({ type: 'recipe', id: r.id, emoji: r.emoji, label: r.name, meta: r.category }));
+
+    const articleMatches = ARTICLES.filter((a) => a.title.toLowerCase().includes(q))
+      .map((a) => ({ type: 'article', id: a.id, emoji: a.emoji, label: a.title, meta: a.category }));
+
+    return [...foodMatches, ...recipeMatches, ...articleMatches].slice(0, 8);
   }, [query]);
 
   const FEATURED_IDS = ['banana', 'avocado', 'pasta', 'pollo', 'uova', 'mandorle', 'cioccolato', 'pomodoro'];
@@ -75,11 +85,20 @@ export default function Home() {
           </div>
           {searchResults.length > 0 && (
             <div className="search-results">
-              {searchResults.map((f) => (
-                <div key={f.id} className="search-result-row" onClick={() => { setQuery(''); navigate(`/alimenti/${f.id}`); }}>
-                  <span>{f.emoji}</span>
-                  <span>{f.name}</span>
-                  <span className="search-result-kcal">{f.kcal} kcal / 100 g</span>
+              {searchResults.map((r) => (
+                <div
+                  key={`${r.type}-${r.id}`}
+                  className="search-result-row"
+                  onClick={() => {
+                    setQuery('');
+                    if (r.type === 'food') navigate(`/alimenti/${r.id}`);
+                    else if (r.type === 'recipe') navigate(`/ricette/${r.id}`);
+                    else navigate(`/articoli/${r.id}`);
+                  }}
+                >
+                  <span>{r.emoji}</span>
+                  <span>{r.label}</span>
+                  <span className="search-result-kcal">{r.meta}</span>
                 </div>
               ))}
             </div>

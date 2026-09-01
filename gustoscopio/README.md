@@ -1,3 +1,16 @@
+## Correzione: ricerca principale in homepage ora trova anche ricette e articoli
+
+La barra di ricerca in homepage prometteva ("Cerca un alimento, una ricetta
+o un argomento...") ma cercava solo tra gli alimenti: RECIPES e ARTICLES
+erano importati in Home.jsx ma mai usati nella ricerca. Corretto: ora la
+ricerca unisce risultati da alimenti, ricette e articoli (max 8 risultati
+totali) e il click porta alla pagina corretta a seconda del tipo
+(/alimenti/:id, /ricette/:id, /articoli/:id).
+
+Verificato: nessun ID duplicato tra i 99 alimenti, le 20 ricette e gli 8
+articoli; nessun foodId richiamato da ricette o articoli che non esista in
+foods.js. Build (`npm install` + `npm run build`) completata senza errori.
+
 # Gustoscopio — come aggiornare il sito online
 
 ## Se il repository GitHub esiste già (caso piu probabile)
