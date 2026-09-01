@@ -92,3 +92,21 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
 - Filtro opzionale per limite di calorie (≤300 / ≤500 / ≤700).
 - Accessibile dalla pagina Ricette con il link "Non sai cosa cucinare? Apri
   il frigo →".
+
+## Novità: database alimenti ampliato
+
+- Da 15 a 84 alimenti, distribuiti su tutte le categorie del brief originale:
+  Frutta, Verdura, Cereali & derivati, Carne, Pesce, Uova, Legumi,
+  Latte & derivati, Frutta secca, Condimenti, Dolci & snack, Bevande.
+- IMPORTANTE — trasparenza sui dati: i valori nutrizionali sono valori di
+  riferimento standard (compatibili con le tabelle nutrizionali più diffuse,
+  tipo USDA/CREA), inseriti manualmente per popolare la piattaforma.
+  Prima di una pubblicazione pubblica definitiva andrebbero verificati e
+  collegati a una fonte ufficiale, come previsto dal Prompt 3 (campo
+  "source" per ogni alimento). Per arrivare a centinaia o migliaia di
+  alimenti in modo affidabile servirà un vero import da una fonte esterna
+  strutturata (es. CREA, USDA), non l'inserimento manuale.
+- La homepage ora mostra una selezione fissa e varia di 8 alimenti in
+  vetrina (prima, con l'ordinamento per categoria, mostrava solo frutta).
+- Ricerca, Food Battle, Apri il Frigo, pagine alimento: tutto funziona già
+  con l'intero dataset ampliato, nessuna modifica necessaria.

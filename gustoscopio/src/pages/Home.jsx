@@ -22,7 +22,8 @@ export default function Home() {
     return FOODS.filter((f) => f.name.toLowerCase().includes(q)).slice(0, 6);
   }, [query]);
 
-  const kcalGridFoods = FOODS.slice(0, 8);
+  const FEATURED_IDS = ['banana', 'avocado', 'pasta', 'pollo', 'uova', 'mandorle', 'cioccolato', 'pomodoro'];
+  const kcalGridFoods = FEATURED_IDS.map((id) => FOODS.find((f) => f.id === id)).filter(Boolean);
 
   const plateFilteredFoods = useMemo(() => {
     const q = plateQuery.toLowerCase();
