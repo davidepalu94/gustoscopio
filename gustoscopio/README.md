@@ -1,4 +1,13 @@
-## Correzione: ricerca principale in homepage ora trova anche ricette e articoli
+## Aggiornamento: grammi editabili nel piatto ("Costruisci il tuo piatto")
+
+Nella sezione "Il tuo piatto", il valore in grammi di ogni alimento non era
+più solo un numero fisso regolabile a scatti di 10g: ora è un campo di
+testo cliccabile, in cui si può scrivere direttamente il valore esatto
+desiderato (es. 137 g). I pulsanti −/+ restano per gli spostamenti rapidi
+di 10g; il campo serve per la precisione fine, incluso variare di 1g alla
+volta. Build verificata senza errori.
+
+
 
 La barra di ricerca in homepage prometteva ("Cerca un alimento, una ricetta
 o un argomento...") ma cercava solo tra gli alimenti: RECIPES e ARTICLES

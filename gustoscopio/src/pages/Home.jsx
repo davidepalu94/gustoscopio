@@ -223,7 +223,19 @@ export default function Home() {
                     <div className="plate-item-actions">
                       <div className="stepper">
                         <button onClick={() => updatePlateGrams(item.uid, item.grams - 10)}>−</button>
-                        <span>{item.grams} g</span>
+                        <input
+                          type="number"
+                          className="stepper-input"
+                          value={item.grams}
+                          onChange={(e) => {
+                            const v = e.target.value;
+                            if (v === '') { updatePlateGrams(item.uid, 0); return; }
+                            const n = parseInt(v, 10);
+                            if (!Number.isNaN(n)) updatePlateGrams(item.uid, n);
+                          }}
+                          onBlur={(e) => { if (e.target.value === '') updatePlateGrams(item.uid, 0); }}
+                        />
+                        <span className="stepper-unit">g</span>
                         <button onClick={() => updatePlateGrams(item.uid, item.grams + 10)}>+</button>
                       </div>
                       <button className="remove-x" onClick={() => removeFromPlate(item.uid)}>✕</button>
