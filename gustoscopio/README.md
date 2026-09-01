@@ -1,4 +1,14 @@
-## Aggiornamento: 9 nuove ricette per pranzo e cena
+## Aggiornamento: email reale per le richieste di Percorsi Personalizzati
+
+L'indirizzo email placeholder (`info@gustoscopio.it`) in
+`src/components/PercorsiModal.jsx` è stato sostituito con l'indirizzo reale
+`davidepalumbo.nutrizione@gmail.com`. Da ora le richieste di prenotazione
+dal modale di "Percorsi Personalizzati" apriranno il client di posta
+dell'utente con questo indirizzo già precompilato. Verificato che non ci
+fossero altri riferimenti al vecchio indirizzo nel codice. Build verificata
+senza errori.
+
+
 
 Da 20 a 29 ricette. Aggiunte 9 ricette pensate per pranzo/cena, con
 ingredienti già presenti nel database che finora erano poco usati (merluzzo,
@@ -229,14 +239,13 @@ Trasparenza sui valori:
   pagina BMI, pagina Fabbisogno calorico, menu in alto) ora portano
   davvero a questa pagina — prima erano testo non cliccabile.
 
-## ATTENZIONE — indirizzo email da sostituire
+## Email del modale di prenotazione (RISOLTO — vedi nota più recente in cima)
 
 Il file src/components/PercorsiModal.jsx contiene questa riga in cima:
 
-    const CONTACT_EMAIL = 'info@gustoscopio.it';
+    const CONTACT_EMAIL = 'davidepalumbo.nutrizione@gmail.com';
 
-È un indirizzo segnaposto. Prima di pubblicare, sostituiscilo con il tuo
-indirizzo email reale, altrimenti le richieste finiranno nel vuoto.
+Non è più un segnaposto: è l'indirizzo reale a cui arrivano le richieste.
 
 Nota: il sistema attuale (mailto) apre il programma di posta dell'utente
 con l'email già scritta, ma è l'utente a doverla effettivamente inviare —

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // ATTENZIONE: sostituire con l'indirizzo email reale prima della pubblicazione.
-const CONTACT_EMAIL = 'info@gustoscopio.it';
+const CONTACT_EMAIL = 'davidepalumbo.nutrizione@gmail.com';
 
 const PACKAGES = [
   { id: 'visita', icon: '🎯', label: 'Prima visita', desc: 'Un incontro iniziale per valutare la tua situazione e i tuoi obiettivi.' },
