@@ -1,44 +1,38 @@
-# Gustoscopio — come mettere il sito online
+# Gustoscopio — come aggiornare il sito online
 
-Questo è un progetto React (Vite). Puoi metterlo online gratis in circa 15 minuti,
-senza terminale, seguendo i passi qui sotto.
+## Se il repository GitHub esiste già (caso piu probabile)
 
-## 1. Crea un account GitHub
-Vai su https://github.com/signup e crea un account gratuito.
+1. Vai sul tuo repository su GitHub.
+2. Elimina tutto il contenuto attuale (o crea un nuovo repository pulito).
+3. Clicca "Add file" -> "Upload files".
+4. IMPORTANTE: apri questa cartella estratta e trascina dentro il CONTENUTO
+   (index.html, package.json, vercel.json, src, ecc.) - NON trascinare la cartella
+   "gustoscopio" stessa, altrimenti i file finiscono un livello troppo in profondita
+   e Vercel non li trova (e' l'errore capitato la prima volta).
+5. Clicca "Commit changes".
+6. Vercel rifa' il deploy da solo in automatico entro un minuto. Se non parte
+   da solo, vai su Vercel -> Deployments -> pulsante "Redeploy".
 
-## 2. Crea un nuovo repository
-- Clicca "New repository"
-- Nome: `gustoscopio`
-- Lascialo "Public" o "Private", scegli tu
-- Clicca "Create repository"
+## Se stai partendo da zero
 
-## 3. Carica i file
-- Nella pagina del repository appena creato, clicca "uploading an existing file"
-- Trascina dentro TUTTA questa cartella (tranne `node_modules` e `dist`, se presenti)
-- Clicca "Commit changes"
+Segui la guida precedente (crea account GitHub, crea repository, carica il
+CONTENUTO della cartella - non la cartella stessa -, crea account Vercel,
+importa il progetto, Deploy).
 
-## 4. Crea un account Vercel
-Vai su https://vercel.com/signup e registrati con lo stesso account GitHub
-(pulsante "Continue with GitHub").
+Se il sito da' errore 404 dopo il deploy: su Vercel vai su
+Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
+(cioe' che i file siano davvero alla radice del repository).
 
-## 5. Importa il progetto
-- Su Vercel clicca "Add New" → "Project"
-- Seleziona il repository `gustoscopio`
-- Vercel riconosce automaticamente che è un progetto Vite: non devi cambiare nulla
-- Clicca "Deploy"
+## Cosa c'e' di nuovo in questa versione
 
-Dopo circa un minuto il sito è online con un indirizzo tipo:
-`https://gustoscopio.vercel.app`
-
-## 6. (Opzionale) Dominio personalizzato
-- Compra un dominio (es. gustoscopio.it) su un registrar qualsiasi (es. Namecheap, Register.it)
-- Su Vercel vai su Project → Settings → Domains → aggiungi il dominio
-- Segui le istruzioni per puntare il DNS (Vercel te le mostra passo passo)
+- Ogni alimento ha ora una pagina propria: /alimenti/banana, /alimenti/pasta, ecc.
+  Ci si arriva cliccando "Vedi scheda completa" su una card o dai risultati di ricerca.
+- Il piatto costruito (Plate Builder) e' condiviso tra homepage e pagine alimento.
+- Il file vercel.json e' necessario per far funzionare questi indirizzi anche
+  aprendo il link direttamente: non cancellarlo.
 
 ## Aggiornare il sito in futuro
-Ogni volta che vuoi cambiare qualcosa nel sito:
-1. Modifica il file `src/App.jsx`
-2. Carica di nuovo il file su GitHub (sostituendo quello vecchio)
-3. Vercel pubblica automaticamente la nuova versione in circa un minuto
 
-Nessun comando da digitare, nessun server da gestire.
+1. Modifica i file dentro src/
+2. Ripeti la procedura di upload sopra
+3. Vercel pubblica la nuova versione in automatico
