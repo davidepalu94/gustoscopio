@@ -81,7 +81,7 @@ export default function FabbisognoPage() {
 
         <div className="teaser" style={{ padding: '30px 0' }}>
           <p style={{ fontSize: 14 }}>Vuoi un calcolo costruito sulla tua situazione specifica, non su una formula generica?</p>
-          <div className="teaser-cta" style={{ fontSize: 14 }}>Scopri i percorsi personalizzati →</div>
+          <Link to="/percorsi-personalizzati" className="teaser-cta" style={{ fontSize: 14 }}>Scopri i percorsi personalizzati →</Link>
         </div>
       </div>
       <footer className="foot">

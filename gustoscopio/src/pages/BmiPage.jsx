@@ -63,7 +63,7 @@ export default function BmiPage() {
 
         <div className="teaser" style={{ padding: '30px 0' }}>
           <p style={{ fontSize: 14 }}>Per un quadro reale della tua composizione corporea serve altro che un numero.</p>
-          <div className="teaser-cta" style={{ fontSize: 14 }}>Scopri i percorsi personalizzati →</div>
+          <Link to="/percorsi-personalizzati" className="teaser-cta" style={{ fontSize: 14 }}>Scopri i percorsi personalizzati →</Link>
         </div>
       </div>
       <footer className="foot">

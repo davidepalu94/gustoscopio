@@ -167,3 +167,35 @@ Trasparenza sui valori:
 - Il motore a blocchi (src/articles.js) rende facile aggiungere nuovi
   articoli in futuro senza scrivere una nuova pagina da zero: basta
   aggiungere un nuovo oggetto con i blocchi desiderati.
+
+## Novità: Percorsi Personalizzati (pagina commerciale)
+
+- Nuova pagina /percorsi-personalizzati: hero, le 4 fasi del metodo
+  (Analizziamo, Costruiamo, Adattiamo, Consolidiamo), testimonianze
+  (esempi generici, non persone reali), CTA finale "Richiedi informazioni".
+- Cliccando la CTA finale si apre una FINESTRA (modale) dove si sceglie:
+  - il pacchetto: Prima visita / Percorso 3 mesi / 6 mesi / 12 mesi
+  - eventuali extra: scheda di allenamento personalizzata, pacchetto PDF
+    con manuali e guide
+  - un bottone "Invia richiesta via email" che apre il programma di posta
+    dell'utente con oggetto e corpo del messaggio già compilati in base
+    alle scelte fatte.
+- Tutte le CTA "Scopri i percorsi personalizzati" sparse nel sito (homepage,
+  pagina BMI, pagina Fabbisogno calorico, menu in alto) ora portano
+  davvero a questa pagina — prima erano testo non cliccabile.
+
+## ATTENZIONE — indirizzo email da sostituire
+
+Il file src/components/PercorsiModal.jsx contiene questa riga in cima:
+
+    const CONTACT_EMAIL = 'info@gustoscopio.it';
+
+È un indirizzo segnaposto. Prima di pubblicare, sostituiscilo con il tuo
+indirizzo email reale, altrimenti le richieste finiranno nel vuoto.
+
+Nota: il sistema attuale (mailto) apre il programma di posta dell'utente
+con l'email già scritta, ma è l'utente a doverla effettivamente inviare —
+non c'è un vero invio automatico dal sito, perché non abbiamo un backend.
+Se in futuro vuoi un modulo che invia davvero senza passare dal programma
+di posta dell'utente, serve un servizio esterno tipo Netlify Forms,
+Formspree o simili: possiamo aggiungerlo quando vuoi.

@@ -10,7 +10,7 @@ export default function Nav() {
         <Link to="/lab">LAB</Link>
         <Link to="/strumenti">STRUMENTI</Link>
       </div>
-      <div className="nav-cta">Percorsi personalizzati →</div>
+      <div className="nav-cta"><Link to="/percorsi-personalizzati">Percorsi personalizzati →</Link></div>
     </nav>
   );
 }

@@ -16,6 +16,7 @@ import MitoOVeritaPage from './pages/MitoOVeritaPage';
 import AlimentiPage from './pages/AlimentiPage';
 import ArticlesPage from './pages/ArticlesPage';
 import ArticlePage from './pages/ArticlePage';
+import PercorsiPage from './pages/PercorsiPage';
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/mito-o-verita" element={<MitoOVeritaPage />} />
           <Route path="/articoli" element={<ArticlesPage />} />
           <Route path="/articoli/:slug" element={<ArticlePage />} />
+          <Route path="/percorsi-personalizzati" element={<PercorsiPage />} />
         </Routes>
       </BrowserRouter>
     </PlateProvider>

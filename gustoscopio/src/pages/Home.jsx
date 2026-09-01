@@ -246,7 +246,7 @@ export default function Home() {
           personalizzato parte invece dalla tua situazione, dai tuoi obiettivi e dalle
           tue esigenze.
         </p>
-        <div className="teaser-cta">Scopri i percorsi personalizzati →</div>
+        <Link to="/percorsi-personalizzati" className="teaser-cta">Scopri i percorsi personalizzati →</Link>
       </div>
 
       <footer className="foot">
