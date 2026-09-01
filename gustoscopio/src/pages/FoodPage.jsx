@@ -138,12 +138,9 @@ export default function FoodPage() {
 
         <div className="panel-block">
           <h3 className="panel-title">Confronta</h3>
-          <div className="stub-grid">
-            <div className="stub-card">
-              <span className="stub-badge">Presto disponibile</span>
-              Confronta {food.name.toLowerCase()} con un altro alimento
-            </div>
-          </div>
+          <Link to={`/confronta?a=${food.id}`} className="ghost-link-btn" style={{ display: 'inline-flex' }}>
+            Confronta {food.name.toLowerCase()} con un altro alimento →
+          </Link>
         </div>
       </div>
 

@@ -51,3 +51,16 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
 - La pagina di ogni alimento ora mostra le ricette reali che lo utilizzano.
 - Il database alimenti (src/foods.js) è stato ampliato: ora include anche
   pane integrale, tonno al naturale e spinaci, usati nelle nuove ricette.
+
+## Novità: Food Battle
+
+- Nuova pagina /confronta: scegli due alimenti da menu a tendina, imposta la
+  quantità (uguale per entrambi, così il confronto è corretto) e vedi kcal e
+  macronutrienti affiancati.
+- Puoi scegliere un parametro (es. "Più proteine", "Meno kcal") e il sistema
+  evidenzia quale dei due vince SOLO su quel parametro — non esiste un
+  "alimento migliore assoluto", coerente col principio del brief originale.
+- Dalla pagina di ogni alimento, "Confronta" ora porta dritto al Food Battle
+  con quell'alimento già selezionato.
+- Il menu "LAB" ora punta al Food Battle (sarà la home dell'area Lab quando
+  aggiungeremo Mito o Verità e i quiz).

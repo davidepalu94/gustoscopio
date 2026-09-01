@@ -235,3 +235,33 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .steps-list { display: flex; flex-direction: column; gap: 16px; }
 .step-item { display: flex; gap: 14px; align-items: flex-start; }
 .step-num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #3155FF; color: white; font-size: 12.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* FOOD BATTLE */
+.battle-selectors { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.battle-select { background: #FFFFFF; border: 1px solid rgba(16,19,28,0.12); border-radius: 10px; padding: 12px 16px; font-size: 15px; font-family: inherit; font-weight: 600; min-width: 220px; }
+.swap-btn { background: #10131C; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 18px; }
+
+.battle-quantity { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 40px; max-width: 420px; margin-left: auto; margin-right: auto; }
+.battle-quantity span { font-size: 13px; font-weight: 600; color: #575a68; white-space: nowrap; }
+.battle-quantity input[type=range] { flex: 1; accent-color: #3155FF; }
+.battle-quantity-val { min-width: 50px; text-align: right; }
+
+.battle-cards { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-bottom: 28px; }
+@media (max-width: 600px) { .battle-cards { grid-template-columns: 1fr; } }
+.battle-card { background: #FFFFFF; border: 2px solid rgba(16,19,28,0.07); border-radius: 16px; padding: 26px; text-align: center; position: relative; transition: border-color 200ms ease; }
+.battle-winner { border-color: #3155FF; }
+.battle-vs { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #8a8d97; text-align: center; }
+@media (max-width: 600px) { .battle-vs { display: none; } }
+.winner-badge { margin-top: 10px; display: inline-block; background: rgba(49,85,255,0.1); color: #3155FF; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+
+.battle-params { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
+
+.battle-table { display: flex; flex-direction: column; gap: 16px; }
+.battle-row-label { font-size: 12.5px; font-weight: 700; color: #8a8d97; letter-spacing: 0.03em; margin-bottom: 6px; text-transform: uppercase; }
+.battle-row-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.battle-bar-wrap { display: flex; align-items: center; gap: 8px; }
+.battle-bar-wrap-left { flex-direction: row-reverse; }
+.battle-bar-track { background: #F0EFEA; border-radius: 999px; height: 10px; flex: 1; overflow: hidden; }
+.battle-bar-fill { background: #3155FF; height: 100%; border-radius: 999px; transition: width 300ms ease; margin-left: auto; }
+.battle-bar-fill-left { background: #C94B3C; }
+.battle-bar-val { font-size: 13px; font-weight: 700; min-width: 46px; }
