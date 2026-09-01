@@ -322,3 +322,39 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .fridge-result-name { font-weight: 700; font-size: 15.5px; margin-bottom: 6px; }
 .fridge-result-meta { display: flex; gap: 14px; font-size: 12.5px; color: #8a8d97; font-weight: 600; flex-wrap: wrap; }
 .fridge-missing { font-size: 12.5px; color: #C94B3C; margin-top: 6px; font-weight: 600; }
+
+/* MITO O VERITA - sezione a sfondo blu elettrico, momento visivo forte */
+.myth-section { background: #3155FF; min-height: 100vh; color: white; }
+.myth-section .nav { background: rgba(49,85,255,0.9); border-bottom: 1px solid rgba(255,255,255,0.15); }
+.myth-section .nav-logo, .myth-section .nav-links, .myth-section .nav-cta { color: white; }
+.myth-breadcrumb { color: rgba(255,255,255,0.75); }
+.myth-breadcrumb:hover { color: white; }
+.myth-title { color: white; text-align: center; font-size: clamp(44px, 8vw, 72px); }
+.myth-progress { text-align: center; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 700; letter-spacing: 0.03em; margin: 20px 0 30px; }
+
+.myth-card-container { perspective: 1400px; height: 340px; }
+.myth-card-inner { position: relative; width: 100%; height: 100%; transition: transform 500ms ease; transform-style: preserve-3d; }
+.myth-card-inner.flipped { transform: rotateY(180deg); }
+.myth-card-face {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  background: white; color: #10131C; border-radius: 20px; padding: 36px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.myth-card-back { transform: rotateY(180deg); }
+.myth-claim { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; line-height: 1.35; margin-bottom: 30px; }
+.myth-buttons { display: flex; gap: 14px; }
+.myth-btn { border: none; border-radius: 999px; padding: 14px 30px; font-weight: 800; font-size: 15px; letter-spacing: 0.03em; }
+.myth-btn-mito { background: #F0EFEA; color: #10131C; }
+.myth-btn-mito:hover { background: #C94B3C; color: white; }
+.myth-btn-verita { background: #10131C; color: white; }
+.myth-btn-verita:hover { background: #3155FF; }
+
+.myth-result-icon { font-size: 46px; font-weight: 800; margin-bottom: 6px; }
+.myth-result-label { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; margin-bottom: 14px; }
+.myth-explanation { font-size: 14.5px; line-height: 1.55; color: #4b4f5e; }
+.myth-next-btn { background: white; color: #3155FF; }
+.myth-next-btn:hover { background: #F0EFEA; }
+
+.myth-finish { text-align: center; padding: 60px 0; }
+.myth-finish-score { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 700; }
+.myth-finish-label { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }

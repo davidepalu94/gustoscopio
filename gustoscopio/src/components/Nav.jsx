@@ -7,7 +7,7 @@ export default function Nav() {
       <div className="nav-links">
         <span>ALIMENTI</span>
         <Link to="/ricette">RICETTE</Link>
-        <Link to="/confronta">LAB</Link>
+        <Link to="/lab">LAB</Link>
         <Link to="/strumenti">STRUMENTI</Link>
       </div>
       <div className="nav-cta">Percorsi personalizzati →</div>

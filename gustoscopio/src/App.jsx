@@ -11,6 +11,8 @@ import FabbisognoPage from './pages/FabbisognoPage';
 import ProteinePage from './pages/ProteinePage';
 import BmiPage from './pages/BmiPage';
 import ApriIlFrigoPage from './pages/ApriIlFrigoPage';
+import LabPage from './pages/LabPage';
+import MitoOVeritaPage from './pages/MitoOVeritaPage';
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="/strumenti/proteine" element={<ProteinePage />} />
           <Route path="/strumenti/bmi" element={<BmiPage />} />
           <Route path="/apri-il-frigo" element={<ApriIlFrigoPage />} />
+          <Route path="/lab" element={<LabPage />} />
+          <Route path="/mito-o-verita" element={<MitoOVeritaPage />} />
         </Routes>
       </BrowserRouter>
     </PlateProvider>

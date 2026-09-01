@@ -110,3 +110,17 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
   vetrina (prima, con l'ordinamento per categoria, mostrava solo frutta).
 - Ricerca, Food Battle, Apri il Frigo, pagine alimento: tutto funziona già
   con l'intero dataset ampliato, nessuna modifica necessaria.
+
+## Novità: Mito o Verità + area LAB
+
+- Nuova pagina /lab: raccoglie Food Battle e Mito o Verità (prima "LAB" nel
+  menu portava solo a Food Battle).
+- Nuova pagina /mito-o-verita: 8 affermazioni sulla nutrizione, rispondi
+  MITO o VERITÀ, la card si "gira" (animazione flip reale in CSS) mostrando
+  la risposta corretta e una spiegazione breve. Alla fine mostra un
+  punteggio semplice (es. 5/8) e permette di ricominciare.
+- Questa sezione ha uno sfondo blu elettrico dedicato — è il "momento
+  visivo forte" richiesto dal brief originale per quest'area, distinto dal
+  nero del Plate Builder.
+- Le spiegazioni non danno mai giudizi assoluti ("sempre", "mai") e restano
+  coerenti col principio "niente terrorismo alimentare" del brief.
