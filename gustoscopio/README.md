@@ -132,3 +132,22 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
 - Ogni riga porta alla scheda completa dell'alimento.
 - Il menu "ALIMENTI" ora funziona: era l'ultima voce di navigazione rimasta
   senza destinazione.
+
+## Novità: 15 alimenti aggiunti su richiesta
+
+Da 84 a 99 alimenti. Aggiunti: Seitan, Tofu, Tofu affumicato, Tempeh,
+Affettato vegetale, Tonno sott'olio, Salmone selvaggio, Albume, Proteine in
+polvere isolate, Proteine vegetali (riso e pisello), Latte proteico vaccino
+scremato, Yogurt greco 0%/2%/5% grassi (tre varianti distinte), Gallette di
+riso e di mais.
+
+Trasparenza sui valori:
+- Affettato vegetale, Proteine isolate, Proteine vegetali, Latte proteico:
+  proteine/carboidrati/grassi sono i valori esatti forniti; le kcal sono
+  state CALCOLATE da questi (proteine×4 + carboidrati×4 + grassi×9), mai
+  inventate.
+- Tutti gli altri (Seitan, Tofu, Tempeh, Tonno sott'olio, Salmone selvaggio,
+  Albume, Yogurt 0%/2%, Gallette): valori di riferimento standard, stessa
+  logica già usata per il resto del database — da verificare con una fonte
+  ufficiale prima di una pubblicazione pubblica definitiva.
+- Nuove categorie: "Proteine vegetali" e "Integratori".

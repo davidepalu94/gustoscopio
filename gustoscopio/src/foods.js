@@ -82,7 +82,7 @@ export const FOODS = [
   { id: 'edamame', name: 'Edamame (soia)', emoji: '🫛', kcal: 121, protein: 11, carbs: 8.9, fat: 5.2, fiber: 5.2, category: 'Legumi' },
 
   // LATTE & DERIVATI
-  { id: 'yogurt', name: 'Yogurt greco', emoji: '🥣', kcal: 97, protein: 9, carbs: 3.6, fat: 5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'yogurt', name: 'Yogurt greco (5% grassi)', emoji: '🥣', kcal: 97, protein: 9, carbs: 3.6, fat: 5, fiber: 0, category: 'Latte & derivati' },
   { id: 'yogurt-bianco', name: 'Yogurt bianco intero', emoji: '🥣', kcal: 66, protein: 3.5, carbs: 4.7, fat: 3.6, fiber: 0, category: 'Latte & derivati' },
   { id: 'latte-intero', name: 'Latte intero', emoji: '🥛', kcal: 64, protein: 3.3, carbs: 4.9, fat: 3.6, fiber: 0, category: 'Latte & derivati' },
   { id: 'latte-scremato', name: 'Latte scremato', emoji: '🥛', kcal: 36, protein: 3.4, carbs: 5, fat: 0.2, fiber: 0, category: 'Latte & derivati' },
@@ -116,6 +116,33 @@ export const FOODS = [
   // BEVANDE
   { id: 'succo-arancia', name: 'Succo d\'arancia', emoji: '🧃', kcal: 45, protein: 0.7, carbs: 10.4, fat: 0.2, fiber: 0.2, category: 'Bevande' },
   { id: 'bevanda-soia', name: 'Bevanda di soia', emoji: '🥛', kcal: 33, protein: 3.3, carbs: 0.9, fat: 1.8, fiber: 0.6, category: 'Bevande' },
+
+  // PROTEINE VEGETALI
+  { id: 'seitan', name: 'Seitan', emoji: '🌾', kcal: 120, protein: 21, carbs: 4, fat: 2, fiber: 0.6, category: 'Proteine vegetali' },
+  { id: 'tofu', name: 'Tofu', emoji: '⬜', kcal: 76, protein: 8, carbs: 1.9, fat: 4.8, fiber: 0.3, category: 'Proteine vegetali' },
+  { id: 'tofu-affumicato', name: 'Tofu affumicato', emoji: '🟫', kcal: 148, protein: 16, carbs: 1.5, fat: 9, fiber: 0.5, category: 'Proteine vegetali' },
+  { id: 'tempeh', name: 'Tempeh', emoji: '🟤', kcal: 192, protein: 20.3, carbs: 7.6, fat: 10.8, fiber: 9, category: 'Proteine vegetali' },
+  { id: 'affettato-vegetale', name: 'Affettato vegetale', emoji: '🥪', kcal: 236, protein: 33, carbs: 8, fat: 8, fiber: 1, category: 'Proteine vegetali' },
+
+  // PESCE (aggiunte)
+  { id: 'tonno-olio', name: 'Tonno sott\'olio, sgocciolato', emoji: '🐟', kcal: 189, protein: 25, carbs: 0, fat: 9, fiber: 0, category: 'Pesce' },
+  { id: 'salmone-selvaggio', name: 'Salmone selvaggio', emoji: '🐟', kcal: 116, protein: 20, carbs: 0, fat: 3.4, fiber: 0, category: 'Pesce' },
+
+  // UOVA (aggiunte)
+  { id: 'albume', name: 'Albume d\'uovo', emoji: '🥚', kcal: 52, protein: 10.9, carbs: 0.7, fat: 0.2, fiber: 0, category: 'Uova' },
+
+  // INTEGRATORI
+  { id: 'proteine-isolate', name: 'Proteine in polvere isolate', emoji: '🥤', kcal: 360, protein: 90, carbs: 0, fat: 0, fiber: 0, category: 'Integratori' },
+  { id: 'proteine-vegetali', name: 'Proteine vegetali (riso e pisello)', emoji: '🥤', kcal: 345, protein: 75, carbs: 0, fat: 5, fiber: 0, category: 'Integratori' },
+
+  // LATTE & DERIVATI (aggiunte)
+  { id: 'latte-proteico', name: 'Latte proteico vaccino scremato', emoji: '🥛', kcal: 48, protein: 7, carbs: 4.9, fat: 0, fiber: 0, category: 'Latte & derivati' },
+  { id: 'yogurt-greco-0', name: 'Yogurt greco bianco 0% grassi', emoji: '🥣', kcal: 57, protein: 10, carbs: 3.6, fat: 0.2, fiber: 0, category: 'Latte & derivati' },
+  { id: 'yogurt-greco-2', name: 'Yogurt greco bianco 2% grassi', emoji: '🥣', kcal: 73, protein: 9, carbs: 3.8, fat: 2, fiber: 0, category: 'Latte & derivati' },
+
+  // CEREALI & DERIVATI (aggiunte)
+  { id: 'gallette-riso', name: 'Gallette di riso', emoji: '🍘', kcal: 387, protein: 8.2, carbs: 81.5, fat: 2.8, fiber: 4.2, category: 'Cereali & derivati' },
+  { id: 'gallette-mais', name: 'Gallette di mais', emoji: '🌽', kcal: 383, protein: 7.5, carbs: 82, fat: 2.5, fiber: 3.5, category: 'Cereali & derivati' },
 ];
 
 export function calc(food, grams) {
