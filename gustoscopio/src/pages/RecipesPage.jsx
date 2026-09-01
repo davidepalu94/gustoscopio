@@ -40,6 +40,9 @@ export default function RecipesPage() {
         <div className="section-head">
           <h2>Mangia bene. Davvero.</h2>
           <p>Ricette semplici, valori nutrizionali chiari e zero terrorismo alimentare.</p>
+          <Link to="/apri-il-frigo" className="ghost-link-btn" style={{ display: 'inline-flex', marginTop: 18 }}>
+            🧊 Non sai cosa cucinare? Apri il frigo →
+          </Link>
         </div>
 
         <div className="recipe-filters">

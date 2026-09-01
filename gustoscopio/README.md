@@ -80,3 +80,15 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
   componenti, con disclaimer chiaro ovunque: sono stime informative, non
   sostituiscono una valutazione professionale.
 - Il menu "STRUMENTI" ora funziona.
+
+## Novità: Apri il Frigo
+
+- Nuova pagina /apri-il-frigo: seleziona gli ingredienti che hai a disposizione
+  (chip cliccabili con tutti gli alimenti del database).
+- Il sistema mostra le ricette compatibili ordinate per: quanti ingredienti
+  hai già, percentuale di compatibilità, poi tempo di preparazione.
+- Se ti manca 1-2 ingredienti per completare una ricetta, te lo dice
+  esplicitamente ("Ti manca: pomodoro").
+- Filtro opzionale per limite di calorie (≤300 / ≤500 / ≤700).
+- Accessibile dalla pagina Ricette con il link "Non sai cosa cucinare? Apri
+  il frigo →".

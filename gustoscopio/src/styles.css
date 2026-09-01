@@ -299,3 +299,26 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .bmi-ranges { display: flex; flex-direction: column; gap: 6px; margin-top: 26px; }
 .bmi-range-row { display: flex; justify-content: space-between; padding: 10px 14px; border-radius: 8px; font-size: 13.5px; font-weight: 600; color: #575a68; background: #F8F7F3; }
 .bmi-range-row.active { background: #10131C; color: white; }
+
+/* APRI IL FRIGO */
+.fridge-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.fridge-chip {
+  display: flex; align-items: center; gap: 8px; background: #FFFFFF;
+  border: 1.5px solid rgba(16,19,28,0.12); border-radius: 999px; padding: 10px 16px;
+  font-size: 14px; font-weight: 600; transition: all 140ms ease;
+}
+.fridge-chip.active { background: #10131C; color: white; border-color: #10131C; }
+.fridge-chip:hover { border-color: #3155FF; }
+
+.fridge-kcal-filter { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 30px; }
+.fridge-kcal-filter > span { font-size: 13px; font-weight: 700; color: #575a68; }
+
+.fridge-results { display: flex; flex-direction: column; gap: 10px; }
+.fridge-result-card { display: flex; align-items: center; gap: 16px; background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 14px; padding: 16px 20px; transition: transform 160ms ease, box-shadow 160ms ease; }
+.fridge-result-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(16,19,28,0.08); }
+.fridge-result-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #d7d5cd; width: 34px; }
+.fridge-result-emoji { font-size: 30px; }
+.fridge-result-body { flex: 1; }
+.fridge-result-name { font-weight: 700; font-size: 15.5px; margin-bottom: 6px; }
+.fridge-result-meta { display: flex; gap: 14px; font-size: 12.5px; color: #8a8d97; font-weight: 600; flex-wrap: wrap; }
+.fridge-missing { font-size: 12.5px; color: #C94B3C; margin-top: 6px; font-weight: 600; }
