@@ -4,10 +4,10 @@ import { useState } from 'react';
 const CONTACT_EMAIL = 'info@gustoscopio.it';
 
 const PACKAGES = [
-  { id: 'visita', label: 'Prima visita', desc: 'Un incontro iniziale per valutare la tua situazione e i tuoi obiettivi.' },
-  { id: '3m', label: 'Percorso 3 mesi', desc: 'La base per costruire le prime abitudini sostenibili.' },
-  { id: '6m', label: 'Percorso 6 mesi', desc: 'Il tempo per consolidare i risultati e adattare il percorso.' },
-  { id: '12m', label: 'Percorso 12 mesi', desc: 'Un accompagnamento esteso, pensato per cambiamenti duraturi.' },
+  { id: 'visita', icon: '🎯', label: 'Prima visita', desc: 'Un incontro iniziale per valutare la tua situazione e i tuoi obiettivi.' },
+  { id: '3m', icon: '🌱', label: 'Percorso 3 mesi', desc: 'La base per costruire le prime abitudini sostenibili.' },
+  { id: '6m', icon: '🔄', label: 'Percorso 6 mesi', desc: 'Il tempo per consolidare i risultati e adattare il percorso.' },
+  { id: '12m', icon: '🏆', label: 'Percorso 12 mesi', desc: 'Un accompagnamento esteso, pensato per cambiamenti duraturi.' },
 ];
 
 const ADDONS = [
@@ -50,6 +50,7 @@ export default function PercorsiModal({ isOpen, onClose }) {
               className={`modal-package-card ${selectedPackage === p.id ? 'active' : ''}`}
               onClick={() => setSelectedPackage(p.id)}
             >
+              <div className="modal-package-icon">{p.icon}</div>
               <div className="modal-package-label">{p.label}</div>
               <div className="modal-package-desc">{p.desc}</div>
             </button>

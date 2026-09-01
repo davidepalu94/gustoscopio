@@ -234,3 +234,41 @@ contro il database alimenti: nessun riferimento rotto.
   ma restano leggibili.
 - Verificato con screenshot reali a 375px di larghezza (iPhone-size):
   nessun overflow orizzontale residuo su nessuna delle sezioni testate.
+
+## Correzione: ricette e articoli ora visibili in homepage
+
+Il contenuto (13 ricette, 8 articoli) esisteva già nel codice ed era
+raggiungibile dal menu, ma la homepage non lo mostrava mai: si fermava a
+"Quante kcal?" e "Costruisci il piatto". Aggiunte due nuove sezioni alla
+homepage, come previsto dall'ordine originale del brief:
+
+- "Mangia bene. Davvero." — anteprima delle prime 3 ricette con link
+  "Vedi tutte le ricette →"
+- "Palumbo Lab." — Food Battle e Mito o Verità in evidenza, più le prime 2
+  anteprime articoli, con link "Esplora tutto il Lab →"
+
+Verificato con screenshot reali (desktop e mobile 375px) che le sezioni
+compaiono correttamente e senza overflow.
+
+## Novità: redesign "Percorsi Personalizzati" (più magnetico)
+
+Nessun trucco da urgenza finta (niente sconti, countdown, "ultimi posti":
+restano esclusi per scelta, come indicato nel brief originale). Il
+miglioramento è tutto di gerarchia visiva e ritmo:
+
+- Hero con badge "IL METODO", parola chiave "dieta" evidenziata in blu
+  corsivo, e tre pillole di fiducia sotto al sottotitolo (Su misura per
+  te / Si adatta nel tempo / Accompagnamento reale).
+- Le 4 fasi ora sono una vera timeline: cerchi numerati blu, connettori
+  visivi tra una fase e l'altra su desktop.
+- Nuova sezione "Cosa include il percorso": lista con check blu + un
+  pannello scuro a fianco con il numero "4" in grande, per dare peso
+  visivo senza aggiungere altro testo.
+- Testimonianze ridisegnate con virgolette decorative e bordo superiore blu.
+- Finale a tutta larghezza, sfondo scuro arrotondato (stesso linguaggio
+  visivo della sezione "Costruisci il piatto"): è il vero momento di
+  conversione, isolato e ad alto contrasto rispetto al resto della pagina.
+- Il modale di prenotazione ha ora un'icona per ogni pacchetto.
+
+Verificato con screenshot reali (desktop, mobile, modale aperto): nessun
+overflow, tutto leggibile.

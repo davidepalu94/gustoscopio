@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
+import { RECIPES, calcRecipeTotals } from '../recipes';
+import { ARTICLES } from '../articles';
 import { usePlate } from '../PlateContext';
 import Nav from '../components/Nav';
 
@@ -237,6 +239,69 @@ export default function Home() {
               )}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="section-head">
+          <h2>Mangia bene. Davvero.</h2>
+          <p>Ricette semplici, valori nutrizionali chiari e zero terrorismo alimentare.</p>
+        </div>
+        <div className="recipe-grid">
+          {RECIPES.slice(0, 3).map((r) => {
+            const totals = calcRecipeTotals(r, r.baseServings);
+            return (
+              <Link to={`/ricette/${r.id}`} key={r.id} className="recipe-card">
+                <div className="recipe-card-emoji-banner">{r.emoji}</div>
+                <div className="recipe-card-body">
+                  <div className="recipe-card-name">{r.name}</div>
+                  <div className="recipe-card-meta">
+                    <span>⏱ {r.time} min</span>
+                    <span>{r.difficulty}</span>
+                  </div>
+                  <div className="recipe-card-kcal">{totals.kcal} <span style={{ fontSize: 14, fontFamily: 'Manrope', fontWeight: 700, color: '#8a8d97' }}>kcal</span></div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 30 }}>
+          <Link to="/ricette" className="ghost-link-btn" style={{ display: 'inline-flex' }}>Vedi tutte le ricette →</Link>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="section-head">
+          <h2>Palumbo Lab.</h2>
+          <p>Strumenti interattivi e articoli per esplorare la nutrizione, non solo per leggerla.</p>
+        </div>
+        <div className="tools-grid">
+          <Link to="/confronta" className="tool-card">
+            <div className="tool-icon">⚔️</div>
+            <div className="tool-title">Food Battle</div>
+            <div className="tool-desc">Confronta due alimenti su kcal, proteine, carboidrati, grassi e fibre.</div>
+            <div className="tool-cta">Prova →</div>
+          </Link>
+          <Link to="/mito-o-verita" className="tool-card">
+            <div className="tool-icon">🧠</div>
+            <div className="tool-title">Mito o Verità</div>
+            <div className="tool-desc">Metti alla prova quello che pensi di sapere sulla nutrizione.</div>
+            <div className="tool-cta">Prova →</div>
+          </Link>
+        </div>
+        <div className="article-grid" style={{ marginTop: 16 }}>
+          {ARTICLES.slice(0, 2).map((a) => (
+            <Link to={`/articoli/${a.id}`} key={a.id} className="article-card">
+              <div className="article-card-emoji">{a.emoji}</div>
+              <div className="article-card-category">{a.category.toUpperCase()}</div>
+              <div className="article-card-title">{a.title}</div>
+              <div className="article-card-excerpt">{a.excerpt}</div>
+              <div className="article-card-time">{a.readingTime} min di lettura</div>
+            </Link>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 30 }}>
+          <Link to="/lab" className="ghost-link-btn" style={{ display: 'inline-flex' }}>Esplora tutto il Lab →</Link>
         </div>
       </div>
 
