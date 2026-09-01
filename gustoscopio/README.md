@@ -1,4 +1,27 @@
-## Aggiornamento: grammi editabili nel piatto ("Costruisci il tuo piatto")
+## Aggiornamento: 9 nuove ricette per pranzo e cena
+
+Da 20 a 29 ricette. Aggiunte 9 ricette pensate per pranzo/cena, con
+ingredienti già presenti nel database che finora erano poco usati (merluzzo,
+gamberi, couscous, orzo, farro, edamame, sgombro, manzo, fagioli, finocchi,
+arancia, melanzane):
+
+- Merluzzo al forno con patate e finocchi
+- Gamberi saltati con couscous e zucchine
+- Farro con ceci e verdure miste
+- Melanzane gratinate con pomodoro e mozzarella
+- Insalata di orzo con verdure e mozzarella
+- Manzo con patate e broccoli al forno
+- Riso con edamame e verdure saltate
+- Sgombro con insalata di finocchi e arancia
+- Fagioli in umido con pane integrale
+
+Valori nutrizionali calcolati automaticamente dagli ingredienti tramite
+`calcRecipeTotals`, come sempre — nessun numero scritto a mano. Verificato
+che tutti i foodId richiamati esistano nel database e che non ci siano ID
+di ricette duplicati (29 ricette, tutte con ID univoco). Build verificata
+senza errori.
+
+
 
 Nella sezione "Il tuo piatto", il valore in grammi di ogni alimento non era
 più solo un numero fisso regolabile a scatti di 10g: ora è un campo di
