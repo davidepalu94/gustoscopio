@@ -272,3 +272,22 @@ miglioramento è tutto di gerarchia visiva e ritmo:
 
 Verificato con screenshot reali (desktop, mobile, modale aperto): nessun
 overflow, tutto leggibile.
+
+## Novità: ricette proteiche / da palestra
+
+Da 13 a 20 ricette. Aggiunte 7 ricette a tema proteico/palestra:
+
+- Pancake proteici con farina d'avena e albume (colazione/post-workout)
+- Porridge proteico con frutta e yogurt greco (avena cotta nel latte
+  proteico, completata con yogurt greco e mirtilli)
+- Frittata di albumi con spinaci
+- Pollo, patate e broccoli al forno (il classico "pasto da palestra")
+- Riso con tonno e piselli (post-workout, veloce)
+- Overnight oats proteici (si prepara la sera prima)
+- Tacchino con riso integrale e zucchine
+
+Tutte usano ingredienti proteici già nel database (albume, latte proteico,
+yogurt greco nelle sue varianti, tonno, pollo, tacchino). Valori
+nutrizionali calcolati automaticamente dagli ingredienti, come sempre —
+nessun numero scritto a mano. Verificato che tutti i foodId richiamati
+esistano nel database e che non ci siano ID di ricette duplicati.
