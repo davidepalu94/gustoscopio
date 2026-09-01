@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 const LAB_TOOLS = [
   { icon: '⚔️', title: 'Food Battle', desc: 'Confronta due alimenti su kcal, proteine, carboidrati, grassi e fibre.', to: '/confronta' },
   { icon: '🧠', title: 'Mito o Verità', desc: 'Metti alla prova quello che pensi di sapere sulla nutrizione.', to: '/mito-o-verita' },
+  { icon: '📖', title: 'Articoli', desc: 'Scienza, alimentazione e metabolismo spiegati senza complicazioni.', to: '/articoli' },
 ];
 
 export default function LabPage() {

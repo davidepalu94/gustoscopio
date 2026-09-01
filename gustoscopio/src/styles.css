@@ -368,3 +368,42 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .alimenti-row-cat { font-size: 12px; color: #8a8d97; margin-top: 2px; }
 .alimenti-row-kcal { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; white-space: nowrap; }
 .alimenti-row-kcal span { font-size: 11px; font-family: 'Manrope', sans-serif; font-weight: 700; color: #8a8d97; margin-left: 2px; }
+
+/* ARTICLES LIST */
+.article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 700px) { .article-grid { grid-template-columns: 1fr; } }
+.article-card { background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 16px; padding: 26px; display: block; transition: transform 180ms ease, box-shadow 180ms ease; }
+.article-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(16,19,28,0.1); }
+.article-card-emoji { font-size: 32px; margin-bottom: 12px; }
+.article-card-category { font-size: 11px; font-weight: 700; color: #3155FF; letter-spacing: 0.04em; margin-bottom: 8px; }
+.article-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+.article-card-excerpt { font-size: 13.5px; color: #575a68; line-height: 1.5; margin-bottom: 16px; }
+.article-card-time { font-size: 12px; color: #8a8d97; font-weight: 600; }
+
+/* ARTICLE DETAIL */
+.article-header { margin-bottom: 34px; }
+.article-header-category { font-size: 12px; font-weight: 700; color: #3155FF; letter-spacing: 0.04em; margin-bottom: 10px; }
+.article-header-title { font-size: clamp(30px, 5vw, 44px); font-weight: 700; }
+.article-body { display: flex; flex-direction: column; gap: 22px; }
+.article-paragraph { font-size: 16px; line-height: 1.7; color: #2b2e38; margin: 0; }
+
+.in-breve-box { background: #10131C; color: white; border-radius: 14px; padding: 22px 26px; }
+.in-breve-label { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: #a9abb8; margin-bottom: 10px; }
+.in-breve-text { font-size: 15.5px; line-height: 1.6; }
+
+.content-link-card { display: flex; align-items: center; gap: 12px; background: #F8F7F3; border-radius: 12px; padding: 16px 18px; font-weight: 700; font-size: 14.5px; transition: background 140ms ease; }
+.content-link-card:hover { background: #F0EFEA; }
+.content-link-arrow { margin-left: auto; color: #3155FF; }
+
+/* INLINE QUIZ */
+.inline-quiz { background: #F8F7F3; border: 1.5px solid rgba(16,19,28,0.08); border-radius: 16px; padding: 24px; }
+.inline-quiz-label { font-size: 11px; font-weight: 700; color: #3155FF; letter-spacing: 0.05em; margin-bottom: 10px; }
+.inline-quiz-question { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+.inline-quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.inline-quiz-option { background: white; border: 1.5px solid rgba(16,19,28,0.12); border-radius: 10px; padding: 12px 16px; font-size: 14.5px; font-weight: 600; text-align: left; transition: border-color 140ms ease; }
+.inline-quiz-option:hover { border-color: #3155FF; }
+.inline-quiz-option.correct { border-color: #3155FF; background: rgba(49,85,255,0.08); }
+.inline-quiz-option.incorrect { border-color: #C94B3C; background: rgba(201,75,60,0.08); }
+.inline-quiz-result { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(16,19,28,0.1); }
+.inline-quiz-verdict { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+.inline-quiz-explanation { font-size: 14px; line-height: 1.6; color: #4b4f5e; }

@@ -14,6 +14,8 @@ import ApriIlFrigoPage from './pages/ApriIlFrigoPage';
 import LabPage from './pages/LabPage';
 import MitoOVeritaPage from './pages/MitoOVeritaPage';
 import AlimentiPage from './pages/AlimentiPage';
+import ArticlesPage from './pages/ArticlesPage';
+import ArticlePage from './pages/ArticlePage';
 
 export default function App() {
   return (
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="/apri-il-frigo" element={<ApriIlFrigoPage />} />
           <Route path="/lab" element={<LabPage />} />
           <Route path="/mito-o-verita" element={<MitoOVeritaPage />} />
+          <Route path="/articoli" element={<ArticlesPage />} />
+          <Route path="/articoli/:slug" element={<ArticlePage />} />
         </Routes>
       </BrowserRouter>
     </PlateProvider>

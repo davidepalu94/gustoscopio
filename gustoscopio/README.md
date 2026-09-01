@@ -151,3 +151,19 @@ Trasparenza sui valori:
   logica già usata per il resto del database — da verificare con una fonte
   ufficiale prima di una pubblicazione pubblica definitiva.
 - Nuove categorie: "Proteine vegetali" e "Integratori".
+
+## Novità: Articoli / Palumbo Lab editoriale
+
+- Nuova pagina /articoli: 4 articoli (Calorie, Dimagrimento, Proteine,
+  Metabolismo), raggiungibile dall'hub /lab (terza card "Articoli").
+- Ogni articolo è costruito "a blocchi", non come muro di testo:
+  - box "IN BREVE" con risposta rapida in 2-4 frasi
+  - paragrafi di approfondimento
+  - quiz interattivi incorporati DENTRO l'articolo (component InlineQuiz):
+    l'utente risponde, vede subito se ha indovinato e legge la spiegazione
+  - link contestuali a schede alimento e strumenti (es. link al
+    calcolatore fabbisogno dentro l'articolo sul deficit calorico)
+  - articoli correlati in fondo
+- Il motore a blocchi (src/articles.js) rende facile aggiungere nuovi
+  articoli in futuro senza scrivere una nuova pagina da zero: basta
+  aggiungere un nuovo oggetto con i blocchi desiderati.
