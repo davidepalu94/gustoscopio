@@ -13,6 +13,7 @@ import BmiPage from './pages/BmiPage';
 import ApriIlFrigoPage from './pages/ApriIlFrigoPage';
 import LabPage from './pages/LabPage';
 import MitoOVeritaPage from './pages/MitoOVeritaPage';
+import AlimentiPage from './pages/AlimentiPage';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Toast />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/alimenti" element={<AlimentiPage />} />
           <Route path="/alimenti/:slug" element={<FoodPage />} />
           <Route path="/ricette" element={<RecipesPage />} />
           <Route path="/ricette/:slug" element={<RecipePage />} />

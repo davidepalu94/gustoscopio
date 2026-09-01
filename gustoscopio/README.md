@@ -124,3 +124,11 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
   nero del Plate Builder.
 - Le spiegazioni non danno mai giudizi assoluti ("sempre", "mai") e restano
   coerenti col principio "niente terrorismo alimentare" del brief.
+
+## Novità: pagina Alimenti (database completo)
+
+- Nuova pagina /alimenti: elenco di tutti gli 84 alimenti, con ricerca live
+  e filtro per categoria (Frutta, Verdura, Carne, ecc.).
+- Ogni riga porta alla scheda completa dell'alimento.
+- Il menu "ALIMENTI" ora funziona: era l'ultima voce di navigazione rimasta
+  senza destinazione.

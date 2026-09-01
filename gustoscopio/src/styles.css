@@ -358,3 +358,13 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .myth-finish { text-align: center; padding: 60px 0; }
 .myth-finish-score { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 700; }
 .myth-finish-label { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+
+/* ALIMENTI DATABASE PAGE */
+.alimenti-grid { display: flex; flex-direction: column; gap: 8px; }
+.alimenti-row { display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 10px; padding: 14px 18px; transition: transform 140ms ease, box-shadow 140ms ease; }
+.alimenti-row:hover { transform: translateX(4px); box-shadow: 0 6px 16px rgba(16,19,28,0.06); }
+.alimenti-row-info { flex: 1; }
+.alimenti-row-name { font-weight: 700; font-size: 14.5px; }
+.alimenti-row-cat { font-size: 12px; color: #8a8d97; margin-top: 2px; }
+.alimenti-row-kcal { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; white-space: nowrap; }
+.alimenti-row-kcal span { font-size: 11px; font-family: 'Manrope', sans-serif; font-weight: 700; color: #8a8d97; margin-left: 2px; }
