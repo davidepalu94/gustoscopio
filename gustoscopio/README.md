@@ -199,3 +199,38 @@ non c'è un vero invio automatico dal sito, perché non abbiamo un backend.
 Se in futuro vuoi un modulo che invia davvero senza passare dal programma
 di posta dell'utente, serve un servizio esterno tipo Netlify Forms,
 Formspree o simili: possiamo aggiungerlo quando vuoi.
+
+## Novità: più ricette e più articoli
+
+Da 5 a 13 ricette. Aggiunte: Buddha bowl con quinoa e ceci, Salmone al
+forno con patate, Tofu saltato con verdure, Insalata di farro con
+mozzarella e pomodoro, Porridge di avena con mirtilli e mandorle, Seitan
+alla piastra con verdure, Lenticchie stufate, Smoothie proteico alla
+banana. Usano gli alimenti aggiunti di recente (tofu, seitan, salmone,
+quinoa, lenticchie, farro, avena, proteine isolate).
+
+Da 4 a 8 articoli. Aggiunti, con nuove categorie: "Cosa mangiare prima di
+allenarsi" (Sport), "Le fibre e la salute intestinale" (Intestino), "Dieta
+chetogenica: come funziona davvero" (Keto & Low Carb), "Il mito del
+metabolismo lento" (Miti alimentari). Stessa struttura a blocchi degli
+altri, con quiz interattivi incorporati.
+
+Tutti i foodId usati nelle nuove ricette e articoli sono stati verificati
+contro il database alimenti: nessun riferimento rotto.
+
+## Novità: ottimizzazione mobile
+
+- Menu mobile vero (hamburger): prima ALIMENTI/RICETTE/LAB/STRUMENTI
+  sparivano del tutto sotto i 780px di larghezza senza alcuna alternativa.
+  Ora un'icona ☰ in alto a destra apre un menu a tendina con tutte le voci
+  (icona che si trasforma in ✕ quando aperto).
+- Risolto un bug strutturale di CSS (flex/grid non permettevano agli
+  elementi di restringersi sotto una certa larghezza) che causava
+  overflow orizzontale in "Costruisci il tuo piatto" e "Il tuo piatto":
+  ora gli elementi di ogni riga vanno a capo in modo ordinato invece di
+  uscire dallo schermo.
+- Numeri e testo ridotti su schermi molto piccoli (sotto 480px): il totale
+  kcal, le card dei macronutrienti e i pulsanti target sono più compatti
+  ma restano leggibili.
+- Verificato con screenshot reali a 375px di larghezza (iPhone-size):
+  nessun overflow orizzontale residuo su nessuna delle sezioni testate.

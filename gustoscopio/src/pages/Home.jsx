@@ -175,7 +175,7 @@ export default function Home() {
               {plateFilteredFoods.map((f) => (
                 <div key={f.id} className="plate-food-row">
                   <span style={{ fontSize: 20 }}>{f.emoji}</span>
-                  <div>
+                  <div className="plate-food-row-info">
                     <div className="name">{f.name}</div>
                     <div className="meta">{f.kcal} kcal / 100 g</div>
                   </div>
@@ -199,12 +199,14 @@ export default function Home() {
                       <div className="n">{food.name}</div>
                       <div className="k">{c.kcal} kcal</div>
                     </div>
-                    <div className="stepper">
-                      <button onClick={() => updatePlateGrams(item.uid, item.grams - 10)}>−</button>
-                      <span>{item.grams} g</span>
-                      <button onClick={() => updatePlateGrams(item.uid, item.grams + 10)}>+</button>
+                    <div className="plate-item-actions">
+                      <div className="stepper">
+                        <button onClick={() => updatePlateGrams(item.uid, item.grams - 10)}>−</button>
+                        <span>{item.grams} g</span>
+                        <button onClick={() => updatePlateGrams(item.uid, item.grams + 10)}>+</button>
+                      </div>
+                      <button className="remove-x" onClick={() => removeFromPlate(item.uid)}>✕</button>
                     </div>
-                    <button className="remove-x" onClick={() => removeFromPlate(item.uid)}>✕</button>
                   </div>
                 );
               })}
