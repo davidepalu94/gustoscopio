@@ -64,3 +64,19 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
   con quell'alimento già selezionato.
 - Il menu "LAB" ora punta al Food Battle (sarà la home dell'area Lab quando
   aggiungeremo Mito o Verità e i quiz).
+
+## Novità: Strumenti
+
+- Nuova pagina /strumenti con 4 card: Fabbisogno calorico, Proteine,
+  Costruisci il piatto (rimanda al Plate Builder in homepage), BMI.
+- /strumenti/fabbisogno: calcolatore del fabbisogno calorico (formula di
+  Mifflin-St Jeor), mostra mantenimento, deficit (-500 kcal) e surplus (+500 kcal).
+- /strumenti/proteine: intervallo proteico giornaliero indicativo in base a
+  peso e livello di attività.
+- /strumenti/bmi: calcolo del BMI con tono neutro — mostra solo il dato e le
+  fasce di riferimento, senza giudizi, con una nota che spiega i limiti
+  dell'indicatore (non distingue massa muscolare da massa grassa).
+- Tutte le formule sono centralizzate in src/calculators.js, non ripetute nei
+  componenti, con disclaimer chiaro ovunque: sono stime informative, non
+  sostituiscono una valutazione professionale.
+- Il menu "STRUMENTI" ora funziona.

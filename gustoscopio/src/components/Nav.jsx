@@ -8,7 +8,7 @@ export default function Nav() {
         <span>ALIMENTI</span>
         <Link to="/ricette">RICETTE</Link>
         <Link to="/confronta">LAB</Link>
-        <span>STRUMENTI</span>
+        <Link to="/strumenti">STRUMENTI</Link>
       </div>
       <div className="nav-cta">Percorsi personalizzati →</div>
     </nav>

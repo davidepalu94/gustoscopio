@@ -265,3 +265,37 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .battle-bar-fill { background: #3155FF; height: 100%; border-radius: 999px; transition: width 300ms ease; margin-left: auto; }
 .battle-bar-fill-left { background: #C94B3C; }
 .battle-bar-val { font-size: 13px; font-weight: 700; min-width: 46px; }
+
+/* STRUMENTI HUB */
+.tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 700px) { .tools-grid { grid-template-columns: 1fr; } }
+.tool-card { background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 16px; padding: 28px; display: block; transition: transform 180ms ease, box-shadow 180ms ease; }
+.tool-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(16,19,28,0.1); }
+.tool-icon { font-size: 34px; margin-bottom: 14px; }
+.tool-title { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+.tool-desc { font-size: 14px; color: #575a68; line-height: 1.5; margin-bottom: 16px; }
+.tool-cta { font-weight: 700; font-size: 13.5px; color: #3155FF; }
+
+/* CALCULATOR FORMS */
+.calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.calc-field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #575a68; }
+.calc-field-full { grid-column: 1 / -1; }
+.calc-field input, .calc-field select {
+  border: 1px solid rgba(16,19,28,0.14); border-radius: 10px; padding: 11px 14px;
+  font-size: 15px; font-family: inherit; background: #F8F7F3; color: #10131C;
+}
+.calc-result-label { font-size: 12px; font-weight: 700; color: #8a8d97; letter-spacing: 0.04em; }
+.calc-result-big { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; margin-top: 6px; }
+.calc-result-big span { font-size: 18px; font-family: 'Manrope', sans-serif; font-weight: 700; color: #8a8d97; }
+.calc-result-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+@media (max-width: 600px) { .calc-result-row { grid-template-columns: 1fr; } }
+.calc-result-box { background: #F8F7F3; border-radius: 10px; padding: 16px; text-align: center; }
+.calc-result-box-lbl { font-size: 11px; font-weight: 700; color: #8a8d97; letter-spacing: 0.03em; margin-bottom: 6px; }
+.calc-result-box-val { font-weight: 700; font-size: 16px; }
+.calc-disclaimer { font-size: 12.5px; color: #8a8d97; margin-top: 20px; text-align: center; line-height: 1.5; }
+
+/* BMI */
+.bmi-category-tag { display: inline-block; margin-top: 10px; background: rgba(49,85,255,0.1); color: #3155FF; font-weight: 700; font-size: 13px; padding: 5px 14px; border-radius: 999px; }
+.bmi-ranges { display: flex; flex-direction: column; gap: 6px; margin-top: 26px; }
+.bmi-range-row { display: flex; justify-content: space-between; padding: 10px 14px; border-radius: 8px; font-size: 13.5px; font-weight: 600; color: #575a68; background: #F8F7F3; }
+.bmi-range-row.active { background: #10131C; color: white; }

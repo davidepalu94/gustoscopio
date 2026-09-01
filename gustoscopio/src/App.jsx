@@ -6,6 +6,10 @@ import FoodPage from './pages/FoodPage';
 import RecipesPage from './pages/RecipesPage';
 import RecipePage from './pages/RecipePage';
 import FoodBattlePage from './pages/FoodBattlePage';
+import StrumentiPage from './pages/StrumentiPage';
+import FabbisognoPage from './pages/FabbisognoPage';
+import ProteinePage from './pages/ProteinePage';
+import BmiPage from './pages/BmiPage';
 
 export default function App() {
   return (
@@ -18,6 +22,10 @@ export default function App() {
           <Route path="/ricette" element={<RecipesPage />} />
           <Route path="/ricette/:slug" element={<RecipePage />} />
           <Route path="/confronta" element={<FoodBattlePage />} />
+          <Route path="/strumenti" element={<StrumentiPage />} />
+          <Route path="/strumenti/fabbisogno" element={<FabbisognoPage />} />
+          <Route path="/strumenti/proteine" element={<ProteinePage />} />
+          <Route path="/strumenti/bmi" element={<BmiPage />} />
         </Routes>
       </BrowserRouter>
     </PlateProvider>

@@ -159,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="plate-section">
+      <div className="plate-section" id="plate-builder">
         <div className="section-head">
           <h2>Costruisci il tuo piatto</h2>
           <p>Aggiungi alimenti e guarda calorie e macronutrienti aggiornarsi in tempo reale.</p>
