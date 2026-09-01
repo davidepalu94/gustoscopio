@@ -1,4 +1,12 @@
-## Aggiornamento: email reale per le richieste di Percorsi Personalizzati
+## Correzione: rimosso il cognome "Palumbo" dalla sezione Lab
+
+Il titolo "Palumbo Lab." compariva in tre punti (homepage, /lab,
+/articoli), in contrasto con la regola del brief originale "nessun
+riferimento a nomi personali nel brand, nei testi o nel codice" — probabile
+refuso rimasto da una versione precedente. Sostituito con "Il Lab." in
+tutti e tre i punti. Build verificata senza errori.
+
+
 
 L'indirizzo email placeholder (`info@gustoscopio.it`) in
 `src/components/PercorsiModal.jsx` è stato sostituito con l'indirizzo reale

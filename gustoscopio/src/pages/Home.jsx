@@ -303,7 +303,7 @@ export default function Home() {
 
       <div className="section">
         <div className="section-head">
-          <h2>Palumbo Lab.</h2>
+          <h2>Il Lab.</h2>
           <p>Strumenti interattivi e articoli per esplorare la nutrizione, non solo per leggerla.</p>
         </div>
         <div className="tools-grid">

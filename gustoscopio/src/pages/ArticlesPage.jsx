@@ -8,7 +8,7 @@ export default function ArticlesPage() {
       <Nav />
       <div className="section">
         <div className="section-head">
-          <h2>Palumbo Lab.</h2>
+          <h2>Il Lab.</h2>
           <p>Scienza, alimentazione e metabolismo spiegati senza complicazioni.</p>
         </div>
         <div className="article-grid">
