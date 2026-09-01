@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
+import { RECIPES } from '../recipes';
 import { usePlate } from '../PlateContext';
 import Nav from '../components/Nav';
 
@@ -28,6 +29,7 @@ export default function FoodPage() {
   const maxMacro = Math.max(base.protein, base.carbs, base.fat, base.fiber, 1);
 
   const otherFoods = FOODS.filter((f) => f.category === food.category && f.id !== food.id).slice(0, 3);
+  const relatedRecipes = RECIPES.filter((r) => r.ingredients.some((ing) => ing.foodId === food.id)).slice(0, 4);
 
   return (
     <div>
@@ -118,12 +120,25 @@ export default function FoodPage() {
         </div>
 
         <div className="panel-block">
-          <h3 className="panel-title">Ricette e confronti</h3>
-          <div className="stub-grid">
-            <div className="stub-card">
-              <span className="stub-badge">Presto disponibile</span>
-              Ricette che usano {food.name.toLowerCase()}
+          <h3 className="panel-title">Ricette con {food.name.toLowerCase()}</h3>
+          {relatedRecipes.length > 0 ? (
+            <div className="related-grid">
+              {relatedRecipes.map((r) => (
+                <Link to={`/ricette/${r.id}`} key={r.id} className="related-card">
+                  <span style={{ fontSize: 22 }}>{r.emoji}</span>
+                  <span className="related-name">{r.name}</span>
+                  <span className="related-kcal">⏱ {r.time} min</span>
+                </Link>
+              ))}
             </div>
+          ) : (
+            <div className="stub-card">Non ci sono ancora ricette con questo alimento.</div>
+          )}
+        </div>
+
+        <div className="panel-block">
+          <h3 className="panel-title">Confronta</h3>
+          <div className="stub-grid">
             <div className="stub-card">
               <span className="stub-badge">Presto disponibile</span>
               Confronta {food.name.toLowerCase()} con un altro alimento

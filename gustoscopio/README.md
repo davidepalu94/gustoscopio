@@ -36,3 +36,18 @@ Settings -> Build and Deployment -> Root Directory, e verifica che sia vuoto
 1. Modifica i file dentro src/
 2. Ripeti la procedura di upload sopra
 3. Vercel pubblica la nuova versione in automatico
+
+## Novità: Ricette
+
+- Nuova pagina /ricette con filtri reali (kcal, tempo, categoria).
+- Ogni ricetta ha una pagina propria /ricette/nome-ricetta con:
+  - porzioni regolabili (i valori nutrizionali si ricalcolano sommando gli
+    ingredienti reali dal database alimenti, mai scritti a mano)
+  - lista ingredienti collegata alle rispettive pagine alimento
+  - preparazione passo passo
+  - pulsante "Aggiungi tutto al piatto" che aggiunge ogni ingrediente al
+    Plate Builder condiviso
+  - ricette correlate
+- La pagina di ogni alimento ora mostra le ricette reali che lo utilizzano.
+- Il database alimenti (src/foods.js) è stato ampliato: ora include anche
+  pane integrale, tonno al naturale e spinaci, usati nelle nuove ricette.

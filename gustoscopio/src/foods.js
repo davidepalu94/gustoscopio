@@ -11,6 +11,9 @@ export const FOODS = [
   { id: 'olio', name: 'Olio EVO', emoji: '🫒', kcal: 884, protein: 0, carbs: 0, fat: 100, fiber: 0, category: 'Condimenti' },
   { id: 'yogurt', name: 'Yogurt greco', emoji: '🥣', kcal: 97, protein: 9, carbs: 3.6, fat: 5, fiber: 0, category: 'Latte & derivati' },
   { id: 'mela', name: 'Mela', emoji: '🍎', kcal: 52, protein: 0.3, carbs: 13.8, fat: 0.2, fiber: 2.4, category: 'Frutta' },
+  { id: 'pane', name: 'Pane integrale', emoji: '🍞', kcal: 265, protein: 9, carbs: 49, fat: 3.2, fiber: 7, category: 'Cereali & derivati' },
+  { id: 'tonno', name: 'Tonno al naturale', emoji: '🐟', kcal: 116, protein: 25.5, carbs: 0, fat: 1, fiber: 0, category: 'Pesce' },
+  { id: 'spinaci', name: 'Spinaci', emoji: '🥬', kcal: 23, protein: 2.9, carbs: 3.6, fat: 0.4, fiber: 2.2, category: 'Verdura' },
 ];
 
 export function calc(food, grams) {

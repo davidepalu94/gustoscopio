@@ -6,7 +6,7 @@ export default function Nav() {
       <Link to="/" className="nav-logo">GUSTOSCOPIO</Link>
       <div className="nav-links">
         <span>ALIMENTI</span>
-        <span>RICETTE</span>
+        <Link to="/ricette">RICETTE</Link>
         <span>LAB</span>
         <span>STRUMENTI</span>
       </div>
