@@ -61,24 +61,3 @@ export function calculateBMI({ weightKg, heightCm }) {
   else category = 'Obesità';
   return { bmi: +bmi.toFixed(1), category };
 }
-
-// Stima pratica: 35ml per kg di peso corporeo, con un margine aggiuntivo
-// legato al livello di attività fisica (sudorazione, allenamento).
-const WATER_BASE_ML_PER_KG = 35;
-const WATER_ACTIVITY_EXTRA_ML = {
-  sedentario: 0,
-  leggero: 300,
-  moderato: 500,
-  intenso: 700,
-  atleta: 1000,
-};
-
-export function calculateWaterNeeds({ weightKg, activityLevel }) {
-  const baseMl = weightKg * WATER_BASE_ML_PER_KG;
-  const extraMl = WATER_ACTIVITY_EXTRA_ML[activityLevel] || 0;
-  const totalMl = baseMl + extraMl;
-  return {
-    totalMl: Math.round(totalMl),
-    totalLiters: +(totalMl / 1000).toFixed(1),
-  };
-}

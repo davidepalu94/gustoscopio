@@ -6,8 +6,6 @@ const TOOLS = [
   { icon: '💪', title: 'Proteine', desc: 'Scopri un intervallo indicativo in base a peso e attività.', to: '/strumenti/proteine', cta: 'Calcola' },
   { icon: '🍽️', title: 'Costruisci il piatto', desc: 'Componi un pasto e scopri kcal e macronutrienti in tempo reale.', to: '/#plate-builder', cta: 'Inizia' },
   { icon: '⚖️', title: 'BMI', desc: 'Calcola il tuo indice di massa corporea.', to: '/strumenti/bmi', cta: 'Calcola' },
-  { icon: '💧', title: 'Fabbisogno idrico', desc: 'Scopri una stima di quanta acqua ti serve al giorno.', to: '/strumenti/acqua', cta: 'Calcola' },
-  { icon: '🥄', title: 'Quanto pesa?', desc: 'Converti cucchiai, fette e manciate in grammi.', to: '/strumenti/quanto-pesa', cta: 'Esplora' },
 ];
 
 export default function StrumentiPage() {

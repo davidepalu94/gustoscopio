@@ -3,6 +3,7 @@ import { PlateProvider } from './PlateContext';
 import Toast from './components/Toast';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
+import Login from './pages/Login';
 import FoodPage from './pages/FoodPage';
 import RecipesPage from './pages/RecipesPage';
 import RecipePage from './pages/RecipePage';
@@ -11,8 +12,6 @@ import StrumentiPage from './pages/StrumentiPage';
 import FabbisognoPage from './pages/FabbisognoPage';
 import ProteinePage from './pages/ProteinePage';
 import BmiPage from './pages/BmiPage';
-import AcquaPage from './pages/AcquaPage';
-import QuantoPesaPage from './pages/QuantoPesaPage';
 import ApriIlFrigoPage from './pages/ApriIlFrigoPage';
 import LabPage from './pages/LabPage';
 import MitoOVeritaPage from './pages/MitoOVeritaPage';
@@ -29,6 +28,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/corsi" element={<Corsi />} />
+          <Route path="/accedi" element={<Login />} />
           <Route path="/alimenti" element={<AlimentiPage />} />
           <Route path="/alimenti/:slug" element={<FoodPage />} />
           <Route path="/ricette" element={<RecipesPage />} />
@@ -38,8 +38,6 @@ export default function App() {
           <Route path="/strumenti/fabbisogno" element={<FabbisognoPage />} />
           <Route path="/strumenti/proteine" element={<ProteinePage />} />
           <Route path="/strumenti/bmi" element={<BmiPage />} />
-          <Route path="/strumenti/acqua" element={<AcquaPage />} />
-          <Route path="/strumenti/quanto-pesa" element={<QuantoPesaPage />} />
           <Route path="/apri-il-frigo" element={<ApriIlFrigoPage />} />
           <Route path="/lab" element={<LabPage />} />
           <Route path="/mito-o-verita" element={<MitoOVeritaPage />} />
