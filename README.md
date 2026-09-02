@@ -1,4 +1,41 @@
-## Aggiornamento: 27 nuove verdure (da 14 a 41 verdure, 150 alimenti totali)
+## Aggiornamento: 15 nuove ricette pranzo/cena, tutte sotto i 15g di grassi (da 56 a 71)
+
+Nuove ricette pensate per variare le fonti proteiche (tacchino, pollo,
+merluzzo, gamberi, seitan, ceci, tonno, tofu, lenticchie, calamari,
+fagioli, edamame, polpo, manzo) e i carboidrati (patate, farro, riso,
+patate dolci, pane, quinoa, orzo), usando molte delle verdure aggiunte di
+recente (verza, asparagi, carciofi, fagiolini, cavolo nero, bietole,
+sedano, cavolo rosso, radicchio, cicoria, germogli di soia, sedano rapa,
+cavoletti di Bruxelles, porri).
+
+Ho calcolato i grassi reali di ogni ricetta sommando i valori degli
+ingredienti (non stimati a occhio), per verificare il limite richiesto di
+15g massimo:
+
+| Ricetta | Grassi |
+|---|---|
+| Tacchino con verza e patate | 9.4g |
+| Pollo con asparagi e farro | 14.3g |
+| Merluzzo con carciofi e patate | 9.8g |
+| Gamberi con fagiolini e riso | 9.8g |
+| Seitan con cavolo nero e patate dolci | 12.6g |
+| Ceci con bietole e pomodoro | 12.4g |
+| Tonno con fagiolini e patate | 9.5g |
+| Tofu con porri e riso | 13.2g |
+| Lenticchie con sedano e carote | 9.2g |
+| Pollo con cavolo rosso e quinoa | 14.2g |
+| Calamari con radicchio e orzo | 10.1g |
+| Fagioli con cicoria e pane | 11.4g |
+| Edamame con germogli di soia e riso | 11.0g |
+| Polpo con sedano rapa e patate | 10.6g |
+| Manzo con cavoletti di Bruxelles e patate | 13.6g |
+
+Nessuna supera i 15g (massimo 14.3g). In alcuni casi ho dovuto ridurre
+l'olio a 5-7g invece dei soliti 8-10g per rientrare nel limite. Nessun ID
+duplicato tra le 71 ricette, nessun foodId rotto, build verificata senza
+errori.
+
+
 
 Aggiunte praticamente tutte le verdure comuni del mercato italiano che
 ancora mancavano:
