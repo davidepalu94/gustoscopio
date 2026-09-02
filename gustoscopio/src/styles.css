@@ -534,3 +534,46 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .percorsi-cta-block h2 { font-size: clamp(30px, 5vw, 44px); margin-top: 8px; }
 .percorsi-cta-block p { margin-top: 16px; font-size: 15.5px; line-height: 1.6; }
 .percorsi-cta-btn { margin-top: 28px; font-size: 15.5px; padding: 16px 32px; }
+
+/* CORSI — area premium (login + hub corsi) */
+.login-page { min-width: 0; min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.login-card { min-width: 0; width: 100%; max-width: 400px; background: #FFFFFF; border-radius: 20px; padding: 40px 32px; box-shadow: 0 4px 24px rgba(16,19,28,0.06); }
+.login-card h1 { font-size: 32px; font-weight: 600; margin-bottom: 8px; }
+.login-subtitle { font-size: 14.5px; color: #575a68; line-height: 1.5; margin-bottom: 26px; }
+.login-form { display: flex; flex-direction: column; gap: 16px; }
+.login-form label { min-width: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; font-weight: 600; }
+.login-form input { min-width: 0; font-size: 15px; font-family: inherit; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(16,19,28,0.15); background: #F8F7F3; transition: border-color 160ms ease; }
+.login-form input:focus { outline: none; border-color: #3155FF; }
+.login-error { font-size: 13.5px; color: #C94B3C; margin: 0; }
+.login-info { font-size: 13.5px; color: #3155FF; margin: 0; }
+.login-submit { font-weight: 700; font-size: 15px; padding: 13px; border: none; border-radius: 999px; background: #3155FF; color: #FFFFFF; transition: opacity 160ms ease; }
+.login-submit:hover:not(:disabled) { opacity: 0.9; }
+.login-submit:disabled { opacity: 0.6; cursor: default; }
+.login-toggle { display: block; margin: 18px auto 0; background: none; border: none; font-size: 13.5px; color: #3155FF; text-decoration: underline; }
+
+.premium-gate { min-width: 0; max-width: 480px; margin: 64px auto; padding: 48px 32px; border-radius: 20px; background: #10131C; color: #F8F7F3; text-align: center; }
+.premium-gate h2 { font-size: 26px; font-weight: 600; margin-bottom: 12px; }
+.premium-gate p { font-size: 14.5px; line-height: 1.5; color: rgba(248,247,243,0.8); margin-bottom: 24px; }
+.premium-gate-loading { color: #10131C !important; }
+.premium-gate-btn { display: inline-block; font-weight: 700; font-size: 14.5px; padding: 12px 28px; border-radius: 999px; transition: opacity 160ms ease; }
+.premium-gate-btn-primary { background: #3155FF; color: #FFFFFF; }
+.premium-gate-btn-secondary { background: transparent; color: #F8F7F3; border: 1px solid rgba(248,247,243,0.4); }
+.premium-gate-btn:hover { opacity: 0.9; }
+
+.corsi-page { min-width: 0; max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+.corsi-header { min-width: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+.corsi-header h1 { font-size: 40px; }
+.corsi-logout { font-size: 13px; font-weight: 600; background: none; border: 1px solid rgba(16,19,28,0.2); border-radius: 999px; padding: 8px 18px; transition: background 160ms ease; }
+.corsi-logout:hover { background: rgba(16,19,28,0.05); }
+.corsi-empty { font-size: 15px; color: #575a68; }
+.corsi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.corso-card { min-width: 0; background: #FFFFFF; border-radius: 18px; padding: 28px 24px; box-shadow: 0 2px 12px rgba(16,19,28,0.05); transition: transform 180ms ease, box-shadow 180ms ease; }
+.corso-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,19,28,0.08); }
+.corso-emoji { font-size: 32px; display: block; margin-bottom: 12px; }
+.corso-card h2 { font-size: 20px; margin-bottom: 6px; }
+.corso-card p { font-size: 13.5px; color: #575a68; }
+@media (max-width: 480px) {
+  .login-card { padding: 32px 24px; }
+  .premium-gate { margin: 32px 16px; padding: 36px 24px; }
+  .corsi-page { padding: 32px 16px; }
+}

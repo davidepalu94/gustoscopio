@@ -1,3 +1,56 @@
+## Novità: area CORSI (riservata ai clienti premium)
+
+- Nuova voce "CORSI" nel menu in alto, sempre visibile — non è una CTA
+  commerciale, è una normale voce di navigazione come le altre.
+- Cliccando su "CORSI" senza essere loggati o senza accesso premium, si
+  vede un messaggio soft ("i corsi fanno parte dei Percorsi
+  Personalizzati") con un link a `/percorsi-personalizzati` — nessun toni
+  aggressivi, coerente col brief.
+- **Serve un backend per gestire l'accesso**, quindi per la prima volta il
+  progetto usa un servizio esterno: **Supabase** (autenticazione email +
+  password, gratuito). Non serve un vero server: Supabase viene chiamato
+  direttamente dal frontend con una chiave pubblica sicura da esporre.
+
+### Cosa è stato aggiunto
+
+- `src/supabaseClient.js` — inizializza la connessione a Supabase.
+- `src/AuthContext.jsx` — gestisce sessione utente e stato "premium",
+  accanto a `PlateContext.jsx`.
+- `src/components/RequirePremium.jsx` — protegge la route `/corsi`:
+  mostra login se non autenticato, messaggio soft se autenticato ma non
+  premium, altrimenti il contenuto.
+- `src/pages/Login.jsx` — pagina di accesso/registrazione (email + password).
+- `src/pages/Corsi.jsx` + `src/corsi.js` — hub corsi, per ora vuoto
+  (nessun corso reale è stato ancora scritto: come da regola per i dati,
+  meglio vuoto che riempito con contenuti finti).
+- `supabase-schema.sql` — da eseguire UNA volta nel pannello Supabase
+  (SQL Editor) per creare la tabella dei profili utente.
+- `.env.example` — mostra quali variabili servono (`VITE_SUPABASE_URL`,
+  `VITE_SUPABASE_ANON_KEY`).
+
+### Come attivare l'accesso premium (per ora manuale)
+
+Non c'è ancora un pagamento automatico collegato. Il flusso è:
+1. Il cliente acquista un Percorso Personalizzato (come già avviene oggi).
+2. Il cliente si registra su `/accedi` con email e password.
+3. Chi gestisce il sito va su Supabase → Table Editor → tabella
+   `profiles` → imposta `is_premium = true` sulla riga di quell'utente.
+4. Da quel momento quel cliente vede i corsi su `/corsi`.
+
+### Cosa serve fare per andare online con questa funzione
+
+1. Creare un progetto gratuito su supabase.com.
+2. Eseguire il contenuto di `supabase-schema.sql` nell'SQL Editor di Supabase.
+3. Copiare URL e chiave anon del progetto Supabase (Settings → API).
+4. Su Vercel: Settings → Environment Variables → aggiungere
+   `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` con quei valori.
+5. Rifare il deploy (o aspettare il prossimo push).
+
+Senza questi passaggi il sito compila ed è online normalmente, ma la
+pagina `/corsi` non troverà una connessione valida a Supabase.
+
+Build verificata (`npm install` + `npm run build`) senza errori.
+
 ## Correzione: rimosso il cognome "Palumbo" dalla sezione Lab
 
 Il titolo "Palumbo Lab." compariva in tre punti (homepage, /lab,
