@@ -155,6 +155,11 @@ export const FOODS = [
   { id: 'salmone-affumicato', name: 'Salmone affumicato', emoji: '🍣', kcal: 117, protein: 18.3, carbs: 0, fat: 4.5, fiber: 0, category: 'Pesce' },
   { id: 'kefir', name: 'Kefir', emoji: '🥛', kcal: 41, protein: 3.4, carbs: 4.5, fat: 1, fiber: 0, category: 'Latte & derivati' },
   { id: 'formaggio-spalmabile-light', name: 'Formaggio spalmabile light', emoji: '🧀', kcal: 155, protein: 11, carbs: 4, fat: 10.5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'fiocchi-latte-0', name: 'Fiocchi di latte 0%', emoji: '🧀', kcal: 72, protein: 12, carbs: 3.4, fat: 0.2, fiber: 0, category: 'Latte & derivati' },
+  { id: 'fiocchi-latte', name: 'Fiocchi di latte', emoji: '🧀', kcal: 98, protein: 11, carbs: 3.4, fat: 4.3, fiber: 0, category: 'Latte & derivati' },
+  { id: 'philadelphia-classico', name: 'Philadelphia Classico', emoji: '🧀', kcal: 253, protein: 5.5, carbs: 4, fat: 24, fiber: 0, category: 'Latte & derivati' },
+  { id: 'philadelphia-light', name: 'Philadelphia Light', emoji: '🧀', kcal: 152, protein: 7.5, carbs: 4.5, fat: 12, fiber: 0, category: 'Latte & derivati' },
+  { id: 'philadelphia-protein', name: 'Philadelphia Protein', emoji: '🧀', kcal: 147, protein: 14, carbs: 4, fat: 8, fiber: 0, category: 'Latte & derivati' },
 ];
 
 export function calc(food, grams) {

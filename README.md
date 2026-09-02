@@ -1,4 +1,20 @@
-## Aggiornamento: 10 nuovi alimenti (da 99 a 109)
+## Aggiornamento: 5 nuovi formaggi/latticini light (da 109 a 114)
+
+Aggiunti fiocchi di latte e le varianti Philadelphia richieste:
+
+- Fiocchi di latte 0%
+- Fiocchi di latte (versione classica, con grassi)
+- Philadelphia Classico
+- Philadelphia Light
+- Philadelphia Protein
+
+Nota: come per Kellogg's, sono prodotti a marchio — i valori inseriti sono
+di riferimento tipico per queste referenze, ma le case produttrici
+aggiornano ricette e valori nel tempo. Prima di un lancio pubblico reale
+vale la pena ricontrollarli sulla confezione attuale. Nessun ID duplicato
+tra i 114 alimenti. Build verificata senza errori.
+
+
 
 Aggiunti i cereali da colazione richiesti e altri alimenti mancanti, per
 coprire meglio colazione, snack e piatti veloci:
