@@ -1,4 +1,22 @@
-## Aggiornamento: 5 nuovi formaggi/latticini light (da 109 a 114)
+## Aggiornamento: 8 nuovi pesci/molluschi (da 114 a 122)
+
+Aggiunti gli alimenti richiesti. Merluzzo e sgombro non sono stati
+ri-aggiunti perché erano già presenti nel database:
+
+- Sogliola
+- Nasello
+- Calamaro
+- Polpo
+- Cefalo
+- Rombo
+- Orata di mare
+- Spigola di mare
+
+Valori di riferimento standard (crudo/100g), come per il resto del
+database — non certificati da una fonte ufficiale singola. Nessun ID
+duplicato tra i 122 alimenti. Build verificata senza errori.
+
+
 
 Aggiunti fiocchi di latte e le varianti Philadelphia richieste:
 

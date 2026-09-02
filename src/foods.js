@@ -70,6 +70,14 @@ export const FOODS = [
   { id: 'merluzzo', name: 'Merluzzo', emoji: '🐟', kcal: 82, protein: 17.8, carbs: 0, fat: 0.7, fiber: 0, category: 'Pesce' },
   { id: 'gamberi', name: 'Gamberi', emoji: '🦐', kcal: 71, protein: 15, carbs: 0.9, fat: 0.5, fiber: 0, category: 'Pesce' },
   { id: 'sgombro', name: 'Sgombro', emoji: '🐟', kcal: 205, protein: 19, carbs: 0, fat: 13.9, fiber: 0, category: 'Pesce' },
+  { id: 'sogliola', name: 'Sogliola', emoji: '🐟', kcal: 78, protein: 16.9, carbs: 0, fat: 0.9, fiber: 0, category: 'Pesce' },
+  { id: 'nasello', name: 'Nasello', emoji: '🐟', kcal: 82, protein: 17.4, carbs: 0, fat: 1.3, fiber: 0, category: 'Pesce' },
+  { id: 'calamaro', name: 'Calamaro', emoji: '🦑', kcal: 68, protein: 13.5, carbs: 3, fat: 0.8, fiber: 0, category: 'Pesce' },
+  { id: 'polpo', name: 'Polpo', emoji: '🐙', kcal: 57, protein: 10.6, carbs: 2.2, fat: 1, fiber: 0, category: 'Pesce' },
+  { id: 'cefalo', name: 'Cefalo', emoji: '🐟', kcal: 117, protein: 19.4, carbs: 0, fat: 3.8, fiber: 0, category: 'Pesce' },
+  { id: 'rombo', name: 'Rombo', emoji: '🐟', kcal: 81, protein: 16.1, carbs: 0, fat: 1.5, fiber: 0, category: 'Pesce' },
+  { id: 'orata', name: 'Orata di mare', emoji: '🐟', kcal: 121, protein: 19.9, carbs: 0, fat: 4.5, fiber: 0, category: 'Pesce' },
+  { id: 'spigola', name: 'Spigola di mare', emoji: '🐟', kcal: 82, protein: 16.5, carbs: 0, fat: 1.9, fiber: 0, category: 'Pesce' },
 
   // UOVA
   { id: 'uova', name: 'Uovo', emoji: '🥚', kcal: 143, protein: 12.6, carbs: 0.7, fat: 9.5, fiber: 0, category: 'Uova' },
