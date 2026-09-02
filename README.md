@@ -1,4 +1,20 @@
-## Aggiornamento: sezione Strumenti ampliata con 2 nuovi calcolatori
+## Aggiornamento: 27 nuove verdure (da 14 a 41 verdure, 150 alimenti totali)
+
+Aggiunte praticamente tutte le verdure comuni del mercato italiano che
+ancora mancavano:
+
+Sedano, Aglio, Porri, Asparagi, Bietole, Cavolo cappuccio, Cavolo nero,
+Verza, Cavoletti di Bruxelles, Rucola, Radicchio, Indivia, Scarola,
+Ravanelli, Barbabietola, Rape, Fagiolini, Carciofi, Sedano rapa, Cicoria,
+Cavolo rosso, Germogli di soia, Mais dolce, Songino, Topinambur, Funghi
+porcini, Peperoncino fresco.
+
+Valori di riferimento standard (crudo/100g, tranne dove indicato), stile
+USDA/CREA — non certificati da una fonte ufficiale singola, come da regola
+del progetto. Nessun ID duplicato tra i 150 alimenti. Build verificata
+senza errori.
+
+
 
 Aggiunti i due strumenti scelti, con relative nuove pagine e route:
 
