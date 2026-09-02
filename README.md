@@ -1,4 +1,28 @@
-## Aggiornamento: 8 nuovi pesci/molluschi (da 114 a 122)
+## Aggiornamento: 12 nuove ricette con gli alimenti aggiunti di recente (da 29 a 41)
+
+Una ricetta per ognuno degli 8 pesci/molluschi aggiunti di recente, più 4
+ricette per colazione/snack che usano i nuovi cereali e latticini:
+
+- Sogliola al limone con patate dolci al forno
+- Nasello con funghi trifolati e patate
+- Calamari saltati con couscous e hummus
+- Polpo con patate e pomodorini
+- Cefalo alla griglia con insalata di finocchi e arancia
+- Rombo al forno con patate
+- Orata al forno con patate e finocchi
+- Spigola al vapore con riso e verdure
+- Cornflakes con kefir e frutti di bosco
+- Muesli con yogurt greco e mirtilli
+- Toast con Philadelphia light, salmone affumicato e cetriolo
+- Fiocchi di latte con banana e mandorle
+
+Valori nutrizionali calcolati automaticamente dagli ingredienti tramite
+`calcRecipeTotals`, come sempre. Verificato che tutti i foodId richiamati
+esistano nel database (122 alimenti) e che non ci siano ID di ricette
+duplicati (41 ricette, tutte con ID univoco). Build verificata senza
+errori.
+
+
 
 Aggiunti gli alimenti richiesti. Merluzzo e sgombro non sono stati
 ri-aggiunti perché erano già presenti nel database:
