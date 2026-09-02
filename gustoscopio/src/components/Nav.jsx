@@ -6,7 +6,6 @@ const LINKS = [
   { to: '/ricette', label: 'RICETTE' },
   { to: '/lab', label: 'LAB' },
   { to: '/strumenti', label: 'STRUMENTI' },
-  { to: '/corsi', label: 'CORSI' },
 ];
 
 export default function Nav() {

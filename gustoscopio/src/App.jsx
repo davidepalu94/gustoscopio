@@ -1,11 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PlateProvider } from './PlateContext';
-import { AuthProvider } from './AuthContext';
-import RequirePremium from './components/RequirePremium';
 import Toast from './components/Toast';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Corsi from './pages/Corsi';
 import FoodPage from './pages/FoodPage';
 import RecipesPage from './pages/RecipesPage';
 import RecipePage from './pages/RecipePage';
@@ -24,21 +20,11 @@ import PercorsiPage from './pages/PercorsiPage';
 
 export default function App() {
   return (
-    <AuthProvider>
     <PlateProvider>
       <BrowserRouter>
         <Toast />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/accedi" element={<Login />} />
-          <Route
-            path="/corsi"
-            element={
-              <RequirePremium>
-                <Corsi />
-              </RequirePremium>
-            }
-          />
           <Route path="/alimenti" element={<AlimentiPage />} />
           <Route path="/alimenti/:slug" element={<FoodPage />} />
           <Route path="/ricette" element={<RecipesPage />} />
@@ -57,6 +43,5 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </PlateProvider>
-    </AuthProvider>
   );
 }
