@@ -1,4 +1,24 @@
-## Aggiornamento: 15 nuove ricette per colazione, tutte proteiche (da 41 a 56)
+## Aggiornamento: sezione Strumenti ampliata con 2 nuovi calcolatori
+
+Aggiunti i due strumenti scelti, con relative nuove pagine e route:
+
+- **Fabbisogno idrico** (`/strumenti/acqua`) — stima l'acqua giornaliera
+  consigliata (35 ml/kg + margine per livello di attività). Formula
+  aggiunta a `calculators.js` come `calculateWaterNeeds()`, riusa
+  `ACTIVITY_LEVELS` già esistente. Disclaimer che segnala i limiti (clima,
+  gravidanza/allattamento, febbre, condizioni mediche).
+- **Quanto pesa?** (`/strumenti/quanto-pesa`) — conversioni pratiche tra
+  misure casalinghe (cucchiaio, fetta, manciata, pezzo medio) e grammi, per
+  25 alimenti comuni. Nuovo file dati `src/portions.js`, con collegamento
+  alla scheda alimento completa quando l'alimento esiste in `foods.js`
+  (verificato: nessun `foodId` rotto). Pagina con ricerca e filtro per
+  categoria, stesso pattern della pagina Alimenti.
+
+Entrambe le pagine riusano componenti/stili già esistenti (`panel-block`,
+`calc-form`, `alimenti-grid`, ecc.) — nessun CSS nuovo necessario. Card
+aggiunte alla griglia di `/strumenti`. Build verificata senza errori.
+
+
 
 Aggiunto anche un alimento mancante: **Farina d'avena** (`farina-avena`),
 citata come possibile fonte di carboidrati ma non ancora presente nel
