@@ -1,4 +1,38 @@
-## Aggiornamento: 12 nuove ricette con gli alimenti aggiunti di recente (da 29 a 41)
+## Aggiornamento: 15 nuove ricette per colazione, tutte proteiche (da 41 a 56)
+
+Aggiunto anche un alimento mancante: **Farina d'avena** (`farina-avena`),
+citata come possibile fonte di carboidrati ma non ancora presente nel
+database (stessi valori dell'avena in fiocchi, di cui è solo la versione
+macinata).
+
+15 nuove ricette colazione, ognuna con **almeno 12g di proteine reali**
+(calcolate sommando i valori degli ingredienti, non stimate) e fonti di
+carboidrati variate come richiesto — riso soffiato, cornflakes, avena,
+farina d'avena, muesli, gallette, frutta, anche in combinazione:
+
+| Ricetta | Proteine |
+|---|---|
+| Riso soffiato con latte proteico e fragole | 20.6g |
+| Cornflakes con proteine in polvere e banana | 22.3g |
+| Yogurt greco con muesli e mandorle | 20.5g |
+| Porridge di farina d'avena con proteine vegetali e mela | 22.0g |
+| Toast con fiocchi di latte e fragole | 17.8g |
+| Smoothie bowl proteico con banana e cornflakes | 22.8g |
+| Kefir con riso soffiato e mango | 13.2g |
+| Yogurt greco con cornflakes e kiwi | 18.2g |
+| Overnight oats con farina d'avena, kefir e frutti di bosco | 15.8g |
+| Uova strapazzate con avena tostata e mela | 16.9g |
+| Pancake di farina d'avena e proteine, farciti con fragole | 21.5g |
+| Gallette di riso con Philadelphia Protein e fragole | 12.1g |
+| Porridge di avena con yogurt greco e banana | 19.2g |
+| Fiocchi di latte con cornflakes e mirtilli | 20.5g |
+| Porridge di farina d'avena con albume e mango | 17.1g |
+
+Ho verificato riga per riga che nessuna scendesse sotto la soglia richiesta
+di 10-15g. Nessun ID duplicato tra le 56 ricette, nessun foodId rotto,
+build verificata senza errori.
+
+
 
 Una ricetta per ognuno degli 8 pesci/molluschi aggiunti di recente, più 4
 ricette per colazione/snack che usano i nuovi cereali e latticini:

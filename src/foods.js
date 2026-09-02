@@ -49,6 +49,7 @@ export const FOODS = [
   { id: 'farro', name: 'Farro, cotto', emoji: '🌾', kcal: 118, protein: 4.5, carbs: 25, fat: 0.8, fiber: 3.8, category: 'Cereali & derivati' },
   { id: 'orzo', name: 'Orzo perlato, cotto', emoji: '🌾', kcal: 123, protein: 2.3, carbs: 28.2, fat: 0.4, fiber: 3.8, category: 'Cereali & derivati' },
   { id: 'avena', name: 'Avena in fiocchi', emoji: '🌾', kcal: 379, protein: 13.5, carbs: 67.7, fat: 6.9, fiber: 10.1, category: 'Cereali & derivati' },
+  { id: 'farina-avena', name: 'Farina d\'avena', emoji: '🌾', kcal: 379, protein: 13.5, carbs: 67.7, fat: 6.9, fiber: 10.1, category: 'Cereali & derivati' },
   { id: 'couscous', name: 'Cous cous, cotto', emoji: '🍚', kcal: 112, protein: 3.8, carbs: 23.2, fat: 0.2, fiber: 1.4, category: 'Cereali & derivati' },
   { id: 'quinoa', name: 'Quinoa, cotta', emoji: '🌾', kcal: 120, protein: 4.4, carbs: 21.3, fat: 1.9, fiber: 2.8, category: 'Cereali & derivati' },
   { id: 'crackers', name: 'Crackers', emoji: '🍘', kcal: 428, protein: 10, carbs: 68, fat: 13, fiber: 3, category: 'Cereali & derivati' },
