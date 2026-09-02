@@ -1,4 +1,29 @@
-## Novità: pagina CORSI (passo 1 di più — solo la struttura base)
+## Aggiornamento: 10 nuovi alimenti (da 99 a 109)
+
+Aggiunti i cereali da colazione richiesti e altri alimenti mancanti, per
+coprire meglio colazione, snack e piatti veloci:
+
+- Riso soffiato Kellogg's
+- Cornflakes di mais
+- Muesli
+- Patate dolci
+- Funghi champignon
+- Hummus di ceci
+- Popcorn al naturale
+- Salmone affumicato
+- Kefir
+- Formaggio spalmabile light
+
+Nota importante: come per tutti gli alimenti già presenti, i valori
+nutrizionali sono di riferimento (stile USDA/CREA), inseriti manualmente e
+NON certificati da una fonte ufficiale singola — per i due prodotti a
+marchio in particolare (riso soffiato e cornflakes) i valori variano da
+lotto a lotto e da paese a paese, quindi prima di un lancio pubblico reale
+andrebbero verificati sull'etichetta nutrizionale effettiva della
+confezione. Nessun ID duplicato tra i 109 alimenti. Build verificata senza
+errori.
+
+
 
 Nuova voce "CORSI" nel menu in alto, che porta a una pagina `/corsi`
 statica e semplice — per ora dice solo "I primi corsi sono in

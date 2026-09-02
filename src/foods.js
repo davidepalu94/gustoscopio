@@ -143,6 +143,18 @@ export const FOODS = [
   // CEREALI & DERIVATI (aggiunte)
   { id: 'gallette-riso', name: 'Gallette di riso', emoji: '🍘', kcal: 387, protein: 8.2, carbs: 81.5, fat: 2.8, fiber: 4.2, category: 'Cereali & derivati' },
   { id: 'gallette-mais', name: 'Gallette di mais', emoji: '🌽', kcal: 383, protein: 7.5, carbs: 82, fat: 2.5, fiber: 3.5, category: 'Cereali & derivati' },
+
+  // NUOVI ALIMENTI
+  { id: 'riso-soffiato-kelloggs', name: "Riso soffiato Kellogg's", emoji: '🍚', kcal: 381, protein: 6, carbs: 87, fat: 0.9, fiber: 2.7, category: 'Cereali & derivati' },
+  { id: 'cornflakes-mais', name: 'Cornflakes di mais', emoji: '🌽', kcal: 378, protein: 7, carbs: 84, fat: 0.9, fiber: 3, category: 'Cereali & derivati' },
+  { id: 'muesli', name: 'Muesli', emoji: '🥣', kcal: 362, protein: 10, carbs: 66, fat: 6, fiber: 8, category: 'Cereali & derivati' },
+  { id: 'patate-dolci', name: 'Patate dolci', emoji: '🍠', kcal: 86, protein: 1.6, carbs: 20.1, fat: 0.1, fiber: 3, category: 'Verdura' },
+  { id: 'funghi', name: 'Funghi champignon', emoji: '🍄', kcal: 22, protein: 3.1, carbs: 3.3, fat: 0.3, fiber: 1, category: 'Verdura' },
+  { id: 'hummus', name: 'Hummus di ceci', emoji: '🧆', kcal: 166, protein: 7.9, carbs: 14.3, fat: 9.6, fiber: 6, category: 'Legumi' },
+  { id: 'popcorn', name: 'Popcorn al naturale', emoji: '🍿', kcal: 387, protein: 12.9, carbs: 78, fat: 4.5, fiber: 14.5, category: 'Dolci & snack' },
+  { id: 'salmone-affumicato', name: 'Salmone affumicato', emoji: '🍣', kcal: 117, protein: 18.3, carbs: 0, fat: 4.5, fiber: 0, category: 'Pesce' },
+  { id: 'kefir', name: 'Kefir', emoji: '🥛', kcal: 41, protein: 3.4, carbs: 4.5, fat: 1, fiber: 0, category: 'Latte & derivati' },
+  { id: 'formaggio-spalmabile-light', name: 'Formaggio spalmabile light', emoji: '🧀', kcal: 155, protein: 11, carbs: 4, fat: 10.5, fiber: 0, category: 'Latte & derivati' },
 ];
 
 export function calc(food, grams) {
