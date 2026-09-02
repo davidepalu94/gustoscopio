@@ -1,3 +1,14 @@
+## Correzione: sito tutto bianco se Supabase non è ancora configurato
+
+Bug della versione precedente: se le variabili `VITE_SUPABASE_URL` /
+`VITE_SUPABASE_ANON_KEY` non erano ancora impostate su Vercel, l'intero
+sito andava in errore al caricamento (pagina bianca), non solo `/corsi`.
+Corretto: ora se Supabase non è configurato, `supabase` resta `null` e il
+resto del sito funziona normalmente. Solo chi prova ad accedere su
+`/accedi` vede un messaggio chiaro ("Accesso non ancora disponibile: la
+configurazione è in corso.") finché non aggiungi le variabili su Vercel.
+Build verificata senza errori.
+
 ## Novità: area CORSI (riservata ai clienti premium)
 
 - Nuova voce "CORSI" nel menu in alto, sempre visibile — non è una CTA
