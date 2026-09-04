@@ -12,6 +12,8 @@ import StrumentiPage from './pages/StrumentiPage';
 import FabbisognoPage from './pages/FabbisognoPage';
 import ProteinePage from './pages/ProteinePage';
 import BmiPage from './pages/BmiPage';
+import FabbisognoIdricoPage from './pages/FabbisognoIdricoPage';
+import PorzioniPage from './pages/PorzioniPage';
 import ApriIlFrigoPage from './pages/ApriIlFrigoPage';
 import LabPage from './pages/LabPage';
 import MitoOVeritaPage from './pages/MitoOVeritaPage';
@@ -38,6 +40,8 @@ export default function App() {
           <Route path="/strumenti/fabbisogno" element={<FabbisognoPage />} />
           <Route path="/strumenti/proteine" element={<ProteinePage />} />
           <Route path="/strumenti/bmi" element={<BmiPage />} />
+          <Route path="/strumenti/fabbisogno-idrico" element={<FabbisognoIdricoPage />} />
+          <Route path="/strumenti/porzioni" element={<PorzioniPage />} />
           <Route path="/apri-il-frigo" element={<ApriIlFrigoPage />} />
           <Route path="/lab" element={<LabPage />} />
           <Route path="/mito-o-verita" element={<MitoOVeritaPage />} />

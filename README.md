@@ -1,3 +1,26 @@
+## Novità: ricreati due strumenti — Fabbisogno idrico e Quanto pesa una porzione
+
+Aggiunte due nuove pagine dentro `/strumenti`, coerenti con gli altri
+calcolatori già presenti (Fabbisogno calorico, Proteine, BMI):
+
+- **`/strumenti/fabbisogno-idrico`** — stima l'acqua giornaliera consigliata
+  in base a peso, livello di attività e clima caldo/sudorazione. Formula in
+  `calculators.js` (`calculateWaterNeeds`): 30-35 ml/kg di base + bonus per
+  attività + bonus per clima caldo. Disclaimer sempre presente.
+- **`/strumenti/porzioni`** — mostra il peso di riferimento di "una
+  porzione" per la categoria dell'alimento selezionato (stile CREA/LARN,
+  es. Frutta 150g, Carne 100g, Legumi cotti 150g...), con slider per
+  regolare i grammi. I valori nutrizionali mostrati vengono SEMPRE calcolati
+  dai dati reali dell'alimento in `foods.js` tramite la funzione `calc()`
+  già usata in `FoodPage.jsx` — nessun valore scritto a mano.
+
+Le porzioni di riferimento sono in `PORTION_REFERENCE` dentro
+`calculators.js`: sono indicative, non regole fisse, e il testo lo dice
+esplicitamente in pagina.
+
+Nessuna nuova dipendenza. Build verificata (`npm install` + `npm run build`)
+senza errori.
+
 ## Novità: pagina di login (passo 2 — solo interfaccia)
 
 Aggiunta la pagina `/accedi` con form email + password, raggiungibile
