@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
 import Login from './pages/Login';
+import ValutazionePage from './pages/ValutazionePage';
 import FoodPage from './pages/FoodPage';
 import RecipesPage from './pages/RecipesPage';
 import RecipePage from './pages/RecipePage';
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/corsi" element={<Corsi />} />
           <Route path="/accedi" element={<Login />} />
+          <Route path="/valutazione" element={<ValutazionePage />} />
           <Route path="/alimenti" element={<AlimentiPage />} />
           <Route path="/alimenti/:slug" element={<FoodPage />} />
           <Route path="/ricette" element={<RecipesPage />} />

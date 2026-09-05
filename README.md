@@ -1,3 +1,24 @@
+## Novità: pagina di valutazione dello stato nutrizionale (passo 3)
+
+Nuova pagina `/valutazione`, raggiungibile da un link in `/corsi`. Chiede
+età, sesso, peso, altezza, livello di attività (e clima) e mostra subito
+4 stime automatiche: BMI, fabbisogno calorico, range proteico, fabbisogno
+idrico — riusando le formule già centralizzate in `calculators.js`,
+nessun calcolo duplicato.
+
+Importante: le stime sono chiaramente etichettate come automatiche e
+informative. La vera valutazione dello stato nutrizionale, quella che
+giustifica la voce in fattura, resta quella scritta personalmente dopo
+l'acquisto — questa pagina è il punto di raccolta dati e la prima stima,
+non sostituisce quel lavoro professionale.
+
+In questo passo il pulsante "Continua all'acquisto del corso" non fa
+ancora nulla di reale (nessun collegamento a Stripe/Supabase): serve solo
+per testare che il form e i calcoli funzionino bene online. Anche la
+pagina Corsi ora ha la barra di navigazione, che mancava.
+
+Nessuna nuova dipendenza esterna. Build verificata senza errori.
+
 ## Novità: fix — "Costruisci il piatto" da Strumenti ora atterra sulla sezione giusta
 
 Il link "Costruisci il piatto" nell'hub `/strumenti` porta a `/#plate-builder`
