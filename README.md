@@ -1,3 +1,28 @@
+## Novità: pagamento Stripe collegato (passo 6, parte 1)
+
+- `api/create-checkout-session.js`: funzione serverless (Vercel) che crea
+  una sessione di pagamento Stripe per il corso scelto.
+- `api/stripe-webhook.js`: funzione serverless che riceve la conferma di
+  pagamento da Stripe e sblocca l'accesso scrivendo nella tabella
+  `purchases` su Supabase (usando la service_role key, mai esposta nel
+  browser).
+- `/corsi/da-zero-al-tuo-piano` ora mostra davvero il blocco: se non sei
+  loggato ti chiede di accedere, se sei loggato ma non hai comprato
+  mostra il bottone "Acquista — 29€", se hai comprato mostra i video.
+- `vercel.json` aggiornato per non intercettare le chiamate a `/api/*`.
+
+IMPORTANTE — prima che funzioni online servono le variabili d'ambiente
+su Vercel (Settings → Environment Variables):
+- STRIPE_SECRET_KEY
+- SUPABASE_SERVICE_ROLE_KEY
+
+La variabile STRIPE_WEBHOOK_SECRET arriva nel prossimo passo (si ottiene
+solo DOPO aver creato il webhook su Stripe, che a sua volta richiede che
+il sito sia già online con questa funzione deployata — va fatto in
+quest'ordine).
+
+Nuova dipendenza: `stripe`. Build verificata senza errori.
+
 ## Novità: login reale collegato a Supabase (passo 5)
 
 - `src/supabaseClient.js`: connessione al progetto Supabase reale
