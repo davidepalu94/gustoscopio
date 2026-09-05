@@ -33,10 +33,6 @@ export default function Corsi() {
             </Link>
           ))}
         </div>
-
-        <Link to="/valutazione" className="corsi-login-link">
-          Scopri la tua valutazione dello stato nutrizionale →
-        </Link>
       </div>
       <footer className="foot">
         Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.

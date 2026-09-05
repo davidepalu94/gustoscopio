@@ -1,3 +1,24 @@
+## Novità: mini valutazione (BMI + metabolismo basale) prima dell'acquisto
+
+- Rimosso il link separato "Scopri la tua valutazione dello stato
+  nutrizionale" da `/corsi`.
+- Nella pagina del corso, prima del bottone "Acquista", ora c'è un mini
+  form (età, sesso, peso, altezza) con BMI e metabolismo basale calcolati
+  al volo — fa parte della valutazione inclusa nel pacchetto.
+- La pagina standalone `/valutazione` resta nel codice ma non è più
+  linkata da nessuna parte (si può rimuovere del tutto in futuro se non
+  serve più altrove).
+
+Nessuna nuova dipendenza. Build verificata senza errori.
+
+## Promemoria: sistemare il redirect email di Supabase
+
+Se durante la conferma email compare un errore "impossibile raggiungere
+il sito" che punta a localhost, vai su Supabase → Authentication → URL
+Configuration e imposta Site URL su https://gustoscopio.vercel.app
+(aggiungendo anche .../** tra i Redirect URLs). Non è un problema di
+codice, solo di configurazione lato Supabase.
+
 ## Novità: pagamento Stripe collegato (passo 6, parte 1)
 
 - `api/create-checkout-session.js`: funzione serverless (Vercel) che crea
