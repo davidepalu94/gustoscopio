@@ -1,3 +1,44 @@
+## Novità: login reale collegato a Supabase (passo 5)
+
+- `src/supabaseClient.js`: connessione al progetto Supabase reale
+  (URL e chiave "anon" — sicura da avere nel codice, protetta dalle
+  regole di sicurezza sul database, non richiede variabili d'ambiente
+  su Vercel).
+- `src/AuthContext.jsx`: gestisce sessione utente reale (login,
+  registrazione, logout) e una funzione `hasPurchased(courseId)` già
+  pronta per il prossimo passo (il blocco pagamento).
+- `/accedi` ora registra/autentica per davvero: crea un utente vero su
+  Supabase, che genera automaticamente anche una riga nella tabella
+  `profiles`.
+- `/corsi` mostra "Accedi" o "Esci (email)" a seconda che tu sia loggato
+  o meno.
+
+Importante: in questo passo il login FUNZIONA, ma non blocca ancora
+niente — chiunque può comunque vedere il corso e i video su
+`/corsi/da-zero-al-tuo-piano` senza aver pagato. Il blocco vero (via
+Stripe + tabella `purchases`) arriva nel prossimo passo.
+
+Nuova dipendenza: `@supabase/supabase-js`. Build verificata senza errori.
+
+## Novità: primo corso collegato ai video reali (passo 4)
+
+- `src/corsi.js`: dati del primo corso, "Da Zero al Tuo Piano" (29€),
+  Modulo 1 con i primi 3 video reali collegati a Bunny Stream (Library
+  ID 745119). Modulo 2 segnato come "in preparazione", nessun contenuto
+  finto.
+- `/corsi`: ora mostra la card del corso con prezzo.
+- `/corsi/da-zero-al-tuo-piano`: pagina di dettaglio con player video
+  (incorporato da Bunny Stream) e lista dei moduli/lezioni cliccabili.
+
+⚠️ IMPORTANTE: in questo passo i video sono ancora VISIBILI A CHIUNQUE
+ABBIA IL LINK della pagina corso — non è ancora collegato nessun
+controllo di pagamento. Il blocco vero (Stripe + Supabase, link firmati
+che scadono su Bunny) arriva nel prossimo passo. Fino ad allora, non
+condividere pubblicamente il link di questa pagina.
+
+Nessuna nuova dipendenza esterna nel codice (l'embed usa un iframe
+diretto verso Bunny). Build verificata senza errori.
+
 ## Novità: pagina di valutazione dello stato nutrizionale (passo 3)
 
 Nuova pagina `/valutazione`, raggiungibile da un link in `/corsi`. Chiede

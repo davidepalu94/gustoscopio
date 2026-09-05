@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PlateProvider } from './PlateContext';
+import { AuthProvider } from './AuthContext';
 import Toast from './components/Toast';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
+import CorsoPage from './pages/CorsoPage';
 import Login from './pages/Login';
 import ValutazionePage from './pages/ValutazionePage';
 import FoodPage from './pages/FoodPage';
@@ -26,6 +28,7 @@ import PercorsiPage from './pages/PercorsiPage';
 
 export default function App() {
   return (
+    <AuthProvider>
     <PlateProvider>
       <BrowserRouter>
         <ScrollToTop />
@@ -33,6 +36,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/corsi" element={<Corsi />} />
+          <Route path="/corsi/:slug" element={<CorsoPage />} />
           <Route path="/accedi" element={<Login />} />
           <Route path="/valutazione" element={<ValutazionePage />} />
           <Route path="/alimenti" element={<AlimentiPage />} />
@@ -55,5 +59,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </PlateProvider>
+    </AuthProvider>
   );
 }
