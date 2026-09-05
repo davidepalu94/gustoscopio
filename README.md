@@ -1,3 +1,21 @@
+## Novità: fix — "Costruisci il piatto" da Strumenti ora atterra sulla sezione giusta
+
+Il link "Costruisci il piatto" nell'hub `/strumenti` porta a `/#plate-builder`
+sulla home. Lo scroll verso quella sezione in realtà funzionava già, ma per
+due motivi sembrava "sbagliato":
+
+1. La nav in alto è `sticky` e copriva il titolo della sezione appena
+   raggiunta — sembrava di essere atterrati nel punto sbagliato. Aggiunto
+   `scroll-margin-top` su `.plate-section` così il browser lascia lo spazio
+   giusto sotto la nav quando scorre fino a quell'ancora.
+2. Lo scroll partiva a volte prima che la nuova pagina fosse del tutto
+   assestata (font, layout), sbagliando di qualche decina di pixel.
+   `ScrollToTop.jsx` ora aspetta un istante prima di calcolare la
+   posizione.
+
+Nessuna nuova dipendenza. Build verificata (`npm install` + `npm run
+build`) senza errori.
+
 ## Novità: fix scroll — le pagine ora si aprono sempre dall'alto
 
 Bug: navigando tra le pagine (es. da `/strumenti` a `/strumenti/bmi`), la

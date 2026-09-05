@@ -11,11 +11,18 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      const el = document.getElementById(hash.slice(1));
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
+      // Piccolo ritardo: aspettiamo che la nuova pagina sia montata e il
+      // layout stabile (font, immagini) prima di calcolare la posizione,
+      // altrimenti lo scroll può "sbagliare" di qualche decina di pixel.
+      const id = window.setTimeout(() => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }, 80);
+      return () => window.clearTimeout(id);
     }
     window.scrollTo(0, 0);
   }, [pathname, hash]);
