@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PlateProvider } from './PlateContext';
 import Toast from './components/Toast';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
 import Login from './pages/Login';
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <PlateProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Toast />
         <Routes>
           <Route path="/" element={<Home />} />

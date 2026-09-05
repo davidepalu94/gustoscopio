@@ -1,3 +1,19 @@
+## Novità: fix scroll — le pagine ora si aprono sempre dall'alto
+
+Bug: navigando tra le pagine (es. da `/strumenti` a `/strumenti/bmi`), la
+pagina si apriva mantenendo la posizione di scroll di quella precedente
+invece di partire dall'inizio. È un comportamento tipico delle SPA con
+`react-router-dom`: il router cambia il contenuto ma non tocca lo scroll
+del browser.
+
+Aggiunto `src/components/ScrollToTop.jsx`, montato dentro `<BrowserRouter>`
+in `App.jsx`: ad ogni cambio di rotta forza lo scroll in cima. Gestisce
+anche i link con ancora (es. "/#plate-builder" da Strumenti verso il Plate
+Builder in home), scorrendo fino a quell'elemento invece che in cima.
+
+Nessuna nuova dipendenza. Build verificata (`npm install` + `npm run
+build`) senza errori.
+
 ## Novità: revisione mobile completa (Plate Builder e non solo)
 
 Nota importante: in questo ambiente non è stato possibile scaricare un
