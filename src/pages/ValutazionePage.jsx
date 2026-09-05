@@ -79,7 +79,7 @@ export default function ValutazionePage() {
             </label>
             <label className="calc-field calc-field-full" style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
               <input type="checkbox" checked={hotClimate} onChange={(e) => setHotClimate(e.target.checked)} style={{ width: 'auto' }} />
-              <span style={{ fontWeight: 500 }}>Vivo in un clima caldo o suo molto durante la giornata</span>
+              <span style={{ fontWeight: 500 }}>Vivo in un clima caldo o sudo molto durante la giornata</span>
             </label>
           </div>
         </div>
