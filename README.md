@@ -1,3 +1,36 @@
+## Novità: revisione mobile completa (Plate Builder e non solo)
+
+Nota importante: in questo ambiente non è stato possibile scaricare un
+browser headless per fare uno screenshot reale a 375px (rete bloccata per
+il download di Chromium). La revisione è stata fatta leggendo il CSS e
+facendo i calcoli aritmetici delle larghezze a 320px/375px, come indicato
+nella regola del progetto. **Consigliamo comunque un test visivo reale su
+telefono/DevTools prima di considerare il lavoro chiuso al 100%.**
+
+Cosa è cambiato:
+
+- **Plate Builder** (`#plate-builder` in Home): era il problema segnalato
+  ("il piatto risulta troppo grande"). Il numero grande delle kcal totali
+  passava da 56px fisso (40px solo sotto i 480px) a `clamp(30px, 9vw,
+  56px)` — ora scala in modo fluido con la larghezza reale dello schermo
+  invece di avere due soli "scalini". Stessa logica su padding e margini
+  della sezione nera (`clamp()` invece di valori fissi), gap tra le due
+  colonne, dimensione dei box macro, input dello stepper (ridotto da 44px
+  a 38px per lasciare più spazio al testo del nome alimento).
+- Stessa tecnica del `clamp()` applicata a: numero risultato di TUTTI i
+  calcolatori in `/strumenti` (`.calc-result-big`), punteggio finale di
+  Mito o Verità, numero grande nella card "Cosa include" di Percorsi
+  Personalizzati, titolo dell'hero in home, titoli di sezione.
+- Padding ridotto su mobile per: hero, sezioni generiche (`.section`),
+  teaser "Percorsi personalizzati", modale di prenotazione.
+- Corretti due bug latenti di overflow orizzontale (la stessa causa già
+  documentata nelle istruzioni di progetto — contenitori flex senza
+  `min-width: 0`): riga alimento in `/alimenti` (`.alimenti-row-info`) e
+  riga quantità in Food Battle su schermi sotto i 380px.
+
+Nessuna nuova dipendenza. Build verificata (`npm install` + `npm run
+build`) senza errori.
+
 ## Novità: ricreati due strumenti — Fabbisogno idrico e Quanto pesa una porzione
 
 Aggiunte due nuove pagine dentro `/strumenti`, coerenti con gli altri
