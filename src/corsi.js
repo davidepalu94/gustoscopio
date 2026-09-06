@@ -17,6 +17,7 @@ export const CORSI = [
     priceLabel: '29€',
     coverEmoji: '🎯',
     subtitle: 'Il videocorso per iniziare a orientarti nella nutrizione, passo dopo passo.',
+    totalPlannedVideos: 12,
     modules: [
       {
         id: 'modulo-1',
@@ -39,4 +40,8 @@ export const CORSI = [
 
 export function getCorsoBySlug(slug) {
   return CORSI.find((c) => c.id === slug) ?? null;
+}
+
+export function countAvailableVideos(corso) {
+  return corso.modules.reduce((sum, m) => sum + (m.videos?.length ?? 0), 0);
 }

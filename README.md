@@ -1,3 +1,27 @@
+## Aggiornamento: indicatore "3 di 12 video disponibili"
+
+Aggiunto un contatore automatico (in `/corsi` e nella pagina del corso)
+che mostra quanti video sono disponibili rispetto al totale previsto
+(`totalPlannedVideos` in `corsi.js`). Per ora dice "3 di 12" — si
+aggiorna da solo appena aggiungi nuovi video a `corsi.js`, nessuna altra
+modifica necessaria.
+
+### Come aggiungere i prossimi video quando sono pronti
+
+1. Carica il video su Bunny.net Stream (stessa Video Library, ID 745119)
+   e prendi il suo Video ID.
+2. Apri `src/corsi.js` e aggiungi il video dentro "Modulo 2" (o crea un
+   "Modulo 3" se preferisci raggruppare diversamente), con lo stesso
+   formato usato per i video di "Modulo 1":
+   `{ id: 'VIDEO-ID-DI-BUNNY', title: '2.1 Titolo della lezione' }`
+3. Se un modulo ha almeno un video, togli `comingSoon: true` da
+   quel modulo.
+4. Il prezzo del corso (29€) resta lo stesso: NON serve toccare Stripe
+   finché il prezzo non cambia. Se in futuro vorrai cambiare il prezzo
+   quando il corso è completo, quello sì richiede di aggiornarlo nel
+   codice (il prezzo è passato dinamicamente a Stripe ad ogni acquisto,
+   non serve un "prodotto" fisso da modificare lì).
+
 ## Novità: mini valutazione (BMI + metabolismo basale) prima dell'acquisto
 
 - Rimosso il link separato "Scopri la tua valutazione dello stato

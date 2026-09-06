@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CORSI } from '../corsi';
+import { CORSI, countAvailableVideos } from '../corsi';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
 
@@ -29,6 +29,11 @@ export default function Corsi() {
               <span className="corso-emoji">{corso.coverEmoji}</span>
               <h2>{corso.title}</h2>
               <p>{corso.subtitle}</p>
+              {corso.totalPlannedVideos && (
+                <p style={{ fontSize: 12.5, color: '#3155FF', fontWeight: 600, margin: '4px 0 0' }}>
+                  {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video disponibili
+                </p>
+              )}
               <span className="corso-price-badge">{corso.priceLabel}</span>
             </Link>
           ))}

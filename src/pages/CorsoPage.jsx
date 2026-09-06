@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { getCorsoBySlug, getBunnyEmbedUrl } from '../corsi';
+import { getCorsoBySlug, getBunnyEmbedUrl, countAvailableVideos } from '../corsi';
 import { calculateBMI, calculateEnergyNeeds } from '../calculators';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
@@ -199,6 +199,11 @@ export default function CorsoPage() {
             )}
 
             <div className="corso-modules">
+              {corso.totalPlannedVideos && (
+                <p className="corsi-empty" style={{ margin: '0 0 4px' }}>
+                  {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video disponibili — nuovi contenuti in arrivo, già inclusi nell'acquisto.
+                </p>
+              )}
               {corso.modules.map((modulo) => (
                 <div key={modulo.id} className="corso-module-block">
                   <h3>{modulo.title}</h3>
