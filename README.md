@@ -1,3 +1,13 @@
+## Aggiornamento: descrizione estesa del corso
+
+Aggiunta la descrizione lunga di "Da Zero al Tuo Piano" nella pagina del
+corso (sotto il titolo, sopra il blocco valutazione/acquisto). Leggermente
+snellita rispetto al testo originale per adattarla meglio alla lettura
+web, senza toglierne il contenuto o il tono.
+
+Per modificarla in futuro: `src/corsi.js` → campo `description` del
+corso (è un elenco di paragrafi, uno per riga).
+
 ## Aggiornamento: badge Instagram in fondo al sito
 
 Creato `src/components/Footer.jsx`, un componente condiviso con il

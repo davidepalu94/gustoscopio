@@ -119,6 +119,14 @@ export default function CorsoPage() {
           <span className="corso-price-badge">{corso.priceLabel}</span>
         </header>
 
+        {corso.description && (
+          <div className="corso-description">
+            {corso.description.map((paragrafo, i) => (
+              <p key={i}>{paragrafo}</p>
+            ))}
+          </div>
+        )}
+
         {!corso.salesOpen ? (
           <div className="premium-gate">
             <h2>In arrivo</h2>
