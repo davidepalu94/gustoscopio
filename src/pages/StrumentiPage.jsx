@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const TOOLS = [
   { icon: '🔥', title: 'Fabbisogno calorico', desc: 'Scopri una stima del tuo dispendio energetico giornaliero.', to: '/strumenti/fabbisogno', cta: 'Inizia' },
@@ -30,9 +31,7 @@ export default function StrumentiPage() {
           ))}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

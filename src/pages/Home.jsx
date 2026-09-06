@@ -5,6 +5,7 @@ import { RECIPES, calcRecipeTotals } from '../recipes';
 import { ARTICLES } from '../articles';
 import { usePlate } from '../PlateContext';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -347,9 +348,7 @@ export default function Home() {
         <Link to="/percorsi-personalizzati" className="teaser-cta">Scopri i percorsi personalizzati →</Link>
       </div>
 
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

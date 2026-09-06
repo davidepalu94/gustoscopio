@@ -4,6 +4,7 @@ import { ARTICLES } from '../articles';
 import { FOODS } from '../foods';
 import Nav from '../components/Nav';
 import InlineQuiz from '../components/InlineQuiz';
+import Footer from '../components/Footer';
 
 export default function ArticlePage() {
   const { slug } = useParams();
@@ -89,9 +90,7 @@ export default function ArticlePage() {
           </div>
         )}
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

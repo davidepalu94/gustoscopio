@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const PARAMS = [
   { id: 'kcal', label: 'Meno kcal', better: 'lower' },
@@ -133,9 +134,7 @@ export default function FoodBattlePage() {
           Nessun alimento è "migliore" in assoluto: dipende da cosa stai cercando in quel momento.
         </p>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

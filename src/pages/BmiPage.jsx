@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { calculateBMI } from '../calculators';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const RANGES = [
   { label: 'Sottopeso', range: '< 18.5' },
@@ -66,9 +67,7 @@ export default function BmiPage() {
           <Link to="/percorsi-personalizzati" className="teaser-cta" style={{ fontSize: 14 }}>Scopri i percorsi personalizzati →</Link>
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

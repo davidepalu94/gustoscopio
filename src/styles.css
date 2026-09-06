@@ -613,3 +613,6 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .premium-gate-btn-primary { background: #3155FF; color: #FFFFFF; }
 .premium-gate-btn:hover { opacity: 0.9; }
 .premium-gate-btn:disabled { opacity: 0.6; cursor: default; }
+
+.instagram-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #3155FF; text-decoration: none; padding: 6px 14px; border: 1px solid rgba(49,85,255,0.25); border-radius: 999px; transition: background 160ms ease; }
+.instagram-badge:hover { background: rgba(49,85,255,0.08); }

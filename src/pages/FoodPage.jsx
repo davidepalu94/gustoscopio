@@ -4,6 +4,7 @@ import { FOODS, calc } from '../foods';
 import { RECIPES } from '../recipes';
 import { usePlate } from '../PlateContext';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function FoodPage() {
   const { slug } = useParams();
@@ -144,9 +145,7 @@ export default function FoodPage() {
         </div>
       </div>
 
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

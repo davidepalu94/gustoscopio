@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const LAB_TOOLS = [
   { icon: '⚔️', title: 'Food Battle', desc: 'Confronta due alimenti su kcal, proteine, carboidrati, grassi e fibre.', to: '/confronta' },
@@ -27,9 +28,7 @@ export default function LabPage() {
           ))}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

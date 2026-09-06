@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Nav from '../components/Nav';
 import PercorsiModal from '../components/PercorsiModal';
+import Footer from '../components/Footer';
 
 const TRUST_POINTS = [
   { icon: '🎯', label: 'Su misura per te' },
@@ -116,9 +117,7 @@ export default function PercorsiPage() {
         </div>
       </div>
 
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
 
       <PercorsiModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { RECIPES, calcRecipeTotals } from '../recipes';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const KCAL_BUCKETS = [
   { id: 'lt300', label: '< 300', test: (k) => k < 300 },
@@ -92,9 +93,7 @@ export default function RecipesPage() {
           </div>
         )}
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

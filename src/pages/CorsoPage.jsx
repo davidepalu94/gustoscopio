@@ -4,6 +4,7 @@ import { getCorsoBySlug, getBunnyEmbedUrl, countAvailableVideos } from '../corsi
 import { calculateBMI, calculateEnergyNeeds } from '../calculators';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function CorsoPage() {
   const { slug } = useParams();
@@ -237,9 +238,7 @@ export default function CorsoPage() {
           </>
         )}
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

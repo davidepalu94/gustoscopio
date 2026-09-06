@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
 import { getPortionReference } from '../calculators';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function PorzioniPage() {
   const [foodId, setFoodId] = useState('pasta');
@@ -84,9 +85,7 @@ export default function PorzioniPage() {
           <Link to={`/alimenti/${food.id}`} className="teaser-cta" style={{ fontSize: 14 }}>Apri la scheda di {food.name} →</Link>
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

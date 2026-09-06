@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ARTICLES } from '../articles';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function ArticlesPage() {
   return (
@@ -23,9 +24,7 @@ export default function ArticlesPage() {
           ))}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

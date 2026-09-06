@@ -1,3 +1,16 @@
+## Aggiornamento: badge Instagram in fondo al sito
+
+Creato `src/components/Footer.jsx`, un componente condiviso con il
+disclaimer nutrizionale + un badge che linka a
+https://www.instagram.com/gustoscopio/ (si apre in una nuova scheda).
+
+Sostituito il footer ripetuto (era copiato in 20 file diversi) con
+questo unico componente in tutte le pagine del sito — se in futuro
+serve cambiare il disclaimer o aggiungere altri link social, si modifica
+in un solo posto: `src/components/Footer.jsx`.
+
+Nessuna nuova dipendenza. Build verificata senza errori su tutte le pagine.
+
 ## Aggiornamento: acquisto disattivato finché il corso non è completo
 
 Aggiunto `salesOpen: false` in `src/corsi.js`. Con questo valore:

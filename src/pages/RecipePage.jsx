@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { RECIPES, calcRecipeTotals, scaledIngredients } from '../recipes';
 import { usePlate } from '../PlateContext';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function RecipePage() {
   const { slug } = useParams();
@@ -107,9 +108,7 @@ export default function RecipePage() {
           </div>
         )}
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { calculateProteinRange, ACTIVITY_LEVELS } from '../calculators';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function ProteinePage() {
   const [weightKg, setWeightKg] = useState(70);
@@ -52,9 +53,7 @@ export default function ProteinePage() {
           <Link to="/#plate-builder" className="teaser-cta" style={{ fontSize: 14 }}>Prova Costruisci il piatto →</Link>
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

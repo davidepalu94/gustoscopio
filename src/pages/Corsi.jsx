@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CORSI, countAvailableVideos } from '../corsi';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function Corsi() {
   const { user, signOut, loading } = useAuth();
@@ -41,9 +42,7 @@ export default function Corsi() {
           ))}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

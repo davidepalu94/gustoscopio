@@ -8,6 +8,7 @@ import {
   ACTIVITY_LEVELS,
 } from '../calculators';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function ValutazionePage() {
   const [age, setAge] = useState(30);
@@ -126,9 +127,7 @@ export default function ValutazionePage() {
           )}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }

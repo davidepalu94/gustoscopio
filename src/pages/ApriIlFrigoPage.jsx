@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FOODS } from '../foods';
 import { RECIPES, calcRecipeTotals } from '../recipes';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const KCAL_OPTIONS = [
   { id: null, label: 'Nessun limite' },
@@ -121,9 +122,7 @@ export default function ApriIlFrigoPage() {
           ))}
         </div>
       </div>
-      <footer className="foot">
-        Informazioni nutrizionali a scopo divulgativo. Non sostituiscono una valutazione professionale personalizzata.
-      </footer>
+      <Footer />
     </div>
   );
 }
