@@ -34,7 +34,9 @@ export default function Corsi() {
                   {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video disponibili
                 </p>
               )}
-              <span className="corso-price-badge">{corso.priceLabel}</span>
+              <span className="corso-price-badge" style={!corso.salesOpen ? { background: '#575a68' } : undefined}>
+                {corso.salesOpen ? corso.priceLabel : 'Prossimamente'}
+              </span>
             </Link>
           ))}
         </div>

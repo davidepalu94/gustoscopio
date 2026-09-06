@@ -1,3 +1,20 @@
+## Aggiornamento: acquisto disattivato finché il corso non è completo
+
+Aggiunto `salesOpen: false` in `src/corsi.js`. Con questo valore:
+- Su `/corsi` la card mostra "Prossimamente" invece del prezzo.
+- Sulla pagina del corso, al posto del bottone "Acquista" compare un
+  messaggio "In arrivo" con il conteggio video pronti.
+
+TUTTO IL RESTO RESTA COLLEGATO E FUNZIONANTE (Stripe, webhook, Supabase)
+— non li abbiamo toccati, sono solo "in pausa" per questo corso.
+
+### Come riattivare le vendite quando il corso è completo
+
+Apri `src/corsi.js` e cambia:
+`salesOpen: false` → `salesOpen: true`
+Nient'altro da fare: bottone "Acquista" e pagamento tornano visibili e
+funzionanti immediatamente.
+
 ## Aggiornamento: indicatore "3 di 12 video disponibili"
 
 Aggiunto un contatore automatico (in `/corsi` e nella pagina del corso)

@@ -18,6 +18,7 @@ export const CORSI = [
     coverEmoji: '🎯',
     subtitle: 'Il videocorso per iniziare a orientarti nella nutrizione, passo dopo passo.',
     totalPlannedVideos: 12,
+    salesOpen: false, // metti a true quando il corso è completo e pronto per la vendita
     modules: [
       {
         id: 'modulo-1',

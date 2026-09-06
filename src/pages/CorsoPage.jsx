@@ -118,7 +118,15 @@ export default function CorsoPage() {
           <span className="corso-price-badge">{corso.priceLabel}</span>
         </header>
 
-        {authLoading || checkingPurchase ? (
+        {!corso.salesOpen ? (
+          <div className="premium-gate">
+            <h2>In arrivo</h2>
+            <p>
+              {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video sono già pronti.
+              Il corso sarà acquistabile appena sarà completo — torna a trovarci presto.
+            </p>
+          </div>
+        ) : authLoading || checkingPurchase ? (
           <p className="corsi-empty">Verifica accesso...</p>
         ) : !user ? (
           <div className="premium-gate">
