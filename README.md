@@ -1,3 +1,15 @@
+## Aggiornamento: aggiunto il video 4 (Modulo 2)
+
+Aggiunto "2.1 Come si calcola il fabbisogno" al Modulo 2. Il contatore
+"X di 12 video disponibili" si è aggiornato da solo a 4/12, sia su
+`/corsi` che nella pagina del corso — nessuna modifica manuale necessaria
+oltre ad aggiungere il video in `corsi.js`.
+
+Ricorda: `salesOpen` resta `false` finché non decidete di riaprire le
+vendite (vedi istruzioni più sotto in questo file).
+
+Build verificata senza errori.
+
 ## Aggiornamento: descrizione estesa del corso
 
 Aggiunta la descrizione lunga di "Da Zero al Tuo Piano" nella pagina del

@@ -38,8 +38,9 @@ export const CORSI = [
       {
         id: 'modulo-2',
         title: 'Modulo 2',
-        videos: [],
-        comingSoon: true,
+        videos: [
+          { id: '7a607fb2-5d11-4586-8a2b-92df53e123b7', title: '2.1 Come si calcola il fabbisogno' },
+        ],
       },
     ],
   },
