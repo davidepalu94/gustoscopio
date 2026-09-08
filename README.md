@@ -1,4 +1,41 @@
-## Aggiornamento: aggiunto il video 4 (Modulo 2)
+## Reintegrazione: alimenti e ricette da versioni precedenti + nuovi pesci e tagli di carne
+
+Questo file zip era la base "attiva" più recente (con login/Supabase, i
+corsi, ecc.), ma non conteneva ancora diverse aggiunte fatte in
+conversazioni precedenti su un'altra copia del progetto. Reintegrato tutto
+tranne gli strumenti Acqua e Quanto pesa (già presenti qui in una versione
+propria: `FabbisognoIdricoPage.jsx` e `PorzioniPage.jsx`).
+
+**Alimenti**: da 99 a 162.
+- 27 verdure (sedano, aglio, porri, asparagi, bietole, cavoli vari, rucola,
+  radicchio, carciofi, ecc.)
+- 8 pesci/molluschi: sogliola, nasello, calamaro, polpo, cefalo, rombo,
+  orata di mare, spigola di mare
+- 5 formaggi/latticini: fiocchi di latte 0% e classici, Philadelphia
+  Classico/Light/Protein
+- 10 alimenti vari: riso soffiato Kellogg's, cornflakes di mais, muesli,
+  patate dolci, funghi, hummus, popcorn, salmone affumicato, kefir,
+  formaggio spalmabile light, più farina d'avena
+- **12 nuovi tagli di carne**, per la richiesta di oggi: filetto di manzo,
+  controfiletto di manzo, agnello, coniglio, pancetta, speck, salame,
+  mortadella, prosciutto crudo sgrassato, petto d'anatra, cosciotto di
+  pollo, hamburger di manzo magro
+
+**Ricette**: da 29 a 71 (+42), comprese le ricette per ciascuno degli 8
+pesci appena reintegrati (es. Sogliola al limone con patate dolci, Nasello
+con funghi trifolati, Calamari con radicchio e orzo, Polpo con sedano rapa
+e patate, Cefalo con finocchi e arancia, Rombo al forno con patate, Orata
+al forno con patate e finocchi, Spigola al vapore con riso), oltre a 15
+ricette colazione proteiche e 15 ricette pranzo/cena sotto i 15g di
+grassi.
+
+Verificato: nessun ID duplicato tra i 162 alimenti né tra le 71 ricette,
+nessun `foodId` richiamato dalle ricette che non esista nel database. Build
+completa del progetto (con Supabase/Stripe inclusi) verificata senza
+errori — solo un avviso standard di Vite sulla dimensione del bundle, non
+un errore, non legato a queste modifiche.
+
+
 
 Aggiunto "2.1 Come si calcola il fabbisogno" al Modulo 2. Il contatore
 "X di 12 video disponibili" si è aggiornato da solo a 4/12, sia su
