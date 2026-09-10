@@ -1,4 +1,23 @@
-## Aggiornamento: rimossa la ricotta generica + nuovo form "Suggerisci un alimento"
+## Aggiornamento: 10 nuove ricette con i prodotti confezionati appena inseriti (da 71 a 81)
+
+Una ricetta per ognuno dei 10 prodotti aggiunti nell'ultimo aggiornamento
+alimenti, distribuite tra colazione, pranzo, cena e snack:
+
+- Yogurt HiPRO con muesli e mirtilli
+- Kefir PRO con gallette Fiorentini Super Protein e mandorle
+- Crackers Galbusera Magretti con Philadelphia Protein
+- Pasta Barilla Protein+ al pomodoro
+- Pasta di legumi con zucchine e pomodoro
+- Mozzarella Protein con pomodorini e rucola
+- Ricotta Proteica LIDL con fragole e gallette di riso
+- Insalata con ricotta di pecora, noci e mela
+- Farro con ricotta di mucca e pomodorini
+- Gallette Fiorentini Super Protein con hummus e pomodorini
+
+Nessun ID duplicato tra le 81 ricette, nessun `foodId` rotto. Build
+verificata senza errori.
+
+
 
 **Ricotta generica rimossa** (da 172 a 171 alimenti): non era usata da
 nessuna ricetta, quindi tolta senza rompere nulla. Restano le tre versioni
