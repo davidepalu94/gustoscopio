@@ -179,6 +179,27 @@ button { font-family: inherit; cursor: pointer; }
 .stepper-unit { font-size: 12px; color: #9a9caa; margin-left: -2px; margin-right: 2px; }
 .remove-x { background: transparent; border: none; color: #7d7f8c; font-size: 16px; padding: 0 2px; flex-shrink: 0; }
 
+/* MEAL TABS */
+.meal-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.meal-tab { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #d5d6de; border-radius: 999px; padding: 9px 16px; font-size: 14px; font-weight: 600; transition: background 0.16s, border-color 0.16s; }
+.meal-tab.active { background: #3155FF; border-color: #3155FF; color: white; }
+.meal-tab-kcal { font-size: 11.5px; font-weight: 700; color: #9a9caa; margin-left: 2px; }
+.meal-tab.active .meal-tab-kcal { color: rgba(255,255,255,0.75); }
+@media (max-width: 480px) { .meal-tab { padding: 8px 12px; font-size: 13px; } }
+
+/* DAY SUMMARY */
+.day-summary { margin-top: clamp(24px, 5vw, 40px); background: #1a1e2b; border-radius: 16px; padding: clamp(18px, 4vw, 28px); }
+.day-summary-head { display: flex; align-items: center; gap: 14px; }
+.day-summary-head > span { font-size: 26px; flex-shrink: 0; }
+.day-summary-title { font-weight: 700; font-size: 16px; }
+.day-summary-sub { font-size: 12.5px; color: #9a9caa; margin-top: 2px; }
+.day-summary-total { margin-left: auto; font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 6vw, 34px); font-weight: 700; text-align: right; flex-shrink: 0; }
+.day-summary-total span { font-size: 12px; color: #9a9caa; font-family: 'Manrope', sans-serif; font-weight: 600; display: block; }
+.day-summary-rows { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-direction: column; gap: 10px; }
+.day-summary-row { display: flex; justify-content: space-between; font-size: 14px; color: #d5d6de; }
+.day-summary-row span:last-child { font-weight: 700; color: white; }
+@media (max-width: 480px) { .day-summary-head { flex-wrap: wrap; } .day-summary-total { margin-left: 40px; text-align: left; } }
+
 .plate-total { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); }
 .plate-total .big { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 9vw, 56px); font-weight: 700; line-height: 1; }
 .plate-total .big span { font-size: clamp(13px, 3vw, 20px); color: #9a9caa; font-family: 'Manrope', sans-serif; font-weight: 600; margin-left: 4px; }

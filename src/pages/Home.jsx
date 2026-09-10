@@ -3,19 +3,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
 import { RECIPES, calcRecipeTotals } from '../recipes';
 import { ARTICLES } from '../articles';
-import { usePlate } from '../PlateContext';
+import { usePlate, MEALS } from '../PlateContext';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
-  const { plate, addToPlate, removeFromPlate, updatePlateGrams, totals } = usePlate();
+  const { addToPlate, removeFromPlate, updatePlateGrams, totals, mealItems, mealTotals } = usePlate();
 
   const [query, setQuery] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [grams, setGrams] = useState({});
   const [plateQuery, setPlateQuery] = useState('');
   const [target, setTarget] = useState(null);
+  const [selectedMeal, setSelectedMeal] = useState('colazione');
+
+  const currentMealItems = mealItems[selectedMeal];
+  const currentMealTotals = mealTotals[selectedMeal];
 
   const suggestions = ['Banana', 'Avocado', 'Pasta di semola', 'Cioccolato fondente', 'Uovo'];
 
@@ -43,7 +47,7 @@ export default function Home() {
     return FOODS.filter((f) => f.name.toLowerCase().includes(q));
   }, [plateQuery]);
 
-  const diff = target ? totals.kcal - target : null;
+  const diff = target ? currentMealTotals.kcal - target : null;
   let targetLabel = null;
   if (target) {
     if (Math.abs(diff) <= 15) targetLabel = 'Sei vicino al tuo obiettivo.';
@@ -52,8 +56,8 @@ export default function Home() {
   }
 
   let suggestion = null;
-  if (target && diff > 30 && plate.length > 0) {
-    const richest = plate
+  if (target && diff > 30 && currentMealItems.length > 0) {
+    const richest = currentMealItems
       .map((item) => {
         const food = FOODS.find((f) => f.id === item.foodId);
         return { item, food, fatKcal: food.fat * 9 * (item.grams / 100) };
@@ -185,8 +189,22 @@ export default function Home() {
       <div className="plate-section" id="plate-builder">
         <div className="section-head">
           <h2>Costruisci il tuo piatto</h2>
-          <p>Aggiungi alimenti e guarda calorie e macronutrienti aggiornarsi in tempo reale.</p>
+          <p>Scegli il momento della giornata, aggiungi alimenti e guarda calorie e macronutrienti aggiornarsi in tempo reale.</p>
         </div>
+
+        <div className="meal-tabs">
+          {MEALS.map((m) => (
+            <button
+              key={m.id}
+              className={`meal-tab ${selectedMeal === m.id ? 'active' : ''}`}
+              onClick={() => setSelectedMeal(m.id)}
+            >
+              <span>{m.emoji}</span> {m.label}
+              {mealTotals[m.id].kcal > 0 && <span className="meal-tab-kcal">{mealTotals[m.id].kcal} kcal</span>}
+            </button>
+          ))}
+        </div>
+
         <div className="plate-layout">
           <div>
             <div className="plate-search">
@@ -201,17 +219,23 @@ export default function Home() {
                     <div className="name">{f.name}</div>
                     <div className="meta">{f.kcal} kcal / 100 g</div>
                   </div>
-                  <button onClick={() => addToPlate(f.id, 100)}>+</button>
+                  <button onClick={() => addToPlate(f.id, 100, selectedMeal)}>+</button>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="plate-panel">
-            <div style={{ fontWeight: 700, fontSize: 14, letterSpacing: 0.02, color: '#c7c8d2', marginBottom: 4 }}>IL TUO PIATTO</div>
+            <div style={{ fontWeight: 700, fontSize: 14, letterSpacing: 0.02, color: '#c7c8d2', marginBottom: 4 }}>
+              {MEALS.find((m) => m.id === selectedMeal)?.label.toUpperCase()}
+            </div>
             <div className="plate-items">
-              {plate.length === 0 && <div className="empty-plate">Il piatto è vuoto. Aggiungi un alimento dalla lista.</div>}
-              {plate.map((item) => {
+              {currentMealItems.length === 0 && (
+                <div className="empty-plate">
+                  {MEALS.find((m) => m.id === selectedMeal)?.label} è vuota. Aggiungi un alimento dalla lista.
+                </div>
+              )}
+              {currentMealItems.map((item) => {
                 const food = FOODS.find((f) => f.id === item.foodId);
                 const c = calc(food, item.grams);
                 return (
@@ -247,12 +271,12 @@ export default function Home() {
             </div>
 
             <div className="plate-total">
-              <div className="big">{totals.kcal}<span>kcal totali</span></div>
+              <div className="big">{currentMealTotals.kcal}<span>kcal · {MEALS.find((m) => m.id === selectedMeal)?.label.toLowerCase()}</span></div>
               <div className="plate-macros">
-                <div><div className="v">{totals.protein}g</div><div className="l">PROTEINE</div></div>
-                <div><div className="v">{totals.carbs}g</div><div className="l">CARBOIDRATI</div></div>
-                <div><div className="v">{totals.fat}g</div><div className="l">GRASSI</div></div>
-                <div><div className="v">{totals.fiber}g</div><div className="l">FIBRE</div></div>
+                <div><div className="v">{currentMealTotals.protein}g</div><div className="l">PROTEINE</div></div>
+                <div><div className="v">{currentMealTotals.carbs}g</div><div className="l">CARBOIDRATI</div></div>
+                <div><div className="v">{currentMealTotals.fat}g</div><div className="l">GRASSI</div></div>
+                <div><div className="v">{currentMealTotals.fiber}g</div><div className="l">FIBRE</div></div>
               </div>
 
               <div className="target-row">
@@ -270,6 +294,31 @@ export default function Home() {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+
+        <div className="day-summary">
+          <div className="day-summary-head">
+            <span>📅</span>
+            <div>
+              <div className="day-summary-title">Riepilogo della giornata</div>
+              <div className="day-summary-sub">Somma di colazione, pranzo, cena e snack</div>
+            </div>
+            <div className="day-summary-total">{totals.kcal}<span> kcal totali</span></div>
+          </div>
+          <div className="day-summary-rows">
+            {MEALS.map((m) => (
+              <div key={m.id} className="day-summary-row">
+                <span>{m.emoji} {m.label}</span>
+                <span>{mealTotals[m.id].kcal} kcal</span>
+              </div>
+            ))}
+          </div>
+          <div className="plate-macros" style={{ marginTop: 16 }}>
+            <div><div className="v">{totals.protein}g</div><div className="l">PROTEINE</div></div>
+            <div><div className="v">{totals.carbs}g</div><div className="l">CARBOIDRATI</div></div>
+            <div><div className="v">{totals.fat}g</div><div className="l">GRASSI</div></div>
+            <div><div className="v">{totals.fiber}g</div><div className="l">FIBRE</div></div>
           </div>
         </div>
       </div>

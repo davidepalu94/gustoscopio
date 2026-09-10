@@ -1,4 +1,34 @@
-## Reintegrazione: alimenti e ricette da versioni precedenti + nuovi pesci e tagli di carne
+## Aggiornamento: Plate Builder diviso per Colazione/Pranzo/Cena/Snack + riepilogo giornata
+
+Cambiamento richiesto: ora quando aggiungi un alimento nella sezione
+"Costruisci il tuo piatto" scegli prima a quale momento della giornata
+appartiene, tramite 4 tab (Colazione/Pranzo/Cena/Snack). Ogni pasto ha il
+suo elenco di alimenti, i suoi grammi e i suoi totali indipendenti — non è
+più un unico piatto condiviso.
+
+Sotto, una nuova card **"Riepilogo della giornata"** somma automaticamente
+tutti e 4 i pasti e mostra: kcal totali della giornata, il dettaglio kcal
+per singolo pasto, e i macro totali (proteine/carboidrati/grassi/fibre)
+dell'intera giornata.
+
+Cosa è cambiato tecnicamente:
+- `PlateContext.jsx`: ogni voce ora ha anche un campo `meal`
+  (`colazione`/`pranzo`/`cena`/`snack`). Aggiunte le funzioni derivate
+  `mealItems` (alimenti raggruppati per pasto) e `mealTotals` (totali per
+  pasto). `totals` ora rappresenta il totale dell'INTERA giornata (somma di
+  tutti i pasti) — usato dal nuovo riepilogo.
+- I pulsanti target (300/400/500/600/700 kcal) e il suggerimento
+  automatico ora si riferiscono al pasto attualmente selezionato, non più
+  al totale generale (ha più senso: un target di 300 kcal è pensato per
+  uno snack, non per l'intera giornata).
+- `FoodPage.jsx` e `RecipePage.jsx` continuano a funzionare come prima
+  (aggiungono di default al pasto "Pranzo") — se in futuro vuoi scegliere
+  il pasto anche da lì, è una modifica separata che possiamo fare quando
+  vuoi.
+
+Nessun nuovo CSS in conflitto con Acqua/Quanto pesa (qui `FabbisognoIdricoPage.jsx`/`PorzioniPage.jsx`, non toccati). Build verificata senza errori.
+
+
 
 Questo file zip era la base "attiva" più recente (con login/Supabase, i
 corsi, ecc.), ma non conteneva ancora diverse aggiunte fatte in
