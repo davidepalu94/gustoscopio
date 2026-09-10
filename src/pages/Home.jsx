@@ -6,6 +6,7 @@ import { ARTICLES } from '../articles';
 import { usePlate, MEALS } from '../PlateContext';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import SuggestFoodForm from '../components/SuggestFoodForm';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -106,6 +107,11 @@ export default function Home() {
                   <span className="search-result-kcal">{r.meta}</span>
                 </div>
               ))}
+            </div>
+          )}
+          {query.trim() && searchResults.length === 0 && (
+            <div className="search-results">
+              <SuggestFoodForm initialQuery={query} embedded />
             </div>
           )}
         </div>

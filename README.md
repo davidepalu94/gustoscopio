@@ -1,4 +1,60 @@
-## Aggiornamento: Plate Builder diviso per Colazione/Pranzo/Cena/Snack + riepilogo giornata
+## Aggiornamento: rimossa la ricotta generica + nuovo form "Suggerisci un alimento"
+
+**Ricotta generica rimossa** (da 172 a 171 alimenti): non era usata da
+nessuna ricetta, quindi tolta senza rompere nulla. Restano le tre versioni
+specifiche già aggiunte: Ricotta di pecora, Ricotta di mucca, Ricotta
+Proteica LIDL.
+
+**Nuovo form "Suggerisci un alimento"**: quando una ricerca non trova
+nulla — sia nella barra principale della homepage sia in `/alimenti` —
+compare un piccolo form (nome alimento precompilato con quello cercato +
+un campo note facoltativo) che salva il suggerimento in una tabella
+Supabase (`food_suggestions`), non più un semplice "nessun risultato".
+
+⚠️ **AZIONE RICHIESTA DA TE PRIMA CHE FUNZIONI**: devi eseguire UNA VOLTA
+il nuovo file `supabase-schema-food-suggestions.sql` in Supabase → SQL
+Editor → New query (è uno script a parte, non serve ri-eseguire il file
+`supabase-schema.sql` originale). Crea la tabella `food_suggestions` con
+Row Level Security: chiunque può scrivere un suggerimento, nessuno può
+leggere quelli altrui dal sito — i suggerimenti li vedi solo tu da
+Supabase → Table Editor → food_suggestions.
+
+File nuovi/modificati: `src/components/SuggestFoodForm.jsx` (nuovo),
+`supabase-schema-food-suggestions.sql` (nuovo), `AlimentiPage.jsx` e
+`Home.jsx` (collegato il form all'empty state della ricerca). Build
+verificata senza errori.
+
+
+
+Aggiunti i prodotti richiesti. Per quelli di cui mi avevi già dato i
+valori esatti li ho usati direttamente; per gli altri ho cercato online i
+valori reali riportati sulle confezioni/schede prodotto ufficiali:
+
+| Alimento | kcal | proteine | carbo | grassi | fibre | Fonte valori |
+|---|---|---|---|---|---|---|
+| Crackers Galbusera Magretti | 370* | 11.6g | 77.4g | 1.5g | 4g | forniti da te |
+| Yogurt HiPRO Danone | 57 | 10g | 3.9g | 0.2g | 0g | cercato online |
+| Kefir PRO High Protein | 57 | 6.8g | 4.1g | 1.5g | 0g | cercato online |
+| Mozzarella Protein (Granarolo/Lidl) | 131 | 20g | 1.4g | 5g | 0g | cercato online |
+| Ricotta Proteica LIDL (Nutricotta) | 55* | 9g | 2.6g | 1g | 0g | forniti da te |
+| Ricotta di pecora | 240 | 11.1g | 3.3g | 19.5g | 0g | valore di riferimento standard |
+| Ricotta di mucca | 146 | 8.8g | 3.5g | 10.9g | 0g | = alla "Ricotta" generica già in database |
+| Pasta Barilla Protein+ | 354 | 20g | 54g | 2.5g | 7g | cercato online |
+| Pasta di lenticchie, ceci e piselli | 335 | 22g | 52g | 2.5g | 10g | valore di riferimento generico |
+| Gallette Fiorentini Super Protein | 355 | 24g | 55g | 1.9g | 12g | cercato online |
+
+*Per i due alimenti dove mi hai dato solo proteine/carbo/grassi/fibre, ho
+calcolato le kcal con la formula standard (4 kcal/g proteine e carbo, 9
+kcal/g grassi) — non un valore a caso.
+
+Nota sui valori "cercati online": sono quelli dichiarati sulle etichette
+al momento della ricerca — i produttori possono aggiornare le ricette nel
+tempo, quindi vale lo stesso avviso già dato per Kellogg's/Philadelphia:
+ricontrollali sulla confezione reale prima di un lancio pubblico.
+
+Nessun ID duplicato tra i 172 alimenti. Build verificata senza errori.
+
+
 
 Cambiamento richiesto: ora quando aggiungi un alimento nella sezione
 "Costruisci il tuo piatto" scegli prima a quale momento della giornata

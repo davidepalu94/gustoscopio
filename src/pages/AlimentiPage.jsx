@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FOODS } from '../foods';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import SuggestFoodForm from '../components/SuggestFoodForm';
 
 export default function AlimentiPage() {
   const [query, setQuery] = useState('');
@@ -58,9 +59,7 @@ export default function AlimentiPage() {
         </div>
 
         {filtered.length === 0 ? (
-          <div className="stub-card" style={{ textAlign: 'center' }}>
-            Nessun alimento corrisponde alla ricerca.
-          </div>
+          <SuggestFoodForm initialQuery={query} />
         ) : (
           <div className="alimenti-grid">
             {filtered.map((f) => (

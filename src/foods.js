@@ -88,7 +88,6 @@ export const FOODS = [
   { id: 'latte-scremato', name: 'Latte scremato', emoji: '🥛', kcal: 36, protein: 3.4, carbs: 5, fat: 0.2, fiber: 0, category: 'Latte & derivati' },
   { id: 'mozzarella', name: 'Mozzarella', emoji: '🧀', kcal: 253, protein: 18.7, carbs: 0.7, fat: 19.5, fiber: 0, category: 'Latte & derivati' },
   { id: 'parmigiano', name: 'Parmigiano', emoji: '🧀', kcal: 392, protein: 33, carbs: 0, fat: 28, fiber: 0, category: 'Latte & derivati' },
-  { id: 'ricotta', name: 'Ricotta', emoji: '🧀', kcal: 146, protein: 8.8, carbs: 3.5, fat: 10.9, fiber: 0, category: 'Latte & derivati' },
 
   // FRUTTA SECCA
   { id: 'mandorle', name: 'Mandorle', emoji: '🌰', kcal: 579, protein: 21, carbs: 22, fat: 50, fiber: 12.5, category: 'Frutta secca' },
@@ -210,6 +209,18 @@ export const FOODS = [
   { id: 'petto-anatra', name: "Petto d'anatra (senza pelle)", emoji: '🦆', kcal: 140, protein: 19.6, carbs: 0, fat: 6.7, fiber: 0, category: 'Carne' },
   { id: 'cosciotto-pollo', name: 'Cosciotto di pollo (senza pelle)', emoji: '🍗', kcal: 172, protein: 20, carbs: 0, fat: 9.6, fiber: 0, category: 'Carne' },
   { id: 'hamburger-manzo-magro', name: 'Hamburger di manzo magro', emoji: '🍔', kcal: 143, protein: 21, carbs: 0, fat: 6, fiber: 0, category: 'Carne' },
+
+  // NUOVI PRODOTTI (marche specifiche + generici)
+  { id: 'crackers-galbusera-magretti', name: 'Crackers Galbusera Magretti', emoji: '🍘', kcal: 370, protein: 11.6, carbs: 77.4, fat: 1.5, fiber: 4, category: 'Cereali & derivati' },
+  { id: 'yogurt-hipro-danone', name: 'Yogurt HiPRO Danone (vasetto 150g)', emoji: '🥣', kcal: 57, protein: 10, carbs: 3.9, fat: 0.2, fiber: 0, category: 'Latte & derivati' },
+  { id: 'kefir-pro-high-protein', name: 'Kefir PRO High Protein Kefir', emoji: '🥛', kcal: 57, protein: 6.8, carbs: 4.1, fat: 1.5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'mozzarella-protein', name: 'Mozzarella Protein (Granarolo/Lidl)', emoji: '🧀', kcal: 131, protein: 20, carbs: 1.4, fat: 5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'ricotta-proteica-lidl', name: 'Ricotta Proteica LIDL (Nutricotta)', emoji: '🧀', kcal: 55, protein: 9, carbs: 2.6, fat: 1, fiber: 0, category: 'Latte & derivati' },
+  { id: 'ricotta-pecora', name: 'Ricotta di pecora', emoji: '🧀', kcal: 240, protein: 11.1, carbs: 3.3, fat: 19.5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'ricotta-mucca', name: 'Ricotta di mucca', emoji: '🧀', kcal: 146, protein: 8.8, carbs: 3.5, fat: 10.9, fiber: 0, category: 'Latte & derivati' },
+  { id: 'pasta-barilla-protein-plus', name: 'Pasta Barilla Protein+', emoji: '🍝', kcal: 354, protein: 20, carbs: 54, fat: 2.5, fiber: 7, category: 'Cereali & derivati' },
+  { id: 'pasta-legumi', name: 'Pasta di lenticchie, ceci e piselli', emoji: '🍝', kcal: 335, protein: 22, carbs: 52, fat: 2.5, fiber: 10, category: 'Legumi' },
+  { id: 'gallette-fiorentini-super-protein', name: 'Gallette Fiorentini Super Protein', emoji: '🍘', kcal: 355, protein: 24, carbs: 55, fat: 1.9, fiber: 12, category: 'Cereali & derivati' },
 ];
 
 export function calc(food, grams) {

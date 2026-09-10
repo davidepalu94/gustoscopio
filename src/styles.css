@@ -275,6 +275,18 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .stub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 @media (max-width: 700px) { .stub-grid { grid-template-columns: 1fr; } }
 .stub-card { background: #F8F7F3; border-radius: 10px; padding: 16px; font-size: 13.5px; color: #7a7d89; display: flex; flex-direction: column; gap: 8px; }
+
+/* SUGGEST FOOD FORM */
+.suggest-food-form { background: #F8F7F3; border: 1px solid rgba(16,19,28,0.08); border-radius: 14px; padding: 22px; max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.suggest-food-title { font-weight: 700; font-size: 15px; color: #10131C; }
+.suggest-food-sub { font-size: 13px; color: #7a7d89; margin: -4px 0 4px; }
+.suggest-food-form input, .suggest-food-form textarea { font-family: inherit; font-size: 14px; border: 1px solid rgba(16,19,28,0.14); border-radius: 8px; padding: 10px 12px; background: white; resize: vertical; }
+.suggest-food-form input:focus, .suggest-food-form textarea:focus { outline: none; border-color: #3155FF; box-shadow: 0 0 0 3px rgba(49,85,255,0.12); }
+.suggest-food-form button { background: #3155FF; color: white; border: none; border-radius: 8px; padding: 11px; font-weight: 700; font-size: 14px; margin-top: 4px; }
+.suggest-food-form button:disabled { opacity: 0.5; }
+.suggest-food-error { font-size: 12.5px; color: #C94B3C; }
+.suggest-food-sent { text-align: center; font-size: 14px; color: #10131C; padding: 26px 22px; }
+.suggest-food-form--embedded { background: transparent; border: none; padding: 6px; max-width: none; }
 .stub-badge { display: inline-block; width: fit-content; background: rgba(201,75,60,0.12); color: #C94B3C; font-size: 10.5px; font-weight: 700; letter-spacing: 0.03em; padding: 3px 8px; border-radius: 999px; }
 
 /* RECIPES LIST */
