@@ -1,4 +1,16 @@
-## Aggiornamento: 10 nuove ricette con i prodotti confezionati appena inseriti (da 71 a 81)
+## Aggiornamento: Food Battle ora ha una ricerca, non solo un menu a tendina
+
+Prima i due selettori di Food Battle erano `<select>` HTML classici con
+tutti i 172 alimenti in fila — scomodo da scorrere, specialmente da
+mobile. Ora sono un campo di ricerca: clicchi, digiti il nome (anche solo
+parziale) e scegli dal menu filtrato in tempo reale.
+
+Nuovo componente riutilizzabile `src/components/FoodSearchSelect.jsx` —
+pensato per essere riusabile anche altrove in futuro, se serve un selettore
+di alimenti in altre pagine. Per ora sostituisce i due `<select>` solo in
+Food Battle, come richiesto. Build verificata senza errori.
+
+
 
 Una ricetta per ognuno dei 10 prodotti aggiunti nell'ultimo aggiornamento
 alimenti, distribuite tra colazione, pranzo, cena e snack:

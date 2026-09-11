@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { FOODS, calc } from '../foods';
+import FoodSearchSelect from '../components/FoodSearchSelect';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
@@ -61,13 +62,9 @@ export default function FoodBattlePage() {
         </div>
 
         <div className="battle-selectors">
-          <select className="battle-select" value={foodAId} onChange={(e) => setFoodAId(e.target.value)}>
-            {FOODS.map((f) => <option key={f.id} value={f.id}>{f.emoji} {f.name}</option>)}
-          </select>
+          <FoodSearchSelect value={foodAId} onChange={setFoodAId} />
           <button className="swap-btn" onClick={swap} title="Scambia">⇄</button>
-          <select className="battle-select" value={foodBId} onChange={(e) => setFoodBId(e.target.value)}>
-            {FOODS.map((f) => <option key={f.id} value={f.id}>{f.emoji} {f.name}</option>)}
-          </select>
+          <FoodSearchSelect value={foodBId} onChange={setFoodBId} />
         </div>
 
         <div className="battle-quantity">
