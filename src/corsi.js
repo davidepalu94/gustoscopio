@@ -40,6 +40,15 @@ export const CORSI = [
         title: 'Modulo 2',
         videos: [
           { id: '7a607fb2-5d11-4586-8a2b-92df53e123b7', title: '2.1 Come si calcola il fabbisogno' },
+          { id: '0fad79d7-f7b7-4521-857a-6cc15bbbdd3d', title: '2.2 Proteine: quante ne servono a te' },
+        ],
+      },
+      {
+        id: 'modulo-3',
+        title: 'Modulo 3',
+        videos: [
+          { id: 'cd3ef792-2d72-49af-91c4-acf176b7eeee', title: '3.1 Il metodo del piatto' },
+          { id: 'a3f43a14-b71c-4526-8f5e-c9f3f13dd3bc', title: '3.2 Usare il Plate Builder passo passo' },
         ],
       },
     ],

@@ -1,3 +1,13 @@
+## Aggiornamento: aggiunti i video 5, 6, 7 (Modulo 2 completato + Modulo 3)
+
+- Modulo 2 ora completo con "2.1 Come si calcola il fabbisogno" e
+  "2.2 Proteine: quante ne servono a te".
+- Nuovo Modulo 3 con "3.1 Il metodo del piatto" e "3.2 Usare il Plate
+  Builder passo passo".
+- Contatore aggiornato automaticamente a 7 di 12 video disponibili.
+
+`salesOpen` resta `false`. Build verificata senza errori.
+
 ## Aggiornamento: valori del Tofu sincronizzati con l'etichetta reale (Eurospin Bio)
 
 Controllati i valori ufficiali del prodotto che mi hai linkato (Tofu al
