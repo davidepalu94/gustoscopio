@@ -1,4 +1,34 @@
-## Aggiornamento: Food Battle ora ha una ricerca, non solo un menu a tendina
+## Aggiornamento: valori del Tofu sincronizzati con l'etichetta reale (Eurospin Bio)
+
+Controllati i valori ufficiali del prodotto che mi hai linkato (Tofu al
+naturale Bio, Eurospin, 2x125g) su Open Food Facts — stessa scheda
+prodotto della linea Amo Essere/Fior di Natura Eurospin, dati presi
+direttamente dall'etichetta:
+
+| | Prima | Ora (da etichetta) |
+|---|---|---|
+| kcal | 76 | **155** |
+| proteine | 8g | **15g** |
+| carboidrati | 1.9g | **2.2g** |
+| grassi | 4.8g | **9.2g** |
+| fibre | 0.3g | **1.9g** |
+
+Il valore precedente era sensibilmente sottostimato (quasi la metà delle
+kcal reali). Ho lasciato il nome "Tofu" generico (non l'ho rinominato in
+"Tofu Eurospin") perché è usato in diverse ricette pensate in modo
+generico — cambiare nome lì avrebbe reso l'accostamento strano.
+
+**Effetto collaterale corretto**: la ricetta "Tofu con porri e riso" era
+stata costruita per stare sotto i 15g di grassi con il vecchio valore del
+tofu. Con grassi quasi raddoppiati, sarebbe salita a ~19.8g. Ho ridotto il
+tofu da 150g a 100g e l'olio da 5g a 4g: ora la ricetta torna a 14.2g di
+grassi, di nuovo sotto la soglia. L'altra ricetta con tofu ("Tofu saltato
+con verdure", tra le 20 originali) non aveva questo vincolo, quindi non
+l'ho toccata.
+
+Build verificata senza errori.
+
+
 
 Prima i due selettori di Food Battle erano `<select>` HTML classici con
 tutti i 172 alimenti in fila — scomodo da scorrere, specialmente da

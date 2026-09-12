@@ -118,7 +118,7 @@ export const FOODS = [
 
   // PROTEINE VEGETALI
   { id: 'seitan', name: 'Seitan', emoji: '🌾', kcal: 120, protein: 21, carbs: 4, fat: 2, fiber: 0.6, category: 'Proteine vegetali' },
-  { id: 'tofu', name: 'Tofu', emoji: '⬜', kcal: 76, protein: 8, carbs: 1.9, fat: 4.8, fiber: 0.3, category: 'Proteine vegetali' },
+  { id: 'tofu', name: 'Tofu', emoji: '⬜', kcal: 155, protein: 15, carbs: 2.2, fat: 9.2, fiber: 1.9, category: 'Proteine vegetali' },
   { id: 'tofu-affumicato', name: 'Tofu affumicato', emoji: '🟫', kcal: 148, protein: 16, carbs: 1.5, fat: 9, fiber: 0.5, category: 'Proteine vegetali' },
   { id: 'tempeh', name: 'Tempeh', emoji: '🟤', kcal: 192, protein: 20.3, carbs: 7.6, fat: 10.8, fiber: 9, category: 'Proteine vegetali' },
   { id: 'affettato-vegetale', name: 'Affettato vegetale', emoji: '🥪', kcal: 236, protein: 33, carbs: 8, fat: 8, fiber: 1, category: 'Proteine vegetali' },

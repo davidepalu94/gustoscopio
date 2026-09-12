@@ -1367,10 +1367,10 @@ export const RECIPES = [
     difficulty: 'Facile',
     baseServings: 1,
     ingredients: [
-      { foodId: 'tofu', grams: 150 },
+      { foodId: 'tofu', grams: 100 },
       { foodId: 'porri', grams: 150 },
       { foodId: 'riso', grams: 80 },
-      { foodId: 'olio', grams: 5 },
+      { foodId: 'olio', grams: 4 },
     ],
     steps: [
       'Cuoci il riso in acqua bollente salata secondo i tempi indicati.',
