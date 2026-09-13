@@ -1,3 +1,32 @@
+## Aggiornamento: 11 alimenti proteici LIDL (poi ridotti a 5) + base per pinsa Di Marco (da 171 a 177)
+
+Ho cercato online i prodotti reali della linea proteica LIDL (marchi
+Chef Select, Milbona, Gelatelli). Aggiunti inizialmente 11 alimenti, poi
+**rimossi i 6 con dati solo "tipici di categoria"** (formaggio spalmabile
+proteico, barretta proteica, affettato vegano proteico, muesli proteico,
+pancake proteici, penne di lenticchie al ragù) su richiesta — nessuno era
+usato in ricette, quindi rimossi senza rompere nulla. Restano solo i 5 con
+dati confermati da fonti reali:
+
+| Alimento | kcal | proteine | carbo | grassi | fibre |
+|---|---|---|---|---|---|
+| Polpette tacchino/pollo High Protein (Chef Select) | 239 | 14g | 12.6g | 15.1g | 0g |
+| Budino Proteico (Milbona) | 76 | 10g | 5.2g | 1.5g | 0g |
+| Pizza Margherita High Protein (Chef Select) | 163 | 15.8g | 13.4g | 4.1g | 3g |
+| Gelato Proteico al Cioccolato (Gelatelli) | 157 | 7.8g | 19.6g | 4.2g | 4.7g |
+| High Protein Drink (Chef Select/Milbona) | 66 | 10g | 4g | 1.5g | 0g |
+
+Aggiunta anche la **Base per pinsa (Di Marco)** richiesta, in vendita in
+vari supermercati (es. DEM): 230 kcal, 10.2g proteine, 41g carboidrati,
+2.4g grassi per 100g, dati confermati su Fatsecret. La fibra (2g) è
+l'unico valore stimato — non trovato nella fonte, segnalato per
+trasparenza.
+
+Nessun ID duplicato tra i 177 alimenti, nessun foodId rotto. Build
+verificata senza errori.
+
+
+
 ## Aggiornamento: aggiunti i video 5, 6, 7 (Modulo 2 completato + Modulo 3)
 
 - Modulo 2 ora completo con "2.1 Come si calcola il fabbisogno" e

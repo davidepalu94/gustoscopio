@@ -221,6 +221,14 @@ export const FOODS = [
   { id: 'pasta-barilla-protein-plus', name: 'Pasta Barilla Protein+', emoji: '🍝', kcal: 354, protein: 20, carbs: 54, fat: 2.5, fiber: 7, category: 'Cereali & derivati' },
   { id: 'pasta-legumi', name: 'Pasta di lenticchie, ceci e piselli', emoji: '🍝', kcal: 335, protein: 22, carbs: 52, fat: 2.5, fiber: 10, category: 'Legumi' },
   { id: 'gallette-fiorentini-super-protein', name: 'Gallette Fiorentini Super Protein', emoji: '🍘', kcal: 355, protein: 24, carbs: 55, fat: 1.9, fiber: 12, category: 'Cereali & derivati' },
+
+  // ALIMENTI PROTEICI LIDL
+  { id: 'chef-select-polpette-tacchino-pollo-protein', name: 'Polpette di tacchino e pollo High Protein (Chef Select)', emoji: '🍗', kcal: 239, protein: 14, carbs: 12.6, fat: 15.1, fiber: 0, category: 'Carne' },
+  { id: 'milbona-budino-proteico', name: 'Budino Proteico (Milbona)', emoji: '🍮', kcal: 76, protein: 10, carbs: 5.2, fat: 1.5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'chef-select-high-protein-drink', name: 'High Protein Drink (Chef Select/Milbona)', emoji: '🥛', kcal: 66, protein: 10, carbs: 4, fat: 1.5, fiber: 0, category: 'Latte & derivati' },
+  { id: 'chef-select-pizza-margherita-protein', name: 'Pizza Margherita High Protein (Chef Select)', emoji: '🍕', kcal: 163, protein: 15.8, carbs: 13.4, fat: 4.1, fiber: 3, category: 'Cereali & derivati' },
+  { id: 'gelatelli-gelato-proteico-cioccolato', name: 'Gelato Proteico al Cioccolato (Gelatelli)', emoji: '🍫', kcal: 157, protein: 7.8, carbs: 19.6, fat: 4.2, fiber: 4.7, category: 'Dolci & snack' },
+  { id: 'base-pinsa-di-marco', name: 'Base per pinsa (Di Marco)', emoji: '🍕', kcal: 230, protein: 10.2, carbs: 41, fat: 2.4, fiber: 2, category: 'Cereali & derivati' },
 ];
 
 export function calc(food, grams) {

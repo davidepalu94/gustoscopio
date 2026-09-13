@@ -1,6 +1,10 @@
 {
   "name": "Gustoscopio",
   "short_name": "Gustoscopio",
+  "description": "Esplora alimenti, ricette e calorie. Costruisci il tuo piatto e scopri i tuoi macronutrienti.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,5 +19,6 @@
   ],
   "theme_color": "#10131C",
   "background_color": "#10131C",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait"
 }
