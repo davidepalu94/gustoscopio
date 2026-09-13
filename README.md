@@ -1,4 +1,25 @@
-## Aggiornamento: 11 alimenti proteici LIDL (poi ridotti a 5) + base per pinsa Di Marco (da 171 a 177)
+## Aggiornamento: banner discreto che invita a installare l'app
+
+Chi visita il sito da telefono ora vede, in basso, un piccolo banner
+scuro (coerente col design system) che lo informa della possibilità di
+installare Gustoscopio come app:
+
+- **Android/Chrome**: il banner mostra un pulsante "Installa" che apre
+  direttamente il prompt nativo del browser (nessun passaggio manuale).
+- **iPhone/iPad (Safari)**: Safari non permette di aprire il prompt in
+  automatico, quindi il banner mostra le istruzioni testuali — "tocca
+  Condividi, poi Aggiungi a Home".
+- Non compare affatto se l'app è già installata (rilevato tramite
+  `display-mode: standalone`), e se l'utente lo chiude con la ✕ non
+  ricompare più su quel dispositivo (ricordato in `localStorage`).
+
+Nuovo componente `src/components/InstallAppBanner.jsx`, collegato in
+`App.jsx` accanto al Toast esistente — visibile su tutte le pagine.
+Nessuna CTA aggressiva, coerente col tono del brief ("mai invadente"):
+un banner piccolo, in basso, sempre chiudibile con un tap. Build
+verificata senza errori.
+
+
 
 Ho cercato online i prodotti reali della linea proteica LIDL (marchi
 Chef Select, Milbona, Gelatelli). Aggiunti inizialmente 11 alimenti, poi

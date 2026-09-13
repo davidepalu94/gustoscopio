@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PlateProvider } from './PlateContext';
 import { AuthProvider } from './AuthContext';
 import Toast from './components/Toast';
+import InstallAppBanner from './components/InstallAppBanner';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
@@ -33,6 +34,7 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Toast />
+        <InstallAppBanner />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/corsi" element={<Corsi />} />
