@@ -18,6 +18,7 @@ const TIME_BUCKETS = [
 const CATEGORIES = ['Colazione', 'Pranzo', 'Cena'];
 
 export default function RecipesPage() {
+  const [query, setQuery] = useState('');
   const [kcalFilter, setKcalFilter] = useState(null);
   const [timeFilter, setTimeFilter] = useState(null);
   const [categoryFilter, setCategoryFilter] = useState(null);
@@ -28,6 +29,7 @@ export default function RecipesPage() {
   );
 
   const filtered = recipesWithTotals.filter((r) => {
+    if (query.trim() && !r.name.toLowerCase().includes(query.trim().toLowerCase())) return false;
     if (kcalFilter && !KCAL_BUCKETS.find((b) => b.id === kcalFilter).test(r.totals.kcal)) return false;
     if (timeFilter && !TIME_BUCKETS.find((b) => b.id === timeFilter).test(r.time)) return false;
     if (categoryFilter && r.category !== categoryFilter) return false;
@@ -44,6 +46,17 @@ export default function RecipesPage() {
           <Link to="/apri-il-frigo" className="ghost-link-btn" style={{ display: 'inline-flex', marginTop: 18 }}>
             🧊 Non sai cosa cucinare? Apri il frigo →
           </Link>
+        </div>
+
+        <div className="search-wrap" style={{ marginTop: 0, marginBottom: 24 }}>
+          <div className="search-box">
+            <span>🔎</span>
+            <input
+              placeholder="Cerca una ricetta..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="recipe-filters">
@@ -72,7 +85,9 @@ export default function RecipesPage() {
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', color: '#8a8d97', padding: '40px 0' }}>
-            Nessuna ricetta corrisponde a questi filtri. Prova a rimuoverne qualcuno.
+            {query.trim()
+              ? `Nessuna ricetta corrisponde a "${query}". Prova un altro termine o rimuovi qualche filtro.`
+              : 'Nessuna ricetta corrisponde a questi filtri. Prova a rimuoverne qualcuno.'}
           </div>
         ) : (
           <div className="recipe-grid">

@@ -1,4 +1,26 @@
-## Aggiornamento: banner discreto che invita a installare l'app
+## Aggiornamento: barra di ricerca in /ricette + 6 nuove ricette veloci (da 81 a 87)
+
+**Barra di ricerca aggiunta a `/ricette`**: con 81+ ricette e solo i filtri
+per kcal/tempo/categoria, trovare una ricetta specifica per nome era
+scomodo — hai ragione, mancava. Ora c'è una ricerca per nome sopra i
+filtri esistenti, stesso stile già usato in `/alimenti`. Si combina con i
+filtri (puoi cercare per nome E filtrare per kcal insieme).
+
+**6 nuove ricette veloci per snack**:
+
+- Crackers Galbusera Magretti con Parmigiano (1 pacchetto/4 gallette + 20g
+  Parmigiano, come richiesto)
+- Kefir PRO con banana
+- Bresaola con grana e rucola
+- Tonno con gallette di riso
+- Uovo sodo con gallette di mais
+- Yogurt HiPRO con noci
+
+Tutte pronte in 2-8 minuti, zero o quasi preparazione. Nessun ID
+duplicato tra le 87 ricette, nessun foodId rotto. Build verificata senza
+errori.
+
+
 
 Chi visita il sito da telefono ora vede, in basso, un piccolo banner
 scuro (coerente col design system) che lo informa della possibilità di
