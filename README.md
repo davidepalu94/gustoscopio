@@ -1,3 +1,19 @@
+## Aggiornamento: corso completo — 12 di 12 video
+
+Aggiunti gli ultimi 5 video: "3.3 Esempio pratico: una giornata intera",
+Modulo 4 ("4.1 I 3 miti che rovinano i piani", "4.2 Perché
+\"buono/cattivo\" non esiste") e Modulo 5 ("5.1 Cosa fare quando non hai
+voglia", "5.2 Come adattare il piano nel tempo").
+
+Tutti e 12 i Video ID controllati: nessun duplicato.
+
+`salesOpen` resta VOLUTAMENTE `false`: il corso è tecnicamente completo
+ma le vendite restano disattivate finché non vengono controllati tutti
+i video online. Quando sei pronto, in `src/corsi.js` cambia
+`salesOpen: false` in `salesOpen: true` per aprire l'acquisto.
+
+Build verificata senza errori.
+
 ## Aggiornamento: barra di ricerca in /ricette + 6 nuove ricette veloci (da 81 a 87)
 
 **Barra di ricerca aggiunta a `/ricette`**: con 81+ ricette e solo i filtri
