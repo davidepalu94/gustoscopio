@@ -1,3 +1,22 @@
+## Aggiornamento: restyling sezione "Percorsi Personalizzati"
+
+Nessuna modifica strutturale, solo rifiniture visive:
+- Hover con leggero sollevamento su: card delle 4 fasi, righe "cosa
+  include", card testimonianze, pillole "trust", bottone CTA finale.
+- Avatar con iniziali per ogni testimonianza (più umano, meno "muro di
+  testo").
+- Sottolineatura rossa (Pompeian Red, uso minimo) sotto la parola
+  "dieta" nel titolo — l'unico tocco di rosso della pagina, coerente col
+  vincolo "max 2%" del design system.
+- Sfondo leggermente decorato (puntini sottili) nel pannello scuro
+  "4 fasi" e bagliore blu soffuso nel blocco CTA finale, per dare
+  profondità senza aggiungere immagini esterne.
+- Checkmark che diventano rossi al passaggio del mouse su "cosa include"
+  (piccola sorpresa coerente col ruolo del rosso nel design system).
+
+Nessuna nuova dipendenza, nessuna immagine esterna (tutto CSS). Build
+verificata senza errori.
+
 ## Aggiornamento: corso completo — 12 di 12 video
 
 Aggiunti gli ultimi 5 video: "3.3 Esempio pratico: una giornata intera",

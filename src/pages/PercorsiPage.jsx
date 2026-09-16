@@ -100,7 +100,10 @@ export default function PercorsiPage() {
             <div className="testimonial-card testimonial-card-v2" key={t.name}>
               <div className="testimonial-quote-mark">"</div>
               <div className="testimonial-text">{t.text}</div>
-              <div className="testimonial-name">{t.name}</div>
+              <div className="testimonial-footer">
+                <div className="testimonial-avatar">{t.name.charAt(0)}</div>
+                <div className="testimonial-name">{t.name}</div>
+              </div>
             </div>
           ))}
         </div>
