@@ -21,13 +21,24 @@ const INCLUDES = [
   'Piano nutrizionale costruito su di te, non un modello standard',
   'Aggiustamenti del percorso nel tempo, non un piano rigido e fisso',
   'Un punto di riferimento diretto per le tue domande',
-  'Possibilità di aggiungere scheda di allenamento e materiali extra',
+  'Scheda di allenamento personalizzata',
+  'Guide PDF di approfondimento',
+  'Accesso al videocorso "Da Zero al Tuo Piano"',
 ];
 
 const TESTIMONIALS = [
   { name: 'Marco, 34 anni', text: 'Avevo già provato diete rigide che duravano poche settimane. Qui il percorso si è adattato a me, non il contrario.' },
   { name: 'Giulia, 41 anni', text: 'Quello che mi ha convinta è stato non sentirmi giudicata per nessuna scelta alimentare, solo accompagnata.' },
   { name: 'Luca, 28 anni', text: 'Utile soprattutto la parte di adattamento: la mia vita è cambiata a metà percorso e il piano si è aggiustato con me.' },
+  { name: 'Sara, 37 anni', text: 'Tra lavoro e famiglia non ho mai tempo. Qui i pasti sono pensati per essere veloci da preparare, non per un mondo ideale che non esiste.' },
+  { name: 'Alessandro, 45 anni', text: 'La scheda di allenamento inclusa mi ha fatto capire come far andare insieme palestra e alimentazione, cosa che da solo non ero mai riuscito a fare.' },
+  { name: 'Chiara, 29 anni', text: 'Avevo un rapporto complicato col cibo. Il tono usato durante il percorso non mi ha mai fatto sentire sbagliata per come mangiavo prima.' },
+  { name: 'Davide, 52 anni', text: 'Ho abitudini radicate da vent\'anni. Non mi hanno chiesto di stravolgere tutto, ma di cambiare un pezzo alla volta.' },
+  { name: 'Federica, 33 anni', text: 'Dopo la maternità cercavo qualcosa di realistico, non un piano da rivista. Qui si parte da dove sei davvero.' },
+  { name: 'Andrea, 39 anni', text: 'Viaggio spesso per lavoro. Il percorso ha tenuto conto anche di questo, con alternative pratiche per quando sono fuori casa.' },
+  { name: 'Valentina, 26 anni', text: 'Prima ho sempre fatto da sola, seguendo consigli trovati online. Avere un confronto reale ha fatto la differenza.' },
+  { name: 'Roberto, 48 anni', text: 'I video del corso incluso mi hanno aiutato a capire il perché delle scelte, non solo il cosa fare — questo mi ha convinto a restare costante.' },
+  { name: 'Elena, 31 anni', text: 'Quello che apprezzo di più è che il percorso si aggiorna con me: quando qualcosa non funziona, lo diciamo e si cambia.' },
 ];
 
 export default function PercorsiPage() {

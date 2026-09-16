@@ -1,3 +1,32 @@
+## Aggiornamento: testimonianze da 3 a 12
+
+Espansa la sezione "Chi lo ha provato" nella pagina Percorsi
+Personalizzati da 3 a 12 testimonianze, con situazioni ed età diverse
+(lavoro/famiglia, sport, rapporto col cibo, maternità, viaggi, ecc.), per
+evitare che sembrino tutte uguali. La griglia a 3 colonne ora si riempie
+in 4 righe piene.
+
+⚠️ PROMEMORIA IMPORTANTE: come le 3 originali, anche queste 9 nuove sono
+testimonianze di esempio/segnaposto (nomi ed età inventati), non persone
+reali. Prima di un lancio pubblico vero vanno sostituite con
+testimonianze autentiche di clienti reali (con il loro consenso) — non
+lasciarle come sono se il sito va online per davvero, altrimenti
+sarebbero recensioni false.
+
+Build verificata senza errori.
+
+## Aggiornamento: scheda allenamento, guide PDF e videocorso inclusi nel Percorso
+
+Nella lista "Cosa include il percorso" (pagina Percorsi Personalizzati),
+sostituita la voce generica "possibilità di aggiungere scheda di
+allenamento e materiali extra" con tre voci esplicite, ora incluse di
+default:
+- Scheda di allenamento personalizzata
+- Guide PDF di approfondimento
+- Accesso al videocorso "Da Zero al Tuo Piano"
+
+Build verificata senza errori.
+
 ## Aggiornamento: restyling sezione "Percorsi Personalizzati"
 
 Nessuna modifica strutturale, solo rifiniture visive:
