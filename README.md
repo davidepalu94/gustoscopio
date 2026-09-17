@@ -1,3 +1,18 @@
+## Aggiornamento: testimonianze in striscia scorrevole (invece della griglia)
+
+Le 12 testimonianze non occupano più una griglia enorme: ora scorrono in
+due righe automaticamente (direzioni opposte), con i bordi che sfumano
+dolcemente — uno spazio fisso e compatto qualunque sia il numero di
+testimonianze presenti. Passando il mouse sopra una riga, quella riga si
+ferma per poter leggere con calma. Nessuna nuova dipendenza: solo
+animazione CSS.
+
+Se in futuro aggiungi altre testimonianze, basta aggiungerle
+all'array `TESTIMONIALS` in `PercorsiPage.jsx` — si dividono da sole
+tra le due righe.
+
+Build verificata senza errori.
+
 ## Aggiornamento: testimonianze da 3 a 12
 
 Espansa la sezione "Chi lo ha provato" nella pagina Percorsi

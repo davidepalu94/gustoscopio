@@ -41,6 +41,9 @@ const TESTIMONIALS = [
   { name: 'Elena, 31 anni', text: 'Quello che apprezzo di più è che il percorso si aggiorna con me: quando qualcosa non funziona, lo diciamo e si cambia.' },
 ];
 
+const TESTIMONIALS_ROW_1 = TESTIMONIALS.slice(0, 6);
+const TESTIMONIALS_ROW_2 = TESTIMONIALS.slice(6, 12);
+
 export default function PercorsiPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -102,21 +105,33 @@ export default function PercorsiPage() {
         </div>
       </div>
 
-      <div className="section" style={{ maxWidth: 920 }}>
-        <div className="section-head">
+      <div className="section" style={{ maxWidth: 1100, paddingLeft: 0, paddingRight: 0 }}>
+        <div className="section-head" style={{ paddingLeft: 20, paddingRight: 20 }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)' }}>Chi lo ha provato</h2>
         </div>
-        <div className="testimonial-grid">
-          {TESTIMONIALS.map((t) => (
-            <div className="testimonial-card testimonial-card-v2" key={t.name}>
-              <div className="testimonial-quote-mark">"</div>
-              <div className="testimonial-text">{t.text}</div>
-              <div className="testimonial-footer">
-                <div className="testimonial-avatar">{t.name.charAt(0)}</div>
-                <div className="testimonial-name">{t.name}</div>
+        <div className="testimonial-marquee">
+          <div className="testimonial-track">
+            {[...TESTIMONIALS_ROW_1, ...TESTIMONIALS_ROW_1].map((t, i) => (
+              <div className="testimonial-mini-card" key={i}>
+                <div className="testimonial-text-mini">{t.text}</div>
+                <div className="testimonial-footer">
+                  <div className="testimonial-avatar">{t.name.charAt(0)}</div>
+                  <div className="testimonial-name">{t.name}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="testimonial-track testimonial-track-reverse">
+            {[...TESTIMONIALS_ROW_2, ...TESTIMONIALS_ROW_2].map((t, i) => (
+              <div className="testimonial-mini-card" key={i}>
+                <div className="testimonial-text-mini">{t.text}</div>
+                <div className="testimonial-footer">
+                  <div className="testimonial-avatar">{t.name.charAt(0)}</div>
+                  <div className="testimonial-name">{t.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

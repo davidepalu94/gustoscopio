@@ -727,3 +727,21 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 
 .corso-description { min-width: 0; max-width: 680px; margin: 28px 0 36px; display: flex; flex-direction: column; gap: 16px; }
 .corso-description p { font-size: 16.5px; line-height: 1.65; color: #2a2d38; margin: 0; }
+
+/* Testimonianze - striscia scorrevole a due righe (spazio fisso, compatto) */
+.testimonial-marquee { position: relative; margin-top: 24px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%); }
+.testimonial-track { display: flex; gap: 16px; width: max-content; margin-bottom: 16px; animation: marquee-left 46s linear infinite; }
+.testimonial-track-reverse { animation-name: marquee-right; animation-duration: 52s; }
+.testimonial-track:hover { animation-play-state: paused; }
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+.testimonial-mini-card { flex-shrink: 0; width: 280px; background: white; border: 1px solid rgba(16,19,28,0.08); border-top: 3px solid #3155FF; border-radius: 14px; padding: 18px 20px; }
+.testimonial-text-mini {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; line-height: 1.5; margin-bottom: 14px; color: #2a2d38;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+@media (max-width: 700px) {
+  .testimonial-mini-card { width: 240px; }
+  .testimonial-track, .testimonial-track-reverse { animation-duration: 34s; }
+}
