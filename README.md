@@ -1,3 +1,17 @@
+## Aggiornamento: vendite del corso attivate (salesOpen: true)
+
+Il corso "Da Zero al Tuo Piano" non mostra più "In arrivo" — è
+acquistabile per davvero. Il bottone "Acquista — 29€" è di nuovo
+visibile su `/corsi` e sulla pagina del corso.
+
+IMPORTANTE: questo va caricato SOLO dopo aver già aggiornato su Vercel
+le chiavi Stripe da test a Live (STRIPE_SECRET_KEY e
+STRIPE_WEBHOOK_SECRET) e aver fatto il Redeploy — altrimenti il sito
+mostrerebbe il bottone attivo ma i pagamenti userebbero ancora le
+chiavi sbagliate.
+
+Build verificata senza errori.
+
 ## Aggiornamento: testimonianze in striscia scorrevole (invece della griglia)
 
 Le 12 testimonianze non occupano più una griglia enorme: ora scorrono in

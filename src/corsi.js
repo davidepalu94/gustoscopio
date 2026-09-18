@@ -24,7 +24,7 @@ export const CORSI = [
       'Alla fine non avrai solo capito qualcosa in più sulla nutrizione. Avrai il metodo per costruire il tuo piano da solo, ogni volta che ti serve — senza doverti affidare a qualcun altro.',
     ],
     totalPlannedVideos: 12,
-    salesOpen: false, // metti a true quando il corso è completo e pronto per la vendita
+    salesOpen: true,
     modules: [
       {
         id: 'modulo-1',
