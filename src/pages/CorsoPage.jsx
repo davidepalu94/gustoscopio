@@ -6,11 +6,18 @@ import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
+function traduciErroreAuth(msg) {
+  if (msg.includes('Invalid login credentials')) return 'Email o password non corrette.';
+  if (msg.includes('already registered') || msg.includes('User already registered')) return 'Esiste già un account con questa email — prova ad accedere.';
+  if (msg.includes('Password should be')) return 'La password deve avere almeno 6 caratteri.';
+  return 'Qualcosa è andato storto. Riprova.';
+}
+
 export default function CorsoPage() {
   const { slug } = useParams();
   const [searchParams] = useSearchParams();
   const corso = getCorsoBySlug(slug);
-  const { user, loading: authLoading, hasPurchased } = useAuth();
+  const { user, loading: authLoading, hasPurchased, signIn, signUp } = useAuth();
 
   const [purchased, setPurchased] = useState(false);
   const [checkingPurchase, setCheckingPurchase] = useState(true);
@@ -25,6 +32,13 @@ export default function CorsoPage() {
   const [weightKg, setWeightKg] = useState(70);
   const [heightCm, setHeightCm] = useState(175);
 
+  const [authMode, setAuthMode] = useState('registrati'); // 'accedi' | 'registrati'
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [authError, setAuthError] = useState(null);
+  const [authInfo, setAuthInfo] = useState(null);
+  const [authBusy, setAuthBusy] = useState(false);
+
   const bmi = useMemo(
     () => calculateBMI({ weightKg: +weightKg, heightCm: +heightCm }),
     [weightKg, heightCm]
@@ -33,6 +47,28 @@ export default function CorsoPage() {
     () => calculateEnergyNeeds({ age: +age, sex, weightKg: +weightKg, heightCm: +heightCm, activityLevel: 'sedentario' }),
     [age, sex, weightKg, heightCm]
   );
+
+  async function handleAuthSubmit(e) {
+    e.preventDefault();
+    setAuthError(null);
+    setAuthInfo(null);
+    setAuthBusy(true);
+
+    const { error } =
+      authMode === 'accedi' ? await signIn(email, password) : await signUp(email, password);
+
+    setAuthBusy(false);
+
+    if (error) {
+      setAuthError(traduciErroreAuth(error.message));
+      return;
+    }
+
+    if (authMode === 'registrati') {
+      setAuthInfo('Controlla la tua email per confermare l\'account, poi accedi qui sotto.');
+      setAuthMode('accedi');
+    }
+  }
 
   const checkPurchase = useCallback(async () => {
     if (!user || !corso) {
@@ -138,10 +174,51 @@ export default function CorsoPage() {
         ) : authLoading || checkingPurchase ? (
           <p className="corsi-empty">Verifica accesso...</p>
         ) : !user ? (
-          <div className="premium-gate">
-            <h2>Accedi per acquistare</h2>
-            <p>Serve un account per comprare e guardare questo corso.</p>
-            <Link to="/accedi" className="premium-gate-btn premium-gate-btn-primary">Accedi</Link>
+          <div className="premium-gate" style={{ maxWidth: 400 }}>
+            <h2>{authMode === 'accedi' ? 'Accedi per continuare' : 'Crea il tuo account per continuare'}</h2>
+            <p>
+              {authMode === 'accedi'
+                ? 'Accedi per vedere la tua valutazione e acquistare.'
+                : 'Bastano email e password. Dopo la registrazione ti arriva una mail di conferma, poi puoi accedere e acquistare.'}
+            </p>
+
+            <form onSubmit={handleAuthSubmit} className="login-form" style={{ textAlign: 'left' }}>
+              <label>
+                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Email</span>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
+              </label>
+              <label>
+                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Password</span>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  autoComplete={authMode === 'accedi' ? 'current-password' : 'new-password'}
+                />
+              </label>
+
+              {authError && <p className="login-error">{authError}</p>}
+              {authInfo && <p className="login-info">{authInfo}</p>}
+
+              <button type="submit" className="login-submit" disabled={authBusy}>
+                {authBusy ? 'Un momento...' : authMode === 'accedi' ? 'Accedi' : 'Continua'}
+              </button>
+            </form>
+
+            <button
+              type="button"
+              className="login-toggle"
+              onClick={() => {
+                setAuthMode(authMode === 'accedi' ? 'registrati' : 'accedi');
+                setAuthError(null);
+                setAuthInfo(null);
+              }}
+              style={{ color: '#3155FF' }}
+            >
+              {authMode === 'accedi' ? 'Non hai un account? Registrati' : 'Hai già un account? Accedi'}
+            </button>
           </div>
         ) : !purchased ? (
           <div className="premium-gate" style={{ maxWidth: 560 }}>

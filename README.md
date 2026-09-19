@@ -1,3 +1,19 @@
+## Aggiornamento: login/registrazione integrati nella pagina del corso
+
+Non serve più uscire dalla pagina del corso per accedere: il form di
+login/registrazione è ora direttamente dentro `/corsi/da-zero-al-tuo-piano`
+(stessa pagina, si passa da form → valutazione → acquisto senza mai
+cambiare URL). La pagina separata `/accedi` resta disponibile per chi la
+raggiunge direttamente, ma non è più necessaria per acquistare.
+
+La conferma email resta ATTIVA (scelta tua): chi si registra riceve
+comunque una mail da confermare prima di poter accedere — non è un
+flusso a un unico passaggio per i nuovi utenti, ma resta molto più
+comodo per chi ha già un account (email + password → subito valutazione
+e acquisto, sulla stessa pagina).
+
+Build verificata senza errori.
+
 ## Aggiornamento: vendite del corso attivate (salesOpen: true)
 
 Il corso "Da Zero al Tuo Piano" non mostra più "In arrivo" — è
