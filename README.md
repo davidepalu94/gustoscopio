@@ -1,3 +1,18 @@
+## Aggiornamento: solo tasto play, niente altri controlli YouTube
+
+Aggiunto `controls=0` (parametro ufficiale YouTube) all'embed: resta
+visibile solo il grande tasto play iniziale, sparisce tutta la barra
+controlli (volume, sottotitoli, impostazioni, schermo intero, logo).
+
+Nota: una volta avviato il video non ci sono più pulsanti visibili per
+pausa/volume, ma un click sul video di solito lo mette comunque in
+pausa/riprende (comportamento base del player). Se in futuro servono
+controlli minimal personalizzati (play/pausa disegnati su misura), è
+possibile ma richiede l'integrazione con l'API IFrame di YouTube — un
+lavoro più corposo, da valutare se serve davvero.
+
+Build verificata senza errori.
+
 ## Aggiornamento: cornice brandizzata Gustoscopio intorno al player
 
 Aggiunta una cornice con gradiente blu/nero e una piccola intestazione

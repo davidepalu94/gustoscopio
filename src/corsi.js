@@ -7,9 +7,10 @@ export function getBunnyEmbedUrl(videoId) {
 
 export function getYoutubeEmbedUrl(videoId) {
   const params = new URLSearchParams({
-    modestbranding: '1', // riduce il logo YouTube nella barra dei controlli
+    modestbranding: '1', // riduce il logo YouTube
     rel: '0', // niente video correlati di altri canali a fine riproduzione
     iv_load_policy: '3', // niente annotazioni/callout sovrapposti
+    controls: '0', // nasconde la barra controlli: resta solo il play iniziale
   });
   return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
 }
