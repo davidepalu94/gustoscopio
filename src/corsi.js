@@ -17,11 +17,12 @@ export const CORSI = [
     priceLabel: '29€',
     coverEmoji: '🎯',
     subtitle: 'Il videocorso per iniziare a orientarti nella nutrizione, passo dopo passo.',
-    description: [
-      'Hai mai cercato "quante calorie ha una banana" e ti sei perso tra mille informazioni contraddittorie? Non sei tu il problema: nessuno ti ha mai spiegato le basi in modo chiaro, senza tecnicismi e senza giudizi.',
-      'Questo corso parte da zero — davvero da zero: cos\'è una caloria, come funzionano i macronutrienti, perché "dieta" non deve fare paura. Poi va dritto al punto: calcolare il tuo fabbisogno reale, costruire un piatto equilibrato, evitare gli errori più comuni, e renderlo qualcosa che mantieni nel tempo, non per due settimane.',
-      '12 video, mai più di 5 minuti l\'uno. Nessun muro di teoria: ogni video ti porta a usare subito uno strumento reale di Gustoscopio, così applichi quello che impari invece di segnarlo su un quaderno che non riaprirai.',
-      'Alla fine non avrai solo capito qualcosa in più sulla nutrizione. Avrai il metodo per costruire il tuo piano da solo, ogni volta che ti serve — senza doverti affidare a qualcun altro.',
+    hook: 'Hai mai cercato "quante calorie ha una banana" e ti sei perso tra mille informazioni contraddittorie? Non sei tu il problema: nessuno ti ha mai spiegato le basi in modo chiaro.',
+    highlights: [
+      { icon: '🧠', text: 'Parti da zero: caloria, macronutrienti, perché "dieta" non deve fare paura' },
+      { icon: '🎯', text: 'Dritto al punto: fabbisogno reale, piatto equilibrato, errori più comuni' },
+      { icon: '⏱️', text: '12 video, mai più di 5 minuti — zero muro di teoria' },
+      { icon: '🛠️', text: 'Ogni lezione usa uno strumento reale di Gustoscopio: applichi subito' },
     ],
     totalPlannedVideos: 12,
     salesOpen: true,

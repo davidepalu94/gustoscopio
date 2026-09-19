@@ -1,3 +1,19 @@
+## Aggiornamento: restyling pagina corso — hero d'impatto, meno testo
+
+- La lunga descrizione a paragrafi è sparita. Al suo posto: un hero scuro
+  (stesso stile dei "momenti firma" del sito) con titolo grande in serif,
+  un gancio di UNA frase, il prezzo in evidenza, e 4 punti chiave in
+  formato "chip" scansionabile invece di testo da leggere per intero.
+- I pannelli sotto l'hero (login/registrazione, valutazione, acquisto)
+  sono ora CHIARI (card bianche), non più neri — così il nero resta
+  "speciale" solo per l'hero, coerente con la regola del vostro design
+  system di usarlo con parsimonia.
+- Nessun contenuto perso: i punti della vecchia descrizione sono
+  riorganizzati come `highlights` in `src/corsi.js`, facili da
+  modificare o estendere per corsi futuri.
+
+Build verificata senza errori.
+
 ## Aggiornamento: login/registrazione integrati nella pagina del corso
 
 Non serve più uscire dalla pagina del corso per accedere: il form di

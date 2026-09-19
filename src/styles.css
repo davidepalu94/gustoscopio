@@ -714,19 +714,38 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .corsi-logout:hover { background: rgba(16,19,28,0.05); }
 
 /* Blocco acquisto/accesso sulla pagina corso */
-.premium-gate { min-width: 0; max-width: 480px; margin: 32px auto; padding: 40px 32px; border-radius: 20px; background: #10131C; color: #F8F7F3; text-align: center; }
-.premium-gate h2 { font-size: 24px; font-weight: 600; margin-bottom: 12px; }
-.premium-gate p { font-size: 14.5px; line-height: 1.5; color: rgba(248,247,243,0.8); margin-bottom: 22px; }
-.premium-gate-btn { display: inline-block; font-weight: 700; font-size: 14.5px; padding: 13px 30px; border-radius: 999px; transition: opacity 160ms ease; }
-.premium-gate-btn-primary { background: #3155FF; color: #FFFFFF; }
-.premium-gate-btn:hover { opacity: 0.9; }
-.premium-gate-btn:disabled { opacity: 0.6; cursor: default; }
+.corso-panel { min-width: 0; max-width: 480px; margin: 0 0 32px; padding: 36px 32px; border-radius: 20px; background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); box-shadow: 0 2px 16px rgba(16,19,28,0.05); text-align: center; }
+.corso-panel h2 { font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #10131C; }
+.corso-panel p { font-size: 14.5px; line-height: 1.5; color: #575a68; margin-bottom: 22px; }
+.corso-panel-btn { display: inline-block; font-weight: 700; font-size: 14.5px; padding: 13px 30px; border-radius: 999px; background: #3155FF; color: #FFFFFF; transition: transform 180ms ease, box-shadow 180ms ease; }
+.corso-panel-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(49,85,255,0.3); }
+.corso-panel-btn:disabled { opacity: 0.6; cursor: default; transform: none; box-shadow: none; }
+.corso-panel .login-form label span { color: #10131C; }
 
 .instagram-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #3155FF; text-decoration: none; padding: 6px 14px; border: 1px solid rgba(49,85,255,0.25); border-radius: 999px; transition: background 160ms ease; }
 .instagram-badge:hover { background: rgba(49,85,255,0.08); }
 
-.corso-description { min-width: 0; max-width: 680px; margin: 28px 0 36px; display: flex; flex-direction: column; gap: 16px; }
-.corso-description p { font-size: 16.5px; line-height: 1.65; color: #2a2d38; margin: 0; }
+/* Hero pagina corso — momento firma scuro, gancio breve + highlights scansionabili */
+.corso-hero { position: relative; background: #10131C; border-radius: 24px; padding: clamp(32px, 6vw, 56px) clamp(24px, 6vw, 48px); margin: 16px 0 32px; overflow: hidden; color: #F8F7F3; }
+.corso-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 55%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(49,85,255,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.corso-hero-kicker { position: relative; display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #3155FF; margin-bottom: 14px; }
+.corso-hero-title { position: relative; font-size: clamp(32px, 5.5vw, 52px); line-height: 1.1; margin: 0 0 14px; color: #FFFFFF; max-width: 640px; }
+.corso-hero-hook { position: relative; font-size: 16px; line-height: 1.55; color: rgba(248,247,243,0.78); max-width: 560px; margin: 0 0 22px; }
+.corso-hero-price { position: relative; display: inline-block; background: #3155FF; color: #FFFFFF; font-weight: 700; font-size: 14px; padding: 8px 18px; border-radius: 999px; margin-bottom: 26px; }
+.corso-highlights-row { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 640px) { .corso-highlights-row { grid-template-columns: 1fr; } }
+.corso-highlight-chip { display: flex; align-items: flex-start; gap: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 14px 16px; font-size: 13.5px; line-height: 1.4; color: rgba(248,247,243,0.9); transition: background 180ms ease, transform 180ms ease; }
+.corso-highlight-chip:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+.corso-highlight-icon { font-size: 18px; flex-shrink: 0; line-height: 1; }
 
 /* Testimonianze - striscia scorrevole a due righe (spazio fisso, compatto) */
 .testimonial-marquee { position: relative; margin-top: 24px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%); }

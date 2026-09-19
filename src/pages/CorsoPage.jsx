@@ -147,24 +147,26 @@ export default function CorsoPage() {
       <div className="corsi-page">
         <Link to="/corsi" className="breadcrumb">← Torna ai corsi</Link>
 
-        <header className="corsi-header" style={{ marginTop: 16 }}>
-          <div>
-            <h1>{corso.title}</h1>
-            <p className="corsi-empty">{corso.subtitle}</p>
-          </div>
-          <span className="corso-price-badge">{corso.priceLabel}</span>
-        </header>
+        <div className="corso-hero">
+          <span className="corso-hero-kicker">VIDEOCORSO</span>
+          <h1 className="corso-hero-title">{corso.title}</h1>
+          {corso.hook && <p className="corso-hero-hook">{corso.hook}</p>}
+          <span className="corso-hero-price">{corso.priceLabel}</span>
 
-        {corso.description && (
-          <div className="corso-description">
-            {corso.description.map((paragrafo, i) => (
-              <p key={i}>{paragrafo}</p>
-            ))}
-          </div>
-        )}
+          {corso.highlights && (
+            <div className="corso-highlights-row">
+              {corso.highlights.map((h, i) => (
+                <div className="corso-highlight-chip" key={i}>
+                  <span className="corso-highlight-icon">{h.icon}</span>
+                  <span>{h.text}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
         {!corso.salesOpen ? (
-          <div className="premium-gate">
+          <div className="corso-panel">
             <h2>In arrivo</h2>
             <p>
               {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video sono già pronti.
@@ -174,7 +176,7 @@ export default function CorsoPage() {
         ) : authLoading || checkingPurchase ? (
           <p className="corsi-empty">Verifica accesso...</p>
         ) : !user ? (
-          <div className="premium-gate" style={{ maxWidth: 400 }}>
+          <div className="corso-panel" style={{ maxWidth: 400 }}>
             <h2>{authMode === 'accedi' ? 'Accedi per continuare' : 'Crea il tuo account per continuare'}</h2>
             <p>
               {authMode === 'accedi'
@@ -184,11 +186,11 @@ export default function CorsoPage() {
 
             <form onSubmit={handleAuthSubmit} className="login-form" style={{ textAlign: 'left' }}>
               <label>
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Email</span>
+                <span>Email</span>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
               </label>
               <label>
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Password</span>
+                <span>Password</span>
                 <input
                   type="password"
                   value={password}
@@ -221,7 +223,7 @@ export default function CorsoPage() {
             </button>
           </div>
         ) : !purchased ? (
-          <div className="premium-gate" style={{ maxWidth: 560 }}>
+          <div className="corso-panel" style={{ maxWidth: 560 }}>
             <h2>Prima, la tua valutazione rapida</h2>
             <p>
               Inserisci qualche dato per vedere subito BMI e metabolismo
@@ -231,22 +233,22 @@ export default function CorsoPage() {
 
             <div className="calc-form" style={{ textAlign: 'left', marginBottom: 20 }}>
               <label className="calc-field">
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Età</span>
+                <span>Età</span>
                 <input type="number" value={age} onChange={(e) => setAge(e.target.value)} min={14} max={100} />
               </label>
               <label className="calc-field">
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Sesso</span>
+                <span>Sesso</span>
                 <select value={sex} onChange={(e) => setSex(e.target.value)}>
                   <option value="M">Uomo</option>
                   <option value="F">Donna</option>
                 </select>
               </label>
               <label className="calc-field">
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Peso (kg)</span>
+                <span>Peso (kg)</span>
                 <input type="number" value={weightKg} onChange={(e) => setWeightKg(e.target.value)} min={30} max={250} />
               </label>
               <label className="calc-field">
-                <span style={{ color: 'rgba(248,247,243,0.75)' }}>Altezza (cm)</span>
+                <span>Altezza (cm)</span>
                 <input type="number" value={heightCm} onChange={(e) => setHeightCm(e.target.value)} min={120} max={230} />
               </label>
             </div>
@@ -262,14 +264,14 @@ export default function CorsoPage() {
               </div>
             </div>
 
-            <p style={{ fontSize: 12.5, color: 'rgba(248,247,243,0.6)', marginBottom: 22 }}>
+            <p style={{ fontSize: 12.5, color: '#575a68', marginBottom: 22 }}>
               Stime automatiche a scopo informativo. La valutazione scritta
               da un biologo nutrizionista arriva dopo l'acquisto.
             </p>
 
             {buyError && <p className="login-error" style={{ marginBottom: 12 }}>{buyError}</p>}
             <button
-              className="premium-gate-btn premium-gate-btn-primary"
+              className="corso-panel-btn"
               onClick={handleBuy}
               disabled={buying}
               style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
