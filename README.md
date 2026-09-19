@@ -1,3 +1,14 @@
+## Confermato: pagamento live testato con successo, prezzo tornato a 29€
+
+Test reale completato: pagamento da 1€ riuscito su Stripe Live, webhook
+ricevuto, corso sbloccato automaticamente sul sito. L'intera catena
+(login → valutazione → Stripe → Supabase → sblocco) funziona in
+produzione.
+
+Prezzo rimesso a 29€ (era stato abbassato a 1€ solo per il test).
+
+Build verificata senza errori.
+
 ## ⚠️ TEST TEMPORANEO: prezzo abbassato a 1€
 
 Il prezzo del corso è impostato a 1€ SOLO per verificare che il
