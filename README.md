@@ -1,3 +1,10 @@
+## ⚠️ TEST TEMPORANEO: prezzo abbassato a 1€
+
+Il prezzo del corso è impostato a 1€ SOLO per verificare che il
+pagamento vero (Stripe Live) funzioni end-to-end. Dopo aver confermato
+che l'acquisto sblocca correttamente il corso, va rimesso a 29€ in
+`src/corsi.js` (campo `price` e `priceLabel`).
+
 ## Aggiornamento: stesso restyling per "Il Lab" e "Strumenti"
 
 Entrambe le pagine ora hanno lo stesso hero scuro con bagliore animato
