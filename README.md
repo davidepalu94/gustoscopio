@@ -1,3 +1,20 @@
+## Aggiornamento: tutti i 12 video migrati da Bunny a YouTube
+
+Completata la migrazione: tutti e 12 i video del corso usano ora ID
+YouTube reali invece di Bunny.net. Nessun ID duplicato (verificato).
+
+⚠️ PROMEMORIA IMPORTANTE (invariato): per una protezione reale, ogni
+video va impostato come "Privato" su YouTube e condiviso manualmente
+con l'email Google di ciascun cliente dopo l'acquisto — passaggio NON
+automatizzato dal sito. Finché restano pubblici/non in elenco, chi ha
+il link li vede anche senza aver pagato.
+
+Bunny.net non è più usato per nessun video del corso attuale, ma il
+codice (`getBunnyEmbedUrl`, `BUNNY_LIBRARY_ID`) resta disponibile in
+`corsi.js` per eventuali corsi futuri che vorrete tenere lì.
+
+Build verificata senza errori.
+
 ## Aggiornamento: primi 4 video migrati da Bunny a YouTube
 
 Su richiesta, i video 1.1, 1.2, 1.3 e 2.1 ora usano YouTube invece di

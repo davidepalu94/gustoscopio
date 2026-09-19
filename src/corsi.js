@@ -53,32 +53,32 @@ export const CORSI = [
         title: 'Modulo 2',
         videos: [
           { id: 'Kkei4wh7qX0', provider: 'youtube', title: '2.1 Come si calcola il fabbisogno' },
-          { id: '0fad79d7-f7b7-4521-857a-6cc15bbbdd3d', title: '2.2 Proteine: quante ne servono a te' },
+          { id: '_KsOI7mtAMo', provider: 'youtube', title: '2.2 Proteine: quante ne servono a te' },
         ],
       },
       {
         id: 'modulo-3',
         title: 'Modulo 3',
         videos: [
-          { id: 'cd3ef792-2d72-49af-91c4-acf176b7eeee', title: '3.1 Il metodo del piatto' },
-          { id: 'a3f43a14-b71c-4526-8f5e-c9f3f13dd3bc', title: '3.2 Usare il Plate Builder passo passo' },
-          { id: 'ebf84e1f-4a05-4df5-a0f1-485c2a4c045d', title: '3.3 Esempio pratico: una giornata intera' },
+          { id: 'qfyE1kR3ivo', provider: 'youtube', title: '3.1 Il metodo del piatto' },
+          { id: '4xJIyQz3lvo', provider: 'youtube', title: '3.2 Usare il Plate Builder passo passo' },
+          { id: 'aSSDE4iiozw', provider: 'youtube', title: '3.3 Esempio pratico: una giornata intera' },
         ],
       },
       {
         id: 'modulo-4',
         title: 'Modulo 4',
         videos: [
-          { id: 'f7627a8c-ac77-4720-823a-fa7131539349', title: '4.1 I 3 miti che rovinano i piani' },
-          { id: '789fc958-e9eb-4bb9-ab81-1ab1d6e31f11', title: '4.2 Perché "buono/cattivo" non esiste' },
+          { id: 'ClMiK5UNULs', provider: 'youtube', title: '4.1 I 3 miti che rovinano i piani' },
+          { id: 'tSWa01hH8vc', provider: 'youtube', title: '4.2 Perché "buono/cattivo" non esiste' },
         ],
       },
       {
         id: 'modulo-5',
         title: 'Modulo 5',
         videos: [
-          { id: '15c94326-d4e2-4b46-898b-2191fd847831', title: '5.1 Cosa fare quando non hai voglia' },
-          { id: '743f82c2-9a55-48b6-96aa-91f75f43db43', title: '5.2 Come adattare il piano nel tempo' },
+          { id: 'BqlmGGUMBXQ', provider: 'youtube', title: '5.1 Cosa fare quando non hai voglia' },
+          { id: '8Q-ieTOWYe4', provider: 'youtube', title: '5.2 Come adattare il piano nel tempo' },
         ],
       },
     ],
