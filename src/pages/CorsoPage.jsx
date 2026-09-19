@@ -34,10 +34,14 @@ export default function CorsoPage() {
 
   const [authMode, setAuthMode] = useState('registrati'); // 'accedi' | 'registrati'
   const [email, setEmail] = useState('');
+  const [emailConfirm, setEmailConfirm] = useState('');
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState(null);
   const [authInfo, setAuthInfo] = useState(null);
   const [authBusy, setAuthBusy] = useState(false);
+
+  const emailsMatch = authMode === 'accedi' || (email.length > 0 && email === emailConfirm);
+  const emailConfirmTouched = emailConfirm.length > 0;
 
   const bmi = useMemo(
     () => calculateBMI({ weightKg: +weightKg, heightCm: +heightCm }),
@@ -65,8 +69,9 @@ export default function CorsoPage() {
     }
 
     if (authMode === 'registrati') {
-      setAuthInfo('Controlla la tua email per confermare l\'account, poi accedi qui sotto.');
-      setAuthMode('accedi');
+      // Con la conferma email disattivata, AuthContext si aggiorna da solo
+      // non appena la sessione è pronta, e questo pannello sparisce.
+      setAuthInfo('Un momento...');
     }
   }
 
@@ -181,7 +186,7 @@ export default function CorsoPage() {
             <p>
               {authMode === 'accedi'
                 ? 'Accedi per vedere la tua valutazione e acquistare.'
-                : 'Bastano email e password. Dopo la registrazione ti arriva una mail di conferma, poi puoi accedere e acquistare.'}
+                : 'Bastano email e password — entri subito, senza dover confermare nulla via mail.'}
             </p>
 
             <form onSubmit={handleAuthSubmit} className="login-form" style={{ textAlign: 'left' }}>
@@ -189,22 +194,44 @@ export default function CorsoPage() {
                 <span>Email</span>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
               </label>
-              <label>
-                <span>Password</span>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  minLength={6}
-                  autoComplete={authMode === 'accedi' ? 'current-password' : 'new-password'}
-                />
-              </label>
+
+              {authMode === 'registrati' && (
+                <label>
+                  <span>Conferma email</span>
+                  <input
+                    type="email"
+                    value={emailConfirm}
+                    onChange={(e) => setEmailConfirm(e.target.value)}
+                    required
+                    autoComplete="email"
+                    onPaste={(e) => e.preventDefault()}
+                  />
+                  {emailConfirmTouched && !emailsMatch && (
+                    <span style={{ color: '#C94B3C', fontSize: 12.5, fontWeight: 600 }}>
+                      Le due email non coincidono.
+                    </span>
+                  )}
+                </label>
+              )}
+
+              {emailsMatch && (
+                <label>
+                  <span>Password</span>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={6}
+                    autoComplete={authMode === 'accedi' ? 'current-password' : 'new-password'}
+                  />
+                </label>
+              )}
 
               {authError && <p className="login-error">{authError}</p>}
               {authInfo && <p className="login-info">{authInfo}</p>}
 
-              <button type="submit" className="login-submit" disabled={authBusy}>
+              <button type="submit" className="login-submit" disabled={authBusy || !emailsMatch}>
                 {authBusy ? 'Un momento...' : authMode === 'accedi' ? 'Accedi' : 'Continua'}
               </button>
             </form>
@@ -216,6 +243,7 @@ export default function CorsoPage() {
                 setAuthMode(authMode === 'accedi' ? 'registrati' : 'accedi');
                 setAuthError(null);
                 setAuthInfo(null);
+                setEmailConfirm('');
               }}
               style={{ color: '#3155FF' }}
             >

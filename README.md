@@ -1,3 +1,33 @@
+## Aggiornamento: campo "Conferma email" alla registrazione (+ conferma email non serve più)
+
+Novità di questo pacchetto:
+- Rimossa la conferma via email (vedi nota precedente) — chi si registra
+  entra subito.
+- Aggiunto un campo "Conferma email" nel form di registrazione (sia
+  nella pagina del corso che in /accedi): il campo password compare solo
+  quando le due email coincidono, con incolla disattivato sul secondo
+  campo (altrimenti si potrebbe incollare la stessa email sbagliata due
+  volte, vanificando il controllo). Se non coincidono, appare un avviso
+  chiaro.
+- Questo sostituisce, almeno in parte, la protezione che dava la
+  conferma via email: cattura i refusi nell'indirizzo prima ancora di
+  creare l'account.
+
+Build verificata senza errori.
+
+## Aggiornamento: rimossa la conferma email
+
+Su richiesta, la conferma email è stata disattivata (era il motivo per
+cui arrivava un'email generica di Supabase, percepita come "sospetta").
+Ora chi si registra entra subito, senza dover controllare la posta —
+vero flusso a un unico passaggio dalla pagina del corso.
+
+Compromesso accettato consapevolmente: non c'è più una verifica che
+l'indirizzo email inserito sia corretto/esistente. Il filtro reale
+resta comunque il pagamento con carta.
+
+Build verificata senza errori.
+
 ## Confermato: pagamento live testato con successo, prezzo tornato a 29€
 
 Test reale completato: pagamento da 1€ riuscito su Stripe Live, webhook

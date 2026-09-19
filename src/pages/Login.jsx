@@ -6,6 +6,7 @@ import Nav from '../components/Nav';
 export default function Login() {
   const [mode, setMode] = useState('accedi'); // 'accedi' | 'registrati'
   const [email, setEmail] = useState('');
+  const [emailConfirm, setEmailConfirm] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [info, setInfo] = useState(null);
@@ -13,6 +14,9 @@ export default function Login() {
 
   const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
+
+  const emailsMatch = mode === 'accedi' || (email.length > 0 && email === emailConfirm);
+  const emailConfirmTouched = emailConfirm.length > 0;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -29,11 +33,6 @@ export default function Login() {
 
     if (error) {
       setError(traduciErrore(error.message));
-      return;
-    }
-
-    if (mode === 'registrati') {
-      setInfo("Controlla la tua email per confermare l'account, poi accedi qui.");
       return;
     }
 
@@ -64,22 +63,43 @@ export default function Login() {
               />
             </label>
 
-            <label>
-              Password
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                autoComplete={mode === 'accedi' ? 'current-password' : 'new-password'}
-              />
-            </label>
+            {mode === 'registrati' && (
+              <label>
+                Conferma email
+                <input
+                  type="email"
+                  value={emailConfirm}
+                  onChange={(e) => setEmailConfirm(e.target.value)}
+                  required
+                  autoComplete="email"
+                  onPaste={(e) => e.preventDefault()}
+                />
+                {emailConfirmTouched && !emailsMatch && (
+                  <span style={{ color: '#C94B3C', fontSize: 12.5, fontWeight: 600 }}>
+                    Le due email non coincidono.
+                  </span>
+                )}
+              </label>
+            )}
+
+            {emailsMatch && (
+              <label>
+                Password
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  autoComplete={mode === 'accedi' ? 'current-password' : 'new-password'}
+                />
+              </label>
+            )}
 
             {error && <p className="login-error">{error}</p>}
             {info && <p className="login-info">{info}</p>}
 
-            <button type="submit" className="login-submit" disabled={busy}>
+            <button type="submit" className="login-submit" disabled={busy || !emailsMatch}>
               {busy ? 'Un momento...' : mode === 'accedi' ? 'Accedi' : 'Registrati'}
             </button>
           </form>
@@ -91,6 +111,7 @@ export default function Login() {
               setMode(mode === 'accedi' ? 'registrati' : 'accedi');
               setError(null);
               setInfo(null);
+              setEmailConfirm('');
             }}
           >
             {mode === 'accedi'
