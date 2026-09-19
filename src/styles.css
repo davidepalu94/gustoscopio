@@ -794,3 +794,20 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .corso-panel { animation: corso-panel-in 380ms ease both; }
 
 .calc-result-box-val { display: inline-block; animation: corso-pop 320ms ease; }
+
+/* Hub /corsi — hero compatto, barra di progresso, comparsa a cascata */
+.corsi-hub-hero { padding: clamp(28px, 5vw, 44px) clamp(24px, 6vw, 44px); margin-bottom: 32px; }
+.corsi-hub-auth-btn {
+  position: relative; display: inline-block; margin-top: 22px; font-size: 13px; font-weight: 700;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #F8F7F3;
+  padding: 9px 18px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  animation: corso-fade-up 550ms ease 220ms both; transition: background 180ms ease, transform 180ms ease;
+}
+.corsi-hub-auth-btn:hover { background: rgba(255,255,255,0.14); transform: translateY(-1px); }
+
+.corsi-grid .corso-card { animation: corso-fade-up 480ms ease both; animation-delay: calc(var(--card-i, 0) * 90ms); }
+
+.corso-card-progress { margin: 6px 0 4px; }
+.corso-card-progress-bar { width: 100%; height: 5px; background: rgba(16,19,28,0.08); border-radius: 999px; overflow: hidden; margin-bottom: 6px; }
+.corso-card-progress-fill { height: 100%; background: #3155FF; border-radius: 999px; transition: width 500ms ease; }
+.corso-card-progress-label { font-size: 12px; font-weight: 600; color: #575a68; }

@@ -11,35 +11,54 @@ export default function Corsi() {
     <div>
       <Nav />
       <div className="corsi-page">
-        <header className="corsi-header">
-          <h1>Corsi</h1>
+        <div className="corso-hero corsi-hub-hero">
+          <span className="corso-hero-kicker">CORSI</span>
+          <h1 className="corso-hero-title">Impara facendo, non leggendo</h1>
+          <p className="corso-hero-hook">
+            Videocorsi brevi, diretti, collegati agli strumenti veri di
+            Gustoscopio — niente teoria fine a sé stessa.
+          </p>
+
           {!loading && (
             user ? (
-              <button className="corsi-logout" onClick={signOut}>Esci ({user.email})</button>
+              <button className="corsi-hub-auth-btn" onClick={signOut}>Esci ({user.email})</button>
             ) : (
-              <Link to="/accedi" className="corsi-login-link" style={{ marginTop: 0 }}>
-                Accedi
-              </Link>
+              <Link to="/accedi" className="corsi-hub-auth-btn">Accedi</Link>
             )
           )}
-        </header>
+        </div>
 
         <div className="corsi-grid">
-          {CORSI.map((corso) => (
-            <Link key={corso.id} to={`/corsi/${corso.id}`} className="corso-card">
-              <span className="corso-emoji">{corso.coverEmoji}</span>
-              <h2>{corso.title}</h2>
-              <p>{corso.subtitle}</p>
-              {corso.totalPlannedVideos && (
-                <p style={{ fontSize: 12.5, color: '#3155FF', fontWeight: 600, margin: '4px 0 0' }}>
-                  {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video disponibili
-                </p>
-              )}
-              <span className="corso-price-badge" style={!corso.salesOpen ? { background: '#575a68' } : undefined}>
-                {corso.salesOpen ? corso.priceLabel : 'Prossimamente'}
-              </span>
-            </Link>
-          ))}
+          {CORSI.map((corso, i) => {
+            const done = countAvailableVideos(corso);
+            const total = corso.totalPlannedVideos || done;
+            const pct = total ? Math.round((done / total) * 100) : 100;
+            return (
+              <Link
+                key={corso.id}
+                to={`/corsi/${corso.id}`}
+                className="corso-card"
+                style={{ '--card-i': i }}
+              >
+                <span className="corso-emoji">{corso.coverEmoji}</span>
+                <h2>{corso.title}</h2>
+                <p>{corso.subtitle}</p>
+
+                {corso.totalPlannedVideos && (
+                  <div className="corso-card-progress">
+                    <div className="corso-card-progress-bar">
+                      <div className="corso-card-progress-fill" style={{ width: `${pct}%` }} />
+                    </div>
+                    <span className="corso-card-progress-label">{done} di {total} video</span>
+                  </div>
+                )}
+
+                <span className="corso-price-badge" style={!corso.salesOpen ? { background: '#575a68' } : undefined}>
+                  {corso.salesOpen ? corso.priceLabel : 'Prossimamente'}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
       <Footer />

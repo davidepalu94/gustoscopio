@@ -1,3 +1,17 @@
+## Aggiornamento: restyling pagina hub /corsi
+
+- Aggiunto un hero scuro d'impatto in cima (stesso stile della pagina
+  del singolo corso: bagliore animato, comparsa a cascata), con titolo,
+  gancio breve e il bottone Accedi/Esci ora come pillola elegante invece
+  di un link semplice.
+- Le card dei corsi hanno una vera barra di progresso visiva (invece del
+  solo testo "X di Y video") e compaiono con un leggero effetto a
+  cascata quando la pagina si carica.
+- Pronta a scalare bene quando aggiungerete altri corsi: ogni card
+  calcola da sola la propria barra di progresso.
+
+Build verificata senza errori.
+
 ## Correzione: bagliore dell'hero e pannello decentrato
 
 - Il bagliore blu nell'hero era troppo piccolo: quando si muoveva
