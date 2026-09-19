@@ -1,3 +1,16 @@
+## Aggiornamento: player YouTube più pulito
+
+Aggiunti parametri all'embed YouTube per ridurre al minimo i riferimenti
+alla piattaforma: niente video correlati di altri canali a fine
+riproduzione, logo ridotto, niente annotazioni sovrapposte.
+
+Nota onesta: YouTube non permette di eliminare del tutto la possibilità
+di aprire il video sulla loro piattaforma (è un vincolo dei loro termini
+d'uso per gli embed, non un limite tecnico nostro). Il player è comunque
+molto più pulito di quello di default.
+
+Build verificata senza errori.
+
 ## Aggiornamento: tutti i 12 video migrati da Bunny a YouTube
 
 Completata la migrazione: tutti e 12 i video del corso usano ora ID

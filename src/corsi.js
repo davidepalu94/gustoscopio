@@ -6,7 +6,12 @@ export function getBunnyEmbedUrl(videoId) {
 }
 
 export function getYoutubeEmbedUrl(videoId) {
-  return `https://www.youtube.com/embed/${videoId}`;
+  const params = new URLSearchParams({
+    modestbranding: '1', // riduce il logo YouTube nella barra dei controlli
+    rel: '0', // niente video correlati di altri canali a fine riproduzione
+    iv_load_policy: '3', // niente annotazioni/callout sovrapposti
+  });
+  return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
 }
 
 // Sceglie l'URL giusto in base al campo "provider" del video.
