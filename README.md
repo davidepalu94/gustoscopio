@@ -1,3 +1,15 @@
+## Correzione: bagliore dell'hero e pannello decentrato
+
+- Il bagliore blu nell'hero era troppo piccolo: quando si muoveva
+  rivelava un bordo netto contro lo sfondo nero. Ora è più grande e con
+  una dissolvenza più morbida, quindi il movimento resta invisibile ai
+  bordi.
+- Il pannello "Crea il tuo account" (e gli altri pannelli sotto l'hero)
+  erano scentrati a sinistra su schermi larghi — persa la centratura
+  automatica durante il restyling precedente. Ripristinata.
+
+Build verificata senza errori.
+
 ## Aggiornamento: micro-animazioni sulla pagina corso
 
 - L'hero appare con una comparsa graduale a cascata (kicker → titolo →
