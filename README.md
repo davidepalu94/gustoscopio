@@ -1,3 +1,18 @@
+## Aggiornamento: micro-animazioni sulla pagina corso
+
+- L'hero appare con una comparsa graduale a cascata (kicker → titolo →
+  gancio → prezzo → le 4 chip, una dopo l'altra).
+- Il bagliore blu sullo sfondo dell'hero si muove lentamente in loop,
+  per dare vita senza distrarre.
+- I pannelli (login, valutazione, acquisto) entrano con un piccolo
+  movimento verso l'alto ogni volta che cambi stato, invece di apparire
+  di scatto.
+- I valori BMI e metabolismo basale fanno un piccolo "pop" ogni volta
+  che li aggiorni cambiando i dati nel form.
+
+Nessuna nuova dipendenza: solo animazioni CSS (keyframes), niente
+librerie di animazione. Build verificata senza errori.
+
 ## Aggiornamento: restyling pagina corso — hero d'impatto, meno testo
 
 - La lunga descrizione a paragrafi è sparita. Al suo posto: un hero scuro

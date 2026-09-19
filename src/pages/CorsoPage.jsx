@@ -156,7 +156,7 @@ export default function CorsoPage() {
           {corso.highlights && (
             <div className="corso-highlights-row">
               {corso.highlights.map((h, i) => (
-                <div className="corso-highlight-chip" key={i}>
+                <div className="corso-highlight-chip" key={i} style={{ '--chip-i': i }}>
                   <span className="corso-highlight-icon">{h.icon}</span>
                   <span>{h.text}</span>
                 </div>
@@ -166,7 +166,7 @@ export default function CorsoPage() {
         </div>
 
         {!corso.salesOpen ? (
-          <div className="corso-panel">
+          <div className="corso-panel" key="in-arrivo">
             <h2>In arrivo</h2>
             <p>
               {countAvailableVideos(corso)} di {corso.totalPlannedVideos} video sono già pronti.
@@ -176,7 +176,7 @@ export default function CorsoPage() {
         ) : authLoading || checkingPurchase ? (
           <p className="corsi-empty">Verifica accesso...</p>
         ) : !user ? (
-          <div className="corso-panel" style={{ maxWidth: 400 }}>
+          <div className="corso-panel" style={{ maxWidth: 400 }} key={authMode}>
             <h2>{authMode === 'accedi' ? 'Accedi per continuare' : 'Crea il tuo account per continuare'}</h2>
             <p>
               {authMode === 'accedi'
@@ -223,7 +223,7 @@ export default function CorsoPage() {
             </button>
           </div>
         ) : !purchased ? (
-          <div className="corso-panel" style={{ maxWidth: 560 }}>
+          <div className="corso-panel" style={{ maxWidth: 560 }} key="valutazione">
             <h2>Prima, la tua valutazione rapida</h2>
             <p>
               Inserisci qualche dato per vedere subito BMI e metabolismo
@@ -256,11 +256,11 @@ export default function CorsoPage() {
             <div className="corso-video-list" style={{ marginBottom: 22 }}>
               <div className="calc-result-box">
                 <div className="calc-result-box-lbl">📏 BMI</div>
-                <div className="calc-result-box-val">{bmi.bmi} · {bmi.category}</div>
+                <div className="calc-result-box-val" key={`bmi-${bmi.bmi}`}>{bmi.bmi} · {bmi.category}</div>
               </div>
               <div className="calc-result-box" style={{ marginTop: 8 }}>
                 <div className="calc-result-box-lbl">🔥 METABOLISMO BASALE</div>
-                <div className="calc-result-box-val">{energy.bmr} kcal / giorno</div>
+                <div className="calc-result-box-val" key={`bmr-${energy.bmr}`}>{energy.bmr} kcal / giorno</div>
               </div>
             </div>
 

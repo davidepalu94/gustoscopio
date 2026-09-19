@@ -764,3 +764,33 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
   .testimonial-mini-card { width: 240px; }
   .testimonial-track, .testimonial-track-reverse { animation-duration: 34s; }
 }
+
+/* Micro-animazioni pagina corso */
+@keyframes corso-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes corso-glow-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(24px, 14px); }
+}
+@keyframes corso-panel-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes corso-pop {
+  0% { transform: scale(0.9); opacity: 0.4; }
+  60% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.corso-hero::before { animation: corso-glow-drift 9s ease-in-out infinite; }
+.corso-hero-kicker { animation: corso-fade-up 500ms ease both; }
+.corso-hero-title { animation: corso-fade-up 550ms ease 60ms both; }
+.corso-hero-hook { animation: corso-fade-up 550ms ease 120ms both; }
+.corso-hero-price { animation: corso-fade-up 550ms ease 180ms both; }
+.corso-highlight-chip { animation: corso-fade-up 500ms ease both; animation-delay: calc(220ms + var(--chip-i, 0) * 80ms); }
+
+.corso-panel { animation: corso-panel-in 380ms ease both; }
+
+.calc-result-box-val { display: inline-block; animation: corso-pop 320ms ease; }
