@@ -13,17 +13,21 @@ export default function LabPage() {
     <div>
       <Nav />
       <div className="section">
-        <div className="section-head">
-          <h2>Il Lab.</h2>
-          <p>Strumenti interattivi per esplorare la nutrizione, non solo per leggerla.</p>
+        <div className="corso-hero corsi-hub-hero">
+          <span className="corso-hero-kicker">IL LAB</span>
+          <h1 className="corso-hero-title">Metti alla prova quello che sai</h1>
+          <p className="corso-hero-hook">
+            Strumenti interattivi per esplorare la nutrizione, non solo
+            per leggerla.
+          </p>
         </div>
         <div className="tools-grid">
-          {LAB_TOOLS.map((t) => (
-            <Link to={t.to} key={t.title} className="tool-card">
+          {LAB_TOOLS.map((t, i) => (
+            <Link to={t.to} key={t.title} className="tool-card" style={{ '--card-i': i }}>
               <div className="tool-icon">{t.icon}</div>
               <div className="tool-title">{t.title}</div>
               <div className="tool-desc">{t.desc}</div>
-              <div className="tool-cta">Prova →</div>
+              <div className="tool-cta">Prova <span className="tool-cta-arrow">→</span></div>
             </Link>
           ))}
         </div>

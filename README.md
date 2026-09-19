@@ -1,3 +1,15 @@
+## Aggiornamento: stesso restyling per "Il Lab" e "Strumenti"
+
+Entrambe le pagine ora hanno lo stesso hero scuro con bagliore animato
+usato per Corsi (coerenza visiva su tutto il sito). Le card degli
+strumenti:
+- Compaiono con un leggero effetto a cascata al caricamento.
+- L'icona si ingrandisce e ruota leggermente al passaggio del mouse.
+- La freccia "→" si sposta leggermente a destra all'hover.
+
+Nessuna nuova dipendenza, riusa le stesse animazioni CSS già create per
+Corsi. Build verificata senza errori.
+
 ## Aggiornamento: restyling pagina hub /corsi
 
 - Aggiunto un hero scuro d'impatto in cima (stesso stile della pagina

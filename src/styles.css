@@ -392,12 +392,15 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 /* STRUMENTI HUB */
 .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 @media (max-width: 700px) { .tools-grid { grid-template-columns: 1fr; } }
-.tool-card { background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 16px; padding: 28px; display: block; transition: transform 180ms ease, box-shadow 180ms ease; }
+.tool-card { background: #FFFFFF; border: 1px solid rgba(16,19,28,0.07); border-radius: 16px; padding: 28px; display: block; transition: transform 180ms ease, box-shadow 180ms ease; animation: corso-fade-up 480ms ease both; animation-delay: calc(var(--card-i, 0) * 80ms); }
 .tool-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(16,19,28,0.1); }
-.tool-icon { font-size: 34px; margin-bottom: 14px; }
+.tool-icon { font-size: 34px; margin-bottom: 14px; display: inline-block; transition: transform 220ms ease; }
+.tool-card:hover .tool-icon { transform: scale(1.15) rotate(-4deg); }
 .tool-title { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
 .tool-desc { font-size: 14px; color: #575a68; line-height: 1.5; margin-bottom: 16px; }
 .tool-cta { font-weight: 700; font-size: 13.5px; color: #3155FF; }
+.tool-cta-arrow { display: inline-block; transition: transform 180ms ease; }
+.tool-card:hover .tool-cta-arrow { transform: translateX(4px); }
 
 /* CALCULATOR FORMS */
 .calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }

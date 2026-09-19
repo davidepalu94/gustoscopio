@@ -16,17 +16,21 @@ export default function StrumentiPage() {
     <div>
       <Nav />
       <div className="section">
-        <div className="section-head">
-          <h2>Strumenti.</h2>
-          <p>Calcolatori semplici, basati su formule note, per orientarti — non per sostituire un professionista.</p>
+        <div className="corso-hero corsi-hub-hero">
+          <span className="corso-hero-kicker">STRUMENTI</span>
+          <h1 className="corso-hero-title">Calcola, non indovinare</h1>
+          <p className="corso-hero-hook">
+            Calcolatori semplici, basati su formule note, per orientarti
+            — non per sostituire un professionista.
+          </p>
         </div>
         <div className="tools-grid">
-          {TOOLS.map((t) => (
-            <Link to={t.to} key={t.title} className="tool-card">
+          {TOOLS.map((t, i) => (
+            <Link to={t.to} key={t.title} className="tool-card" style={{ '--card-i': i }}>
               <div className="tool-icon">{t.icon}</div>
               <div className="tool-title">{t.title}</div>
               <div className="tool-desc">{t.desc}</div>
-              <div className="tool-cta">{t.cta} →</div>
+              <div className="tool-cta">{t.cta} <span className="tool-cta-arrow">→</span></div>
             </Link>
           ))}
         </div>
