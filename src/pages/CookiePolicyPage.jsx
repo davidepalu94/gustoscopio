@@ -6,14 +6,6 @@ export default function CookiePolicyPage() {
     <div>
       <Nav />
       <div className="section" style={{ maxWidth: 760 }}>
-        <div className="legal-draft-banner">
-          ⚠️ Bozza generata automaticamente in base a come funziona
-          realmente il sito oggi. Da far verificare da un legale o
-          consulente privacy prima della pubblicazione definitiva, e da
-          aggiornare se in futuro vengono aggiunti strumenti di
-          analisi/marketing.
-        </div>
-
         <div className="section-head" style={{ textAlign: 'left' }}>
           <h1 style={{ fontSize: 'clamp(30px, 5vw, 42px)' }}>Cookie Policy</h1>
           <p>Ultimo aggiornamento: 19 settembre 2026</p>

@@ -1,3 +1,11 @@
+## Aggiornamento: Privacy Policy e Cookie Policy rese definitive
+
+Approvate dal legale — rimosso l'avviso "bozza da verificare" da
+entrambe le pagine (`/privacy` e `/cookie-policy`). Il contenuto resta
+lo stesso, sono definitive.
+
+Build verificata senza errori.
+
 ## Aggiornamento: dati reali del titolare inseriti nella Privacy Policy
 
 Sostituiti tutti i placeholder in `/privacy` e `/cookie-policy` con i

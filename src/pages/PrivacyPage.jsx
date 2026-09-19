@@ -6,13 +6,6 @@ export default function PrivacyPage() {
     <div>
       <Nav />
       <div className="section" style={{ maxWidth: 760 }}>
-        <div className="legal-draft-banner">
-          ⚠️ Bozza generata automaticamente in base ai dati effettivamente
-          trattati dal sito. Da far verificare e completare (dati del
-          titolare, eventuali obblighi specifici) da un legale o
-          consulente privacy prima della pubblicazione definitiva.
-        </div>
-
         <div className="section-head" style={{ textAlign: 'left' }}>
           <h1 style={{ fontSize: 'clamp(30px, 5vw, 42px)' }}>Informativa sulla Privacy</h1>
           <p>Ultimo aggiornamento: 19 settembre 2026</p>
