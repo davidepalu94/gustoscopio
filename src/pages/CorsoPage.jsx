@@ -328,15 +328,21 @@ export default function CorsoPage() {
         ) : (
           <>
             {activeVideo && (
-              <div className="corso-player-wrap">
-                <iframe
-                  src={getEmbedUrl(activeVideo)}
-                  loading="lazy"
-                  style={{ border: 0, width: '100%', height: '100%' }}
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title={activeVideo.title}
-                />
+              <div className="corso-player-frame">
+                <div className="corso-player-header">
+                  <span className="corso-player-header-logo">GUSTOSCOPIO</span>
+                  <span style={{ opacity: 0.6, fontSize: 13 }}>· {activeVideo.title}</span>
+                </div>
+                <div className="corso-player-wrap">
+                  <iframe
+                    src={getEmbedUrl(activeVideo)}
+                    loading="lazy"
+                    style={{ border: 0, width: '100%', height: '100%' }}
+                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    title={activeVideo.title}
+                  />
+                </div>
               </div>
             )}
 

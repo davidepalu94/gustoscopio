@@ -1,3 +1,12 @@
+## Aggiornamento: cornice brandizzata Gustoscopio intorno al player
+
+Aggiunta una cornice con gradiente blu/nero e una piccola intestazione
+"GUSTOSCOPIO · [titolo video]" sopra il player — solo estetica, non
+tocca in alcun modo l'iframe di YouTube al suo interno (nessuna
+violazione dei termini d'uso del loro embed).
+
+Build verificata senza errori.
+
 ## Aggiornamento: player YouTube più pulito
 
 Aggiunti parametri all'embed YouTube per ridurre al minimo i riferimenti
