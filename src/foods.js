@@ -229,6 +229,9 @@ export const FOODS = [
   { id: 'chef-select-pizza-margherita-protein', name: 'Pizza Margherita High Protein (Chef Select)', emoji: '🍕', kcal: 163, protein: 15.8, carbs: 13.4, fat: 4.1, fiber: 3, category: 'Cereali & derivati' },
   { id: 'gelatelli-gelato-proteico-cioccolato', name: 'Gelato Proteico al Cioccolato (Gelatelli)', emoji: '🍫', kcal: 157, protein: 7.8, carbs: 19.6, fat: 4.2, fiber: 4.7, category: 'Dolci & snack' },
   { id: 'base-pinsa-di-marco', name: 'Base per pinsa (Di Marco)', emoji: '🍕', kcal: 230, protein: 10.2, carbs: 41, fat: 2.4, fiber: 2, category: 'Cereali & derivati' },
+  { id: 'marmellata-light', name: 'Marmellata Hero Light', emoji: '🍯', kcal: 42, protein: 0.4, carbs: 9.5, fat: 0.2, fiber: 1, category: 'Dolci & snack' },
+  { id: 'dolcificante', name: 'Dolcificante (senza calorie)', emoji: '🥄', kcal: 8, protein: 0, carbs: 2, fat: 0, fiber: 0, category: 'Condimenti' },
+  { id: 'cacao-amaro', name: 'Cacao amaro in polvere', emoji: '🍫', kcal: 228, protein: 19.6, carbs: 11.5, fat: 13.7, fiber: 33, category: 'Dolci & snack' },
 ];
 
 export function calc(food, grams) {

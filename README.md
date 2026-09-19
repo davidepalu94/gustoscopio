@@ -1,4 +1,29 @@
-## Aggiornamento: Privacy Policy e Cookie Policy rese definitive
+## Aggiornamento: 10 "idee veloci" a 2-3 ingredienti per dare più spunti su ogni alimento base (da 87 a 97 ricette)
+
+Ricette semplicissime come richiesto (tipo "Nutricotta + dolcificante +
+cioccolato fondente"), pensate per dare al paziente tante varianti sullo
+stesso alimento base invece di un'unica ricetta complessa. Coprono 5 basi
+proteiche diverse, ognuna con 2-3 idee:
+
+- **Nutricotta** (Ricotta Proteica LIDL): con dolcificante e cioccolato
+  fondente · con marmellata Hero Light · al cacao
+- **Yogurt greco 0%**: al cacao · con marmellata Hero Light · con
+  cioccolato fondente e dolcificante
+- **Fiocchi di latte 0%**: con cioccolato fondente e dolcificante · con
+  marmellata Hero Light
+- **Kefir PRO**: al cacao
+- **Philadelphia Protein**: con marmellata Hero Light
+
+Aggiunti 3 alimenti mancanti per poterle fare: **Marmellata Hero Light**
+(42 kcal/100g, dati reali trovati online, media tra le varianti gusto),
+**Dolcificante** (valori quasi a zero, come da etichetta tipica) e **Cacao
+amaro in polvere** (228 kcal/100g, valore di riferimento standard).
+
+Tutte pronte in 1 minuto, un solo passaggio ("mescola e mangia"). Nessun
+ID duplicato tra i 180 alimenti né tra le 97 ricette, nessun foodId rotto.
+Build verificata senza errori.
+
+
 
 Approvate dal legale — rimosso l'avviso "bozza da verificare" da
 entrambe le pagine (`/privacy` e `/cookie-policy`). Il contenuto resta
