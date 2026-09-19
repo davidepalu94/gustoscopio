@@ -26,6 +26,8 @@ import AlimentiPage from './pages/AlimentiPage';
 import ArticlesPage from './pages/ArticlesPage';
 import ArticlePage from './pages/ArticlePage';
 import PercorsiPage from './pages/PercorsiPage';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 
 export default function App() {
   return (
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/corsi/:slug" element={<CorsoPage />} />
           <Route path="/accedi" element={<Login />} />
           <Route path="/valutazione" element={<ValutazionePage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
           <Route path="/alimenti" element={<AlimentiPage />} />
           <Route path="/alimenti/:slug" element={<FoodPage />} />
           <Route path="/ricette" element={<RecipesPage />} />

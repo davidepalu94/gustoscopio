@@ -42,6 +42,8 @@ export default function CorsoPage() {
 
   const emailsMatch = authMode === 'accedi' || (email.length > 0 && email === emailConfirm);
   const emailConfirmTouched = emailConfirm.length > 0;
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const canSubmitAuth = authMode === 'accedi' || (emailsMatch && privacyAccepted);
 
   const bmi = useMemo(
     () => calculateBMI({ weightKg: +weightKg, heightCm: +heightCm }),
@@ -228,10 +230,26 @@ export default function CorsoPage() {
                 </label>
               )}
 
+              {authMode === 'registrati' && (
+                <label style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 8, fontWeight: 400 }}>
+                  <input
+                    type="checkbox"
+                    checked={privacyAccepted}
+                    onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                    style={{ width: 'auto', marginTop: 3 }}
+                    required
+                  />
+                  <span style={{ fontSize: 13, fontWeight: 400, color: '#575a68' }}>
+                    Ho letto e accetto la{' '}
+                    <Link to="/privacy" target="_blank" style={{ color: '#3155FF' }}>Privacy Policy</Link>.
+                  </span>
+                </label>
+              )}
+
               {authError && <p className="login-error">{authError}</p>}
               {authInfo && <p className="login-info">{authInfo}</p>}
 
-              <button type="submit" className="login-submit" disabled={authBusy || !emailsMatch}>
+              <button type="submit" className="login-submit" disabled={authBusy || !canSubmitAuth}>
                 {authBusy ? 'Un momento...' : authMode === 'accedi' ? 'Accedi' : 'Continua'}
               </button>
             </form>

@@ -1,3 +1,43 @@
+## Aggiornamento: dati reali del titolare inseriti nella Privacy Policy
+
+Sostituiti tutti i placeholder in `/privacy` e `/cookie-policy` con i
+dati reali:
+- Dr. Davide Palumbo — Biologo Nutrizionista
+- Partita IVA 12543901008
+- Email: davidepalumbo.nutrizione@gmail.com
+- Data ultimo aggiornamento: 19 settembre 2026
+
+Resta comunque valido il consiglio di farla verificare da un legale o
+consulente privacy prima di considerarla definitiva — soprattutto per
+la parte sui dati fisici della valutazione.
+
+Build verificata senza errori.
+
+## Aggiornamento: Privacy Policy, Cookie Policy e consenso alla registrazione
+
+⚠️ IMPORTANTE: queste sono BOZZE basate su cosa fa davvero il sito oggi
+(inventario dati verificato nel codice). Vanno fatte verificare e
+completare da un legale/consulente privacy prima di considerarle
+definitive — in particolare vanno inseriti i dati reali del titolare
+del trattamento (nome, P.IVA, contatti) al posto dei placeholder tra
+[parentesi quadre] in `src/pages/PrivacyPage.jsx`.
+
+Cosa è stato aggiunto:
+- `/privacy` — Informativa Privacy completa: dati account, dati di
+  acquisto, pagamento (gestito da Stripe), dati fisici della valutazione
+  (chiarito che restano SOLO nel browser, mai inviati/salvati), dati
+  tecnici, fornitori terzi coinvolti, diritti dell'utente.
+- `/cookie-policy` — Cookie Policy: il sito non usa cookie di
+  profilazione/marketing né analytics ad oggi; spiegato l'unico
+  meccanismo tecnico usato (sessione di login).
+- Link a entrambe le pagine nel footer di tutto il sito.
+- **Checkbox obbligatoria** "Ho letto e accetto la Privacy Policy" alla
+  registrazione (sia nella pagina del corso che in `/accedi`): il
+  bottone resta disabilitato finché non viene spuntata. Il link apre la
+  pagina in una scheda separata, così non si perde il form compilato.
+
+Build verificata senza errori.
+
 ## Aggiornamento: campo "Conferma email" alla registrazione (+ conferma email non serve più)
 
 Novità di questo pacchetto:

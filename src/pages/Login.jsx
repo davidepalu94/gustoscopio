@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
 
@@ -8,6 +8,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [emailConfirm, setEmailConfirm] = useState('');
   const [password, setPassword] = useState('');
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [error, setError] = useState(null);
   const [info, setInfo] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -17,6 +18,7 @@ export default function Login() {
 
   const emailsMatch = mode === 'accedi' || (email.length > 0 && email === emailConfirm);
   const emailConfirmTouched = emailConfirm.length > 0;
+  const canSubmit = mode === 'accedi' || (emailsMatch && privacyAccepted);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -96,10 +98,26 @@ export default function Login() {
               </label>
             )}
 
+            {mode === 'registrati' && (
+              <label style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 8, fontWeight: 400 }}>
+                <input
+                  type="checkbox"
+                  checked={privacyAccepted}
+                  onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                  style={{ width: 'auto', marginTop: 3 }}
+                  required
+                />
+                <span style={{ fontSize: 13, fontWeight: 400, color: '#575a68' }}>
+                  Ho letto e accetto la{' '}
+                  <Link to="/privacy" target="_blank" style={{ color: '#3155FF' }}>Privacy Policy</Link>.
+                </span>
+              </label>
+            )}
+
             {error && <p className="login-error">{error}</p>}
             {info && <p className="login-info">{info}</p>}
 
-            <button type="submit" className="login-submit" disabled={busy || !emailsMatch}>
+            <button type="submit" className="login-submit" disabled={busy || !canSubmit}>
               {busy ? 'Un momento...' : mode === 'accedi' ? 'Accedi' : 'Registrati'}
             </button>
           </form>
