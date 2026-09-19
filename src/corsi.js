@@ -5,6 +5,18 @@ export function getBunnyEmbedUrl(videoId) {
   return `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${videoId}`;
 }
 
+export function getYoutubeEmbedUrl(videoId) {
+  return `https://www.youtube.com/embed/${videoId}`;
+}
+
+// Sceglie l'URL giusto in base al campo "provider" del video.
+// provider assente = Bunny (comportamento di prima, retrocompatibile).
+export function getEmbedUrl(video) {
+  return video.provider === 'youtube'
+    ? getYoutubeEmbedUrl(video.id)
+    : getBunnyEmbedUrl(video.id);
+}
+
 // Regola: come per foods.js, mai inventare contenuti dei corsi per
 // "sembrare completi". I moduli non ancora pronti restano con
 // comingSoon: true e nessun video, invece di essere riempiti a caso.
@@ -31,16 +43,16 @@ export const CORSI = [
         id: 'modulo-1',
         title: 'Modulo 1',
         videos: [
-          { id: '972d9550-6593-49b4-9c49-661721f24c40', title: "1.1 Cos'è davvero una caloria" },
-          { id: '6c05d6c2-e635-4e65-a3a8-eb4e9cd59e0c', title: '1.2 Macronutrienti' },
-          { id: '2dfce485-bbf7-403f-aefe-86c9b377265c', title: '1.3 Perché "dieta" non deve fare paura' },
+          { id: 'yLmn16N5WYo', provider: 'youtube', title: "1.1 Cos'è davvero una caloria" },
+          { id: 'Al5auUdasPw', provider: 'youtube', title: '1.2 Macronutrienti' },
+          { id: 'vhRkzZfPl1E', provider: 'youtube', title: '1.3 Perché "dieta" non deve fare paura' },
         ],
       },
       {
         id: 'modulo-2',
         title: 'Modulo 2',
         videos: [
-          { id: '7a607fb2-5d11-4586-8a2b-92df53e123b7', title: '2.1 Come si calcola il fabbisogno' },
+          { id: 'Kkei4wh7qX0', provider: 'youtube', title: '2.1 Come si calcola il fabbisogno' },
           { id: '0fad79d7-f7b7-4521-857a-6cc15bbbdd3d', title: '2.2 Proteine: quante ne servono a te' },
         ],
       },

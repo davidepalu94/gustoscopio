@@ -1,3 +1,21 @@
+## Aggiornamento: primi 4 video migrati da Bunny a YouTube
+
+Su richiesta, i video 1.1, 1.2, 1.3 e 2.1 ora usano YouTube invece di
+Bunny.net (ID reali collegati). Aggiunta una funzione generica
+`getEmbedUrl()` in `corsi.js` che sceglie da sola tra Bunny e YouTube in
+base al campo `provider` di ciascun video — i restanti 8 video restano
+su Bunny per ora, migrabili con calma uno alla volta.
+
+⚠️ PROMEMORIA IMPORTANTE (discusso in chat): con YouTube, il vero
+controllo d'accesso va fatto impostando ogni video come "Privato" su
+YouTube e condividendolo manualmente con l'email Google di ciascun
+cliente dopo l'acquisto — questo passaggio NON è automatizzato dal sito
+(il webhook sblocca l'accesso su Gustoscopio, ma non condivide il video
+su YouTube per te). Finché i video restano pubblici/non in elenco su
+YouTube, chi ha il link può vederli anche senza aver pagato.
+
+Build verificata senza errori.
+
 ## Aggiornamento: 10 "idee veloci" a 2-3 ingredienti per dare più spunti su ogni alimento base (da 87 a 97 ricette)
 
 Ricette semplicissime come richiesto (tipo "Nutricotta + dolcificante +

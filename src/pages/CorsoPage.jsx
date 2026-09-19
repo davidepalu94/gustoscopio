@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { getCorsoBySlug, getBunnyEmbedUrl, countAvailableVideos } from '../corsi';
+import { getCorsoBySlug, getEmbedUrl, countAvailableVideos } from '../corsi';
 import { calculateBMI, calculateEnergyNeeds } from '../calculators';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
@@ -330,7 +330,7 @@ export default function CorsoPage() {
             {activeVideo && (
               <div className="corso-player-wrap">
                 <iframe
-                  src={getBunnyEmbedUrl(activeVideo.id)}
+                  src={getEmbedUrl(activeVideo)}
                   loading="lazy"
                   style={{ border: 0, width: '100%', height: '100%' }}
                   allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
