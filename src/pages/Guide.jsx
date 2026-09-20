@@ -12,8 +12,9 @@ export default function Guide() {
           <span className="corso-hero-kicker">GUIDE PDF</span>
           <h1 className="corso-hero-title">Approfondisci, con calma</h1>
           <p className="corso-hero-hook">
-            Guide pratiche da leggere, stampare e compilare. Costruite sugli
-            stessi dati degli strumenti di Gustoscopio: niente teoria fine a sé stessa.
+            Guide pratiche da leggere, stampare e compilare, costruite sugli
+            stessi dati degli strumenti di Gustoscopio. Sono riservate a chi
+            segue un Percorso personalizzato.
           </p>
         </div>
 
@@ -24,12 +25,7 @@ export default function Guide() {
               <h2>{g.title}</h2>
               <p>{g.subtitle}</p>
               <p style={{ marginTop: 10, fontSize: 12.5 }}>{g.pages} pagine · PDF</p>
-              <span
-                className="corso-price-badge"
-                style={!g.salesOpen ? { background: '#575a68' } : undefined}
-              >
-                {g.salesOpen ? g.priceLabel : 'Prossimamente'}
-              </span>
+              <span className="corso-price-badge" style={{ background: '#10131C' }}>Nei Percorsi</span>
             </Link>
           ))}
         </div>

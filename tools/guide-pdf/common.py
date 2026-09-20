@@ -3,7 +3,7 @@
 from design import *
 
 EDITION = 'Edizione 1.0  ·  Settembre 2026'
-TAGLINE = 'Guida Gustoscopio  ·  @gustoscopio'
+TAGLINE = 'Riservata ai Percorsi personalizzati  ·  @gustoscopio'
 
 # Il catalogo riflette src/guide.js (stessi id): se cambi un titolo, cambialo in entrambi.
 CATALOG = {
@@ -42,7 +42,7 @@ DATA_NOTE = (
 def cover(key):
     g = CATALOG[key]
     return [
-        Cover(g['number'], 'GUIDA PDF', g['cover'], g['subtitle'], EDITION, TAGLINE),
+        Cover(g['number'], 'GUIDA ESCLUSIVA', g['cover'], g['subtitle'], EDITION, TAGLINE),
         NextPageTemplate('body'), PageBreak(),
     ]
 
@@ -122,9 +122,9 @@ class ClosingPage(Flowable):
         c.setFillColor(colors.HexColor('#1A1E2B'))
         c.roundRect(0, 15 * mm, self.aw, box_h, 3 * mm, stroke=0, fill=1)
         pp = Paragraph(
-            "<font name='BodyBold' color='#FFFFFF'>Vuoi qualcosa di più su misura?</font> "
-            "I Percorsi personalizzati di Gustoscopio partono dalla tua situazione reale, non da un modello "
-            "standard. Nessuna fretta: questa guida resta tua.",
+            "<font name='BodyBold' color='#FFFFFF'>Una guida dei Percorsi personalizzati.</font> "
+            "Fa parte del materiale riservato a chi segue un percorso con Gustoscopio: se qualcosa non ti torna, "
+            "chiedilo direttamente a chi ti segue. Nessuna fretta: questa guida resta tua.",
             ParagraphStyle('cb', fontName='Body', fontSize=8.8, leading=13.4, textColor=colors.HexColor('#C9CCD9')))
         w, h = pp.wrap(self.aw - 12 * mm, 100)
         pp.drawOn(c, 6 * mm, 15 * mm + (box_h - h) / 2)
@@ -135,6 +135,6 @@ class ClosingPage(Flowable):
 
 def closing(key, steps):
     others = []  # nessun elenco di altre guide: resta valido anche quando ne aggiungiamo di nuove
-    fine = ('Uso personale. Questa guida non può essere copiata, rivenduta o ridistribuita.  ·  '
+    fine = ('Uso personale, riservato a chi ha un percorso attivo. Non può essere copiata, rivenduta o ridistribuita.  ·  '
             'Informazioni a scopo divulgativo.')
     return [PageBreak(), ClosingPage(steps, others, fine)]

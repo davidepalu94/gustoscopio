@@ -1,33 +1,55 @@
-## Aggiornamento: guide PDF a pagamento (3 guide + pagine, acquisto e download protetto)
+## Aggiornamento: richiesta informazioni più magnetica + "incluso" nei Percorsi
 
-Nuove pagine `/guide` (elenco) e `/guide/:id` (dettaglio, acquisto, download),
-voce GUIDE nel menu. Le guide sono PDF generati da `tools/guide-pdf/`
-(`node export_data.mjs && python3 build.py`, serve solo reportlab), con valori
-presi dal database reale di alimenti e ricette.
+Pagina Percorsi: nuova sezione "Il percorso, e tutto il resto" con due schede
+(Videocorsi con il loro prezzo se acquistati da soli, Guide PDF esclusive non in
+vendita). La CTA finale dice esplicitamente che iniziando un percorso si hanno
+videocorsi e guide, senza costi aggiuntivi.
 
-Come funziona l'acquisto: riusa Stripe + Supabase dei corsi. L'id della guida
-finisce in `purchases.course_id`, quindi il webhook NON è cambiato.
-`api/create-checkout-session.js` accetta `kind: 'guida'` solo per tornare a
-`/guide/:id` dopo il pagamento. Il download passa da `api/guide-download.js`:
-verifica l'utente dal token, controlla l'acquisto e restituisce un link
-temporaneo (60 secondi) al file nel bucket PRIVATO `guide` di Supabase.
-`/accedi` ora accetta `?next=/percorso-interno` per tornare alla pagina di partenza.
+Modale "Richiedi informazioni" ridisegnato in 3 passi: scegli da dove partire,
+cosa ricevi (videocorsi + guide + punto di riferimento), racconta qualcosa
+(nome e obiettivo facoltativi, interesse per la scheda di allenamento).
+L'email precompilata include questi dati. Per la "Prima visita" il modale precisa
+che videocorsi e guide si sbloccano con l'avvio di un percorso.
 
-DA FARE PRIMA DI VENDERE:
-1. Supabase → SQL Editor: esegui `supabase-schema-guide.sql` (crea il bucket privato).
-2. Supabase → Storage → guide: carica i 3 PDF con questi nomi esatti:
-   guida-proteine.pdf, guida-piatto-bilanciato.pdf, guida-spesa-etichette.pdf
-3. In `src/guide.js` imposta per ogni guida `price` (euro), `priceLabel` e
-   `salesOpen: true`. Finché il prezzo è null le guide risultano "Prossimamente".
-4. Sostituisci l'email placeholder in `PercorsiModal.jsx`.
+Prezzi e titoli NON sono scritti a mano: arrivano da `src/corsi.js` e `src/guide.js`
+tramite `src/percorsiBonus.js`. Se aggiungi un corso o una guida, pagina e modale si aggiornano da soli.
 
-⚠️ NON mettere i PDF nel repository né in `public/`: chi vede il repository
-(se pubblico) o l'indirizzo del file li avrebbe gratis. I PDF stanno solo nel
-bucket privato; `tools/guide-pdf/out/` è escluso da `.gitignore`.
-Limite noto: chi compra può comunque condividere il file (non c'è filigrana).
+COME DARE ACCESSO AL VIDEOCORSO A CHI INIZIA UN PERCORSO
+Il videocorso si sblocca tramite la tabella `purchases`. In Supabase → SQL Editor
+(sostituisci l'email con quella che il cliente usa per registrarsi sul sito):
 
-Integrata sopra l'ultima versione del progetto (fix icona play/pausa del player).
-Build verificata senza errori; nessun overflow orizzontale a 375, 800 e 1280 px.
+    insert into public.purchases (user_id, course_id)
+    select id, 'da-zero-al-tuo-piano' from auth.users
+    where email = 'email.del.cliente@example.com'
+    on conflict (user_id, course_id) do nothing;
+
+Il cliente deve prima aver creato l'account su /accedi. Le guide PDF si inviano a mano (email).
+
+Build verificata senza errori; nessun overflow orizzontale a 375 e 1280 px.
+
+## Aggiornamento: 3 guide PDF esclusive dei Percorsi personalizzati
+
+Le guide (Proteine, Il piatto bilanciato, La spesa intelligente) NON si
+vendono separatamente: sono riservate a chi ha un Percorso personalizzato.
+Nessun acquisto, nessun account, nessun download dal sito.
+
+Sul sito: pagine informative `/guide` e `/guide/:id` (titolo, capitoli, pagine)
+con il messaggio "riservata ai Percorsi" e un link morbido a
+`/percorsi-personalizzati`. Non c'è voce nel menu: si arriva dalla riga
+"Guide PDF esclusive di approfondimento" nella pagina Percorsi. Catalogo in `src/guide.js`.
+
+Consegna: i PDF NON stanno nel sito (né in `public/`). Si inviano a mano a chi ha
+un percorso attivo (per esempio via email). Copertina e ultima pagina dei PDF
+riportano la dicitura di esclusiva.
+
+I PDF sono generati da `tools/guide-pdf/` (`node export_data.mjs && python3 build.py`,
+serve solo reportlab), con valori presi dal database reale di alimenti e ricette.
+`tools/guide-pdf/out/` è escluso da `.gitignore`.
+
+Se in futuro vorrai venderle anche singolarmente, il progetto Stripe + Supabase
+dei corsi si può riusare (l'id della guida andrebbe in `purchases.course_id`).
+
+Build verificata senza errori.
 
 ## Aggiornamento: il pulsante play/pausa sparisce durante la riproduzione
 

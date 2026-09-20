@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useSearchParams, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import Nav from '../components/Nav';
 
@@ -15,10 +15,6 @@ export default function Login() {
 
   const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  // ritorno alla pagina di partenza (solo percorsi interni, mai URL esterni)
-  const next = searchParams.get('next');
-  const safeNext = next && next.startsWith('/') && !next.startsWith('//') ? next : '/corsi';
 
   const emailsMatch = mode === 'accedi' || (email.length > 0 && email === emailConfirm);
   const emailConfirmTouched = emailConfirm.length > 0;
@@ -42,7 +38,7 @@ export default function Login() {
       return;
     }
 
-    navigate(safeNext);
+    navigate('/corsi');
   }
 
   return (

@@ -7,7 +7,6 @@ const LINKS = [
   { to: '/lab', label: 'LAB' },
   { to: '/strumenti', label: 'STRUMENTI' },
   { to: '/corsi', label: 'CORSI' },
-  { to: '/guide', label: 'GUIDE' },
 ];
 
 export default function Nav() {

@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import PercorsiModal from '../components/PercorsiModal';
 import Footer from '../components/Footer';
+import { getIncludedContent } from '../percorsiBonus';
 
 const TRUST_POINTS = [
   { icon: '🎯', label: 'Su misura per te' },
@@ -22,8 +24,8 @@ const INCLUDES = [
   'Aggiustamenti del percorso nel tempo, non un piano rigido e fisso',
   'Un punto di riferimento diretto per le tue domande',
   'Scheda di allenamento personalizzata',
-  'Guide PDF di approfondimento',
-  'Accesso al videocorso "Da Zero al Tuo Piano"',
+  { text: 'Guide PDF esclusive di approfondimento', to: '/guide', linkLabel: 'Scopri le guide →' },
+  'Accesso ai videocorsi di Gustoscopio',
 ];
 
 const TESTIMONIALS = [
@@ -46,6 +48,7 @@ const TESTIMONIALS_ROW_2 = TESTIMONIALS.slice(6, 12);
 
 export default function PercorsiPage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const inc = getIncludedContent();
 
   return (
     <div>
@@ -90,17 +93,79 @@ export default function PercorsiPage() {
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)' }}>Cosa include il percorso.</h2>
             </div>
             <div className="includes-list">
-              {INCLUDES.map((item) => (
-                <div className="includes-row" key={item}>
-                  <span className="includes-check">✓</span>
-                  <span>{item}</span>
-                </div>
-              ))}
+              {INCLUDES.map((item) => {
+                const text = typeof item === 'string' ? item : item.text;
+                return (
+                  <div className="includes-row" key={text}>
+                    <span className="includes-check">✓</span>
+                    <span>
+                      {text}
+                      {typeof item !== 'string' && (
+                        <>
+                          {' '}
+                          <Link to={item.to} style={{ color: '#3155FF', fontWeight: 600, whiteSpace: 'nowrap' }}>{item.linkLabel}</Link>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="includes-visual">
             <div className="includes-visual-num">4</div>
             <div className="includes-visual-label">fasi pensate per durare<br />oltre il percorso stesso</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="section bonus-section" style={{ maxWidth: 1000 }}>
+        <div className="section-head" style={{ marginBottom: 8 }}>
+          <div className="percorsi-kicker">INCLUSO NEL PERCORSO</div>
+          <h2 style={{ fontSize: 'clamp(30px, 5vw, 44px)' }}>Il percorso, e tutto il resto.</h2>
+          <p className="sub" style={{ maxWidth: 560, margin: '12px auto 0' }}>
+            Quando inizi un percorso ricevi anche i contenuti di Gustoscopio, senza costi aggiuntivi.
+          </p>
+        </div>
+
+        <div className="bonus-grid">
+          <div className="bonus-card">
+            <div className="bonus-card-top">
+              <span className="bonus-icon">🎬</span>
+              <span className="bonus-tag">INCLUSO</span>
+            </div>
+            <h3>Videocorsi</h3>
+            <ul className="bonus-list">
+              {inc.courses.map((c) => (
+                <li key={c.id}>
+                  <strong>{c.title}</strong>
+                  {c.totalPlannedVideos ? ` · ${c.totalPlannedVideos} video brevi` : ''}
+                </li>
+              ))}
+            </ul>
+            {inc.coursesValue && (
+              <div className="bonus-value">
+                <span className="bonus-value-num">{inc.courses.reduce((t, c) => t + c.price, 0)}€</span>
+                <span className="bonus-value-label">{inc.courses.length === 1 ? 'il prezzo, se lo acquisti da solo' : 'il prezzo, se li acquisti da soli'}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="bonus-card">
+            <div className="bonus-card-top">
+              <span className="bonus-icon">📘</span>
+              <span className="bonus-tag">INCLUSO</span>
+            </div>
+            <h3>Guide PDF esclusive</h3>
+            <ul className="bonus-list">
+              {inc.guides.map((g) => (
+                <li key={g.id}><strong>{g.title}</strong> · {g.pages} pagine</li>
+              ))}
+            </ul>
+            <div className="bonus-value">
+              <span className="bonus-value-num bonus-value-word">Esclusive</span>
+              <span className="bonus-value-label">non si trovano in vendita: le ricevi solo con il percorso</span>
+            </div>
           </div>
         </div>
       </div>
@@ -139,10 +204,18 @@ export default function PercorsiPage() {
         <div className="percorsi-cta-inner">
           <div className="kicker" style={{ color: 'rgba(255,255,255,0.6)' }}>VUOI PARLARNE?</div>
           <h2 style={{ color: 'white' }}>Scopri qual è il percorso giusto per te.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.75)' }}>Nessun impegno: la prima richiesta serve solo a capire da dove partire.</p>
+          <p style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Iniziando un percorso hai anche i videocorsi{inc.coursesValue ? ` (${inc.coursesValue})` : ''} e le guide PDF esclusive, senza costi aggiuntivi.
+          </p>
+          <div className="cta-perks">
+            <span>🎬 Videocorsi</span>
+            <span>📘 Guide PDF esclusive</span>
+            <span>🤝 Un punto di riferimento</span>
+          </div>
           <button className="add-btn percorsi-cta-btn" onClick={() => setModalOpen(true)}>
             Richiedi informazioni →
           </button>
+          <p className="cta-note">Nessun impegno: la prima richiesta serve solo a capire da dove partire.</p>
         </div>
       </div>
 
