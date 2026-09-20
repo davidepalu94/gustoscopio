@@ -92,6 +92,7 @@ export default function CorsoPage() {
       if (cancelled) return;
       if (ytPlayerRef.current && ytPlayerRef.current.loadVideoById) {
         ytPlayerRef.current.loadVideoById(activeVideo.id);
+        ytPlayerRef.current.setPlaybackQuality('hd720');
         return;
       }
       ytPlayerRef.current = new window.YT.Player('gustoscopio-yt-player', {
@@ -104,6 +105,11 @@ export default function CorsoPage() {
           disablekb: 1,
         },
         events: {
+          onReady: (e) => {
+            // Tentativo di partire in HD: YouTube lo tratta come un
+            // "suggerimento", non è garantito che venga sempre rispettato.
+            e.target.setPlaybackQuality('hd720');
+          },
           onStateChange: (e) => {
             setIsYtPlaying(e.data === window.YT.PlayerState.PLAYING);
           },

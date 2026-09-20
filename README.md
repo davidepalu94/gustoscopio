@@ -1,3 +1,19 @@
+## Aggiornamento: tentativo di avvio in HD (720p)
+
+Aggiunto un tentativo di forzare la qualità a 720p all'avvio di ogni
+video e ad ogni cambio video, tramite l'API ufficiale di YouTube
+(`setPlaybackQuality('hd720')`).
+
+⚠️ Non è garantito al 100%: YouTube tratta questo come un "suggerimento"
+da anni, non un comando vincolante — la qualità reale dipende anche da
+connessione e browser dell'utente. Inoltre, avendo nascosto i controlli
+nativi nel passo precedente, se YouTube dovesse comunque partire in
+bassa qualità, l'utente non ha più modo di cambiarla manualmente. Se
+noti che capita spesso, fammelo sapere e rivediamo se tenere nascosti
+tutti i controlli.
+
+Build verificata senza errori.
+
 ## Aggiornamento: controlli play/pausa personalizzati (via API ufficiale YouTube)
 
 Costruiti controlli minimal disegnati da noi (solo play/pausa, nessun
