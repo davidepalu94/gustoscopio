@@ -115,7 +115,7 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
               <span className="pm-inc-icon">🏋️</span>
               <div className="pm-inc-text">
                 <div className="pm-inc-title">Scheda di allenamento personalizzata</div>
-                <div className="pm-inc-desc">Costruita su di te, insieme al piano nutrizionale.</div>
+                <div className="pm-inc-desc">Costruita sui tuoi obiettivi, insieme al piano nutrizionale.</div>
               </div>
             </div>
 

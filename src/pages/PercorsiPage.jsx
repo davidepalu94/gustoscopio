@@ -10,6 +10,7 @@ const TRUST_POINTS = [
   { icon: '🎯', label: 'Su misura per te' },
   { icon: '🔄', label: 'Si adatta nel tempo' },
   { icon: '🤝', label: 'Accompagnamento reale' },
+  { icon: '🏋️', label: 'Con scheda di allenamento' },
   { icon: '📍', label: 'A Roma o online' },
 ];
 
@@ -123,7 +124,7 @@ export default function PercorsiPage() {
         </div>
       </div>
 
-      <div className="section bonus-section" style={{ maxWidth: 1000 }}>
+      <div className="section bonus-section" style={{ maxWidth: 1080 }}>
         <div className="section-head" style={{ marginBottom: 8 }}>
           <div className="percorsi-kicker">INCLUSO NEL PERCORSO</div>
           <h2 style={{ fontSize: 'clamp(30px, 5vw, 44px)' }}>Il percorso, e tutto il resto.</h2>
@@ -133,6 +134,23 @@ export default function PercorsiPage() {
         </div>
 
         <div className="bonus-grid">
+          <div className="bonus-card">
+            <div className="bonus-card-top">
+              <span className="bonus-icon">🏋️</span>
+              <span className="bonus-tag">INCLUSA</span>
+            </div>
+            <h3>Scheda di allenamento</h3>
+            <ul className="bonus-list">
+              <li><strong>Costruita sui tuoi obiettivi</strong></li>
+              <li>Pensata insieme al piano nutrizionale</li>
+              <li>Ti arriva già con la prima visita</li>
+            </ul>
+            <div className="bonus-value">
+              <span className="bonus-value-num bonus-value-word">Su misura</span>
+              <span className="bonus-value-label">non è un modello uguale per tutti: parte da ciò che vuoi ottenere</span>
+            </div>
+          </div>
+
           <div className="bonus-card">
             <div className="bonus-card-top">
               <span className="bonus-icon">🎬</span>
@@ -182,7 +200,7 @@ export default function PercorsiPage() {
             </div>
           </div>
         </div>
-        <p className="bonus-total">In tutto, <strong>{inc.totalValue}€</strong> di contenuti inclusi fin dalla prima visita.</p>
+        <p className="bonus-total">In tutto, <strong>{inc.totalValue}€</strong> di contenuti, più la scheda di allenamento, inclusi fin dalla prima visita.</p>
       </div>
 
       <div className="section" style={{ maxWidth: 1100, paddingLeft: 0, paddingRight: 0 }}>

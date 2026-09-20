@@ -1,3 +1,9 @@
+## Aggiornamento: scheda di allenamento a vista
+
+Nella sezione "Il percorso, e tutto il resto" c'è ora una scheda dedicata alla scheda di allenamento
+(costruita sui tuoi obiettivi, inclusa fin dalla prima visita), accanto a videocorsi e guide.
+Aggiunta anche tra le pillole in alto ("Con scheda di allenamento").
+
 ## Aggiornamento: un solo punto di richiesta nella pagina Percorsi
 
 Prima c'erano due blocchi "Richiedi informazioni" (prezzi e CTA finale dopo le recensioni).
