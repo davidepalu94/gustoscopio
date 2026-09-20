@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
 import { getIncludedContent } from '../percorsiBonus';
+import { PACKAGES, MODALITA_LABEL, ACCESSO_GENERICO, perMonth } from '../percorsiData';
 
 // Indirizzo a cui arriva la richiesta.
 const CONTACT_EMAIL = 'davidepalumbo.nutrizione@gmail.com';
 
-const PACKAGES = [
-  { id: 'visita', icon: '🎯', label: 'Prima visita', desc: 'Un incontro iniziale per valutare la tua situazione e i tuoi obiettivi.', isPath: false },
-  { id: '3m', icon: '🌱', label: 'Percorso 3 mesi', desc: 'La base per costruire le prime abitudini sostenibili.', isPath: true },
-  { id: '6m', icon: '🔄', label: 'Percorso 6 mesi', desc: 'Il tempo per consolidare i risultati e adattare il percorso.', isPath: true },
-  { id: '12m', icon: '🏆', label: 'Percorso 12 mesi', desc: 'Un accompagnamento esteso, pensato per cambiamenti duraturi.', isPath: true },
+const MODES = [
+  { id: 'presenza', label: '📍 In presenza (Roma)' },
+  { id: 'online', label: '💻 Online' },
 ];
 
-export default function PercorsiModal({ isOpen, onClose }) {
-  const [selectedPackage, setSelectedPackage] = useState(null);
-  const [wantsTraining, setWantsTraining] = useState(false);
+export default function PercorsiModal({ isOpen, onClose, initialPackage = null }) {
+  const [selectedPackage, setSelectedPackage] = useState(initialPackage);
+  const [mode, setMode] = useState(null);
   const [name, setName] = useState('');
   const [goal, setGoal] = useState('');
+
+  useEffect(() => {
+    if (isOpen) setSelectedPackage(initialPackage);
+  }, [isOpen, initialPackage]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -28,14 +31,14 @@ export default function PercorsiModal({ isOpen, onClose }) {
 
   const inc = getIncludedContent();
   const pkg = PACKAGES.find((p) => p.id === selectedPackage);
-  const isVisit = pkg && !pkg.isPath;
+  const modeObj = MODES.find((m) => m.id === mode);
 
   const subject = 'Richiesta informazioni - Percorsi personalizzati';
   const body =
     `Nome: ${name.trim() || '(da specificare)'}\n` +
-    `Percorso di interesse: ${pkg ? pkg.label : '(da specificare)'}\n` +
-    `Il mio obiettivo: ${goal.trim() || '(da specificare)'}\n` +
-    `Mi interessa anche la scheda di allenamento personalizzata: ${wantsTraining ? 'sì' : 'no'}\n\n` +
+    `Percorso di interesse: ${pkg ? `${pkg.label} (${pkg.price}€)` : '(da specificare)'}\n` +
+    `Modalità preferita: ${modeObj ? modeObj.label.replace(/^\S+\s/, '') : '(da specificare)'}\n` +
+    `Il mio obiettivo: ${goal.trim() || '(da specificare)'}\n\n` +
     `Scrivi qui eventuali domande o dettagli aggiuntivi:\n`;
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
@@ -50,6 +53,7 @@ export default function PercorsiModal({ isOpen, onClose }) {
           <p className="pm-sub">
             Scegli come partire. Poi ne parliamo, senza impegno: la richiesta serve solo a capire dove sei.
           </p>
+          <div className="pm-modality">📍 {MODALITA_LABEL}</div>
         </div>
 
         <div className="pm-body">
@@ -66,15 +70,19 @@ export default function PercorsiModal({ isOpen, onClose }) {
                 <span className="pm-pkg-check">✓</span>
                 <span className="pm-pkg-icon">{p.icon}</span>
                 <span className="pm-pkg-label">{p.label}</span>
+                <span className="pm-pkg-price">
+                  {p.price}€{perMonth(p) ? <small> · ≈{perMonth(p)}€ al mese</small> : null}
+                </span>
                 <span className="pm-pkg-desc">{p.desc}</span>
               </button>
             ))}
           </div>
+          <p className="pm-price-note">La prima visita è inclusa in ogni percorso: non la paghi due volte.</p>
 
           <div className="pm-step"><span className="pm-step-num">2</span> Cosa ricevi</div>
-          <div className={`pm-included ${isVisit ? 'dim' : ''}`}>
+          <div className="pm-included">
             <div className="pm-included-head">
-              <span>Iniziando un percorso, in più hai</span>
+              <span>Fin dalla prima visita, in più hai</span>
               <span className="pm-included-tag">INCLUSO</span>
             </div>
 
@@ -83,17 +91,32 @@ export default function PercorsiModal({ isOpen, onClose }) {
               <div className="pm-inc-text">
                 <div className="pm-inc-title">Accesso ai videocorsi</div>
                 <div className="pm-inc-desc">{inc.courses.map((c) => c.title).join(' · ')}</div>
+                <div className="pm-inc-desc">Accesso: {pkg ? (pkg.months ? pkg.access : `${pkg.access} dalla prima visita`) : ACCESSO_GENERICO}</div>
               </div>
-              {inc.coursesValue && <div className="pm-inc-value">{inc.coursesValue}</div>}
+              {inc.coursesValue && (
+                <div className="pm-inc-value">
+                  {inc.strike ? (
+                    <><s className="pm-strike">{inc.coursesTotal}€</s> <span>{inc.coursesPathTotal}€ con il percorso</span></>
+                  ) : inc.coursesValue}
+                </div>
+              )}
             </div>
 
             <div className="pm-inc-row">
               <span className="pm-inc-icon">📘</span>
               <div className="pm-inc-text">
                 <div className="pm-inc-title">Guide PDF esclusive</div>
-                <div className="pm-inc-desc">{inc.guides.map((g) => g.title).join(' · ')}</div>
+                <div className="pm-inc-desc">{inc.guides.map((g) => g.title).join(' · ')}. Non in vendita: restano tue.</div>
               </div>
-              <div className="pm-inc-value">Non in vendita</div>
+              <div className="pm-inc-value">Valore {inc.guidesValue}€</div>
+            </div>
+
+            <div className="pm-inc-row">
+              <span className="pm-inc-icon">🏋️</span>
+              <div className="pm-inc-text">
+                <div className="pm-inc-title">Scheda di allenamento personalizzata</div>
+                <div className="pm-inc-desc">Costruita su di te, insieme al piano nutrizionale.</div>
+              </div>
             </div>
 
             <div className="pm-inc-row">
@@ -103,20 +126,27 @@ export default function PercorsiModal({ isOpen, onClose }) {
                 <div className="pm-inc-desc">Per le tue domande, lungo tutto il percorso.</div>
               </div>
             </div>
-
-            {isVisit && (
-              <p className="pm-included-note">
-                La prima visita serve a capire da dove partire: videocorsi e guide si sbloccano con l'avvio di un percorso.
-              </p>
-            )}
           </div>
 
           <div className="pm-step"><span className="pm-step-num">3</span> Raccontaci qualcosa <span className="pm-opt">(facoltativo)</span></div>
+          <div className="pm-mode-row" role="group" aria-label="Modalità">
+            {MODES.map((m) => (
+              <button
+                type="button"
+                key={m.id}
+                className={`pm-mode ${mode === m.id ? 'active' : ''}`}
+                aria-pressed={mode === m.id}
+                onClick={() => setMode(mode === m.id ? null : m.id)}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
           <label className="pm-field">
             <span>Come ti chiami?</span>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} autoComplete="given-name" />
           </label>
-          <label className="pm-field">
+          <label className="pm-field" style={{ marginBottom: 22 }}>
             <span>Il tuo obiettivo, in una riga</span>
             <input
               type="text"
@@ -124,10 +154,6 @@ export default function PercorsiModal({ isOpen, onClose }) {
               onChange={(e) => setGoal(e.target.value)}
               placeholder="Es. mangiare meglio con i turni di lavoro"
             />
-          </label>
-          <label className="pm-check">
-            <input type="checkbox" checked={wantsTraining} onChange={(e) => setWantsTraining(e.target.checked)} />
-            <span>Mi interessa anche la scheda di allenamento personalizzata</span>
           </label>
 
           <a

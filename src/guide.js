@@ -3,6 +3,9 @@
 // Gli id sono gli STESSI di tools/guide-pdf/common.py (CATALOG) e dei nomi dei file PDF.
 // Pagine e capitoli riflettono i PDF realmente generati.
 
+// Valore complessivo delle guide (non sono in vendita). Aggiornalo se ne aggiungi altre.
+export const GUIDE_BUNDLE_VALUE_EUR = 46;
+
 export const GUIDE = [
   {
     id: 'guida-proteine',

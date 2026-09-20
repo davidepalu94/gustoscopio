@@ -49,12 +49,18 @@ export default async function handler(req, res) {
     const courseId = session.metadata?.course_id;
 
     if (userId && courseId) {
-      const { error } = await supabaseAdmin
+      const row = { user_id: userId, course_id: courseId, stripe_session_id: session.id };
+      // expires_at: null → chi acquista ha accesso permanente (anche se aveva un accesso a tempo scaduto)
+      let { error } = await supabaseAdmin
         .from('purchases')
-        .upsert(
-          { user_id: userId, course_id: courseId, stripe_session_id: session.id },
-          { onConflict: 'user_id,course_id' }
-        );
+        .upsert({ ...row, expires_at: null }, { onConflict: 'user_id,course_id' });
+
+      if (error) {
+        // Se la colonna expires_at non esiste ancora (SQL non eseguito), salva comunque l'acquisto.
+        ({ error } = await supabaseAdmin
+          .from('purchases')
+          .upsert(row, { onConflict: 'user_id,course_id' }));
+      }
 
       if (error) {
         console.error('Errore nel salvare l\'acquisto su Supabase:', error);

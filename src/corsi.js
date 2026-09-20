@@ -31,8 +31,10 @@ export const CORSI = [
   {
     id: 'da-zero-al-tuo-piano',
     title: 'Da Zero al Tuo Piano',
-    price: 29,
-    priceLabel: '29€',
+    price: 99,
+    // Prezzo del videocorso per chi inizia un percorso di consulenza (incluso nel pacchetto).
+    pathPrice: 29,
+    priceLabel: '99€',
     coverEmoji: '🎯',
     subtitle: 'Il videocorso per iniziare a orientarti nella nutrizione, passo dopo passo.',
     hook: 'Hai mai cercato "quante calorie ha una banana" e ti sei perso tra mille informazioni contraddittorie? Non sei tu il problema: nessuno ti ha mai spiegato le basi in modo chiaro.',

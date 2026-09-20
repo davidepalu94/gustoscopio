@@ -14,7 +14,7 @@ export default function Guide() {
           <p className="corso-hero-hook">
             Guide pratiche da leggere, stampare e compilare, costruite sugli
             stessi dati degli strumenti di Gustoscopio. Sono riservate a chi
-            segue un Percorso personalizzato.
+            inizia con Gustoscopio: le ricevi dalla prima visita.
           </p>
         </div>
 

@@ -34,14 +34,28 @@ export function AuthProvider({ children }) {
 
   async function hasPurchased(courseId) {
     if (!session?.user) return false;
-    const { data, error } = await supabase
+    let { data, error } = await supabase
       .from('purchases')
-      .select('id')
+      .select('id, expires_at')
       .eq('user_id', session.user.id)
       .eq('course_id', courseId)
       .maybeSingle();
-    if (error) return false;
-    return Boolean(data);
+    if (error) {
+      // La colonna expires_at potrebbe non esistere ancora (SQL non ancora eseguito):
+      // in quel caso l'accesso resta quello di sempre (permanente), nessuno viene bloccato.
+      ({ data, error } = await supabase
+        .from('purchases')
+        .select('id')
+        .eq('user_id', session.user.id)
+        .eq('course_id', courseId)
+        .maybeSingle());
+      if (error || !data) return false;
+      return true;
+    }
+    if (!data) return false;
+    // expires_at vuoto = accesso permanente (acquisto). Con una data = accesso a tempo
+    // (prima visita: 30 giorni; percorsi: per la durata del percorso).
+    return !data.expires_at || new Date(data.expires_at) > new Date();
   }
 
   const value = {

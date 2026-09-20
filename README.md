@@ -1,3 +1,49 @@
+## Aggiornamento: videocorso "99€ da solo, 29€ con il percorso"
+
+Con un percorso (o la prima visita) il videocorso costa 29€ ed è incluso nel prezzo
+(`pathPrice` in `src/corsi.js`); da solo costa 99€. Pagina Percorsi e modale mostrano
+"99€ barrato → 29€ con il percorso".
+
+Il confronto barrato compare in automatico 30 giorni dopo `PREZZO_SINGOLO_DAL`
+(`src/percorsiData.js`), perché un annuncio di riduzione deve riferirsi al prezzo più basso
+applicato negli ultimi 30 giorni (art. 17-bis Codice del Consumo): finora il corso costava 29€.
+Prima di quella data si legge "99€ se acquistato da solo, con il percorso è incluso".
+METTI in `PREZZO_SINGOLO_DAL` la data in cui carichi questa versione (oggi: 2026-09-21).
+
+## Aggiornamento: videocorso a 99€ ad accesso a tempo, valore guide 46€
+
+- Videocorso "Da Zero al Tuo Piano": prezzo singolo 99€ (campo `price`/`priceLabel` in `src/corsi.js`).
+- ACCESSO A TEMPO: prima visita = videocorso per 30 giorni; percorsi = per tutta la durata.
+  Le guide PDF restano al cliente. Implementato con la colonna `purchases.expires_at`
+  (vuota = permanente, quindi chi ha già comprato non scade e chi compra con Stripe non scade mai).
+- Valore guide: 46€ (`GUIDE_BUNDLE_VALUE_EUR` in `src/guide.js`, da aggiornare se aggiungi guide).
+  Pagina Percorsi e modale mostrano 99€ (prezzo singolo del corso) + 46€ = 145€ di contenuti inclusi.
+
+ORDINE CONSIGLIATO: (1) Supabase → SQL Editor: esegui `supabase-schema-accesso-a-tempo.sql`
+(aggiunge la colonna; il file contiene anche il comando per dare accesso a un cliente con la durata giusta);
+(2) poi carica lo ZIP. Se carichi lo ZIP prima dell'SQL non si rompe niente (fallback), ma la scadenza non funziona finché la colonna non esiste.
+
+Nota prezzi barrati: non è mostrato nessun prezzo barrato. Vedi sotto la regola sugli annunci di riduzione di prezzo.
+
+## Aggiornamento: prezzi dei Percorsi e modalità (Roma / online)
+
+Nuova sezione "Percorsi e prezzi" nella pagina Percorsi (4 schede, ognuna apre il
+modale con l'opzione già scelta) e prezzi nel modale. Scritta "In presenza a Roma
+oppure online" in pagina, nel modale e nella scelta facoltativa della modalità
+(finisce nell'email precompilata).
+
+PREZZI: si cambiano in UN solo file, `src/percorsiData.js` (pagina e modale leggono da lì).
+Logica: listino studio (prima visita 105€, 3 incontri 250€, 3 successivi 220€)
++ 75€ di contenuti inclusi (videocorso, guide PDF, scheda di allenamento):
+prima visita completa 180€ · 3 mesi 330€ · 6 mesi 550€ · 12 mesi 990€.
+La prima visita è inclusa in ogni percorso. "Al mese" è calcolato in automatico.
+
+Videocorsi, guide PDF e scheda di allenamento sono inclusi FIN DALLA PRIMA VISITA:
+l'accesso al videocorso si sblocca con l'inserimento in `purchases` (vedi voce
+precedente), le guide si inviano a mano per email.
+
+Build verificata senza errori; nessun overflow orizzontale a 375 e 1280 px.
+
 ## Aggiornamento: richiesta informazioni più magnetica + "incluso" nei Percorsi
 
 Pagina Percorsi: nuova sezione "Il percorso, e tutto il resto" con due schede

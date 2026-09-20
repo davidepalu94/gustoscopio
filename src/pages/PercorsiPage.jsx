@@ -4,11 +4,13 @@ import Nav from '../components/Nav';
 import PercorsiModal from '../components/PercorsiModal';
 import Footer from '../components/Footer';
 import { getIncludedContent } from '../percorsiBonus';
+import { PACKAGES, MODALITA_LABEL, perMonth } from '../percorsiData';
 
 const TRUST_POINTS = [
   { icon: '🎯', label: 'Su misura per te' },
   { icon: '🔄', label: 'Si adatta nel tempo' },
   { icon: '🤝', label: 'Accompagnamento reale' },
+  { icon: '📍', label: 'A Roma o online' },
 ];
 
 const PHASES = [
@@ -48,6 +50,8 @@ const TESTIMONIALS_ROW_2 = TESTIMONIALS.slice(6, 12);
 
 export default function PercorsiPage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalPackage, setModalPackage] = useState(null);
+  const openModal = (pkgId = null) => { setModalPackage(pkgId); setModalOpen(true); };
   const inc = getIncludedContent();
 
   return (
@@ -124,7 +128,7 @@ export default function PercorsiPage() {
           <div className="percorsi-kicker">INCLUSO NEL PERCORSO</div>
           <h2 style={{ fontSize: 'clamp(30px, 5vw, 44px)' }}>Il percorso, e tutto il resto.</h2>
           <p className="sub" style={{ maxWidth: 560, margin: '12px auto 0' }}>
-            Quando inizi un percorso ricevi anche i contenuti di Gustoscopio, senza costi aggiuntivi.
+            Fin dalla prima visita ricevi anche i contenuti di Gustoscopio, senza costi aggiuntivi.
           </p>
         </div>
 
@@ -145,8 +149,17 @@ export default function PercorsiPage() {
             </ul>
             {inc.coursesValue && (
               <div className="bonus-value">
-                <span className="bonus-value-num">{inc.courses.reduce((t, c) => t + c.price, 0)}€</span>
-                <span className="bonus-value-label">{inc.courses.length === 1 ? 'il prezzo, se lo acquisti da solo' : 'il prezzo, se li acquisti da soli'}</span>
+                {inc.strike ? (
+                  <>
+                    <span className="bonus-value-num"><s className="bonus-strike">{inc.coursesTotal}€</s> {inc.coursesPathTotal}€</span>
+                    <span className="bonus-value-label">con il percorso, incluso nel prezzo. Da solo costa {inc.coursesTotal}€</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="bonus-value-num">{inc.coursesTotal}€</span>
+                    <span className="bonus-value-label">{inc.courses.length === 1 ? 'il prezzo, se lo acquisti da solo' : 'il prezzo, se li acquisti da soli'}. Con il percorso è incluso</span>
+                  </>
+                )}
               </div>
             )}
           </div>
@@ -162,11 +175,40 @@ export default function PercorsiPage() {
                 <li key={g.id}><strong>{g.title}</strong> · {g.pages} pagine</li>
               ))}
             </ul>
+            <Link to="/guide" style={{ color: '#3155FF', fontWeight: 600, fontSize: 14, marginBottom: 18 }}>Scopri le guide →</Link>
             <div className="bonus-value">
-              <span className="bonus-value-num bonus-value-word">Esclusive</span>
-              <span className="bonus-value-label">non si trovano in vendita: le ricevi solo con il percorso</span>
+              <span className="bonus-value-num">{inc.guidesValue}€</span>
+              <span className="bonus-value-label">il valore delle guide: non sono in vendita, le ricevi con la prima visita e con ogni percorso</span>
             </div>
           </div>
+        </div>
+        <p className="bonus-total">In tutto, <strong>{inc.totalValue}€</strong> di contenuti inclusi fin dalla prima visita.</p>
+      </div>
+
+      <div className="section price-section" style={{ maxWidth: 1040 }}>
+        <div className="section-head" style={{ marginBottom: 8 }}>
+          <div className="percorsi-kicker">PERCORSI E PREZZI</div>
+          <h2 style={{ fontSize: 'clamp(30px, 5vw, 44px)' }}>Scegli da dove partire.</h2>
+          <p className="sub" style={{ maxWidth: 600, margin: '12px auto 0' }}>
+            Ogni opzione include videocorso, guide PDF e scheda di allenamento.
+            La prima visita è compresa in ogni percorso: non la paghi due volte.
+            Le guide PDF restano tue; il videocorso resta accessibile per il tempo indicato.
+          </p>
+          <div className="price-modality">📍 {MODALITA_LABEL}</div>
+        </div>
+
+        <div className="price-grid">
+          {PACKAGES.map((p) => (
+            <div className="price-card" key={p.id}>
+              <span className="price-icon">{p.icon}</span>
+              <h3>{p.label}</h3>
+              <div className="price-amount">{p.price}€</div>
+              <div className="price-sub">{perMonth(p) ? `≈ ${perMonth(p)}€ al mese` : 'una tantum'}</div>
+              <p className="price-desc">{p.desc}</p>
+              <div className="price-access">🎬 Videocorso: {p.months ? p.access : `${p.access} dalla visita`}</div>
+              <button className="add-btn price-btn" onClick={() => openModal(p.id)}>Richiedi informazioni</button>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -205,14 +247,15 @@ export default function PercorsiPage() {
           <div className="kicker" style={{ color: 'rgba(255,255,255,0.6)' }}>VUOI PARLARNE?</div>
           <h2 style={{ color: 'white' }}>Scopri qual è il percorso giusto per te.</h2>
           <p style={{ color: 'rgba(255,255,255,0.75)' }}>
-            Iniziando un percorso hai anche i videocorsi{inc.coursesValue ? ` (${inc.coursesValue})` : ''} e le guide PDF esclusive, senza costi aggiuntivi.
+            Fin dalla prima visita hai anche i videocorsi{inc.coursesValue ? ` (${inc.coursesValue})` : ''}, le guide PDF esclusive e la scheda di allenamento, senza costi aggiuntivi.
           </p>
           <div className="cta-perks">
             <span>🎬 Videocorsi</span>
             <span>📘 Guide PDF esclusive</span>
-            <span>🤝 Un punto di riferimento</span>
+            <span>🏋️ Scheda di allenamento</span>
+            <span>📍 A Roma o online</span>
           </div>
-          <button className="add-btn percorsi-cta-btn" onClick={() => setModalOpen(true)}>
+          <button className="add-btn percorsi-cta-btn" onClick={() => openModal()}>
             Richiedi informazioni →
           </button>
           <p className="cta-note">Nessun impegno: la prima richiesta serve solo a capire da dove partire.</p>
@@ -221,7 +264,7 @@ export default function PercorsiPage() {
 
       <Footer />
 
-      <PercorsiModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <PercorsiModal isOpen={modalOpen} onClose={() => setModalOpen(false)} initialPackage={modalPackage} />
     </div>
   );
 }

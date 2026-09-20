@@ -43,10 +43,10 @@ export default function GuidaPage() {
         </div>
 
         <div className="corso-panel">
-          <h2>Riservata a chi segue un percorso</h2>
+          <h2>Riservata a chi inizia con Gustoscopio</h2>
           <p>
             Questa guida fa parte del materiale dei Percorsi personalizzati: la ricevi
-            insieme al tuo percorso, con un professionista a cui fare domande.
+            fin dalla prima visita, con un professionista a cui fare domande.
           </p>
           <Link to="/percorsi-personalizzati" className="corso-panel-btn">
             Scopri i Percorsi personalizzati
