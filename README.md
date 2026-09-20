@@ -1,3 +1,20 @@
+## Aggiornamento: controlli play/pausa personalizzati (via API ufficiale YouTube)
+
+Costruiti controlli minimal disegnati da noi (solo play/pausa, nessun
+altro elemento YouTube visibile durante la riproduzione), usando la
+IFrame Player API ufficiale di YouTube — pensata proprio per questo
+tipo di personalizzazione, quindi nessuna violazione dei loro termini.
+
+Come funziona: un pulsante trasparente copre tutto il video; mostra
+un'icona play/pausa disegnata da noi al centro, che cambia in base allo
+stato reale del video (gestito tramite l'API, non un trucco visivo). Un
+click mette in pausa o riprende la riproduzione.
+
+I video su Bunny.net (se ce ne saranno in futuro) continuano a usare il
+player semplice di prima, invariato.
+
+Build verificata senza errori.
+
 ## Aggiornamento: solo tasto play, niente altri controlli YouTube
 
 Aggiunto `controls=0` (parametro ufficiale YouTube) all'embed: resta

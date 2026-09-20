@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { getCorsoBySlug, getEmbedUrl, countAvailableVideos } from '../corsi';
 import { calculateBMI, calculateEnergyNeeds } from '../calculators';
@@ -26,6 +26,9 @@ export default function CorsoPage() {
   const [activeVideo, setActiveVideo] = useState(
     corso?.modules?.[0]?.videos?.[0] ?? null
   );
+
+  const ytPlayerRef = useRef(null);
+  const [isYtPlaying, setIsYtPlaying] = useState(false);
 
   const [age, setAge] = useState(30);
   const [sex, setSex] = useState('M');
@@ -75,6 +78,75 @@ export default function CorsoPage() {
       // non appena la sessione è pronta, e questo pannello sparisce.
       setAuthInfo('Un momento...');
     }
+  }
+
+  // Player YouTube personalizzato (IFrame API ufficiale): carichiamo lo
+  // script una sola volta e creiamo/aggiorniamo il player quando cambia
+  // il video attivo, per poter disegnare i nostri pulsanti play/pausa.
+  useEffect(() => {
+    if (!activeVideo || activeVideo.provider !== 'youtube') return;
+
+    let cancelled = false;
+
+    function createOrLoadPlayer() {
+      if (cancelled) return;
+      if (ytPlayerRef.current && ytPlayerRef.current.loadVideoById) {
+        ytPlayerRef.current.loadVideoById(activeVideo.id);
+        return;
+      }
+      ytPlayerRef.current = new window.YT.Player('gustoscopio-yt-player', {
+        videoId: activeVideo.id,
+        playerVars: {
+          modestbranding: 1,
+          rel: 0,
+          iv_load_policy: 3,
+          controls: 0,
+          disablekb: 1,
+        },
+        events: {
+          onStateChange: (e) => {
+            setIsYtPlaying(e.data === window.YT.PlayerState.PLAYING);
+          },
+        },
+      });
+    }
+
+    if (window.YT && window.YT.Player) {
+      createOrLoadPlayer();
+    } else {
+      const existingTag = document.getElementById('youtube-iframe-api');
+      if (!existingTag) {
+        const tag = document.createElement('script');
+        tag.id = 'youtube-iframe-api';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(tag);
+      }
+      const previousCallback = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        if (previousCallback) previousCallback();
+        createOrLoadPlayer();
+      };
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeVideo]);
+
+  useEffect(() => {
+    return () => {
+      if (ytPlayerRef.current && ytPlayerRef.current.destroy) {
+        ytPlayerRef.current.destroy();
+        ytPlayerRef.current = null;
+      }
+    };
+  }, []);
+
+  function toggleYtPlay() {
+    const player = ytPlayerRef.current;
+    if (!player) return;
+    if (isYtPlaying) player.pauseVideo();
+    else player.playVideo();
   }
 
   const checkPurchase = useCallback(async () => {
@@ -334,14 +406,39 @@ export default function CorsoPage() {
                   <span style={{ opacity: 0.6, fontSize: 13 }}>· {activeVideo.title}</span>
                 </div>
                 <div className="corso-player-wrap">
-                  <iframe
-                    src={getEmbedUrl(activeVideo)}
-                    loading="lazy"
-                    style={{ border: 0, width: '100%', height: '100%' }}
-                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                    title={activeVideo.title}
-                  />
+                  {activeVideo.provider === 'youtube' ? (
+                    <>
+                      <div id="gustoscopio-yt-player" style={{ width: '100%', height: '100%' }} />
+                      <button
+                        type="button"
+                        className="corso-player-toggle"
+                        onClick={toggleYtPlay}
+                        aria-label={isYtPlaying ? 'Metti in pausa' : 'Riproduci'}
+                      >
+                        <span className="corso-player-toggle-icon">
+                          {isYtPlaying ? (
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                              <rect x="6" y="5" width="4" height="14" rx="1" />
+                              <rect x="14" y="5" width="4" height="14" rx="1" />
+                            </svg>
+                          ) : (
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                              <path d="M7 4.5v15l14-7.5-14-7.5z" />
+                            </svg>
+                          )}
+                        </span>
+                      </button>
+                    </>
+                  ) : (
+                    <iframe
+                      src={getEmbedUrl(activeVideo)}
+                      loading="lazy"
+                      style={{ border: 0, width: '100%', height: '100%' }}
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                      allowFullScreen
+                      title={activeVideo.title}
+                    />
+                  )}
                 </div>
               </div>
             )}
