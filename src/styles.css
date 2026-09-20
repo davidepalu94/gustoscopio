@@ -835,3 +835,6 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .legal-content ul { margin: 0 0 12px; padding-left: 22px; }
 .legal-content li { font-size: 15px; line-height: 1.65; color: #2a2d38; margin-bottom: 6px; }
 .legal-content a { color: #3155FF; }
+
+/* Guide PDF */
+.guida-chapters { min-width: 0; margin: 4px 0 0; padding-left: 22px; font-size: 14.5px; line-height: 1.7; color: #10131C; }

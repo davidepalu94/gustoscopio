@@ -1,3 +1,34 @@
+## Aggiornamento: guide PDF a pagamento (3 guide + pagine, acquisto e download protetto)
+
+Nuove pagine `/guide` (elenco) e `/guide/:id` (dettaglio, acquisto, download),
+voce GUIDE nel menu. Le guide sono PDF generati da `tools/guide-pdf/`
+(`node export_data.mjs && python3 build.py`, serve solo reportlab), con valori
+presi dal database reale di alimenti e ricette.
+
+Come funziona l'acquisto: riusa Stripe + Supabase dei corsi. L'id della guida
+finisce in `purchases.course_id`, quindi il webhook NON è cambiato.
+`api/create-checkout-session.js` accetta `kind: 'guida'` solo per tornare a
+`/guide/:id` dopo il pagamento. Il download passa da `api/guide-download.js`:
+verifica l'utente dal token, controlla l'acquisto e restituisce un link
+temporaneo (60 secondi) al file nel bucket PRIVATO `guide` di Supabase.
+`/accedi` ora accetta `?next=/percorso-interno` per tornare alla pagina di partenza.
+
+DA FARE PRIMA DI VENDERE:
+1. Supabase → SQL Editor: esegui `supabase-schema-guide.sql` (crea il bucket privato).
+2. Supabase → Storage → guide: carica i 3 PDF con questi nomi esatti:
+   guida-proteine.pdf, guida-piatto-bilanciato.pdf, guida-spesa-etichette.pdf
+3. In `src/guide.js` imposta per ogni guida `price` (euro), `priceLabel` e
+   `salesOpen: true`. Finché il prezzo è null le guide risultano "Prossimamente".
+4. Sostituisci l'email placeholder in `PercorsiModal.jsx`.
+
+⚠️ NON mettere i PDF nel repository né in `public/`: chi vede il repository
+(se pubblico) o l'indirizzo del file li avrebbe gratis. I PDF stanno solo nel
+bucket privato; `tools/guide-pdf/out/` è escluso da `.gitignore`.
+Limite noto: chi compra può comunque condividere il file (non c'è filigrana).
+
+Integrata sopra l'ultima versione del progetto (fix icona play/pausa del player).
+Build verificata senza errori; nessun overflow orizzontale a 375, 800 e 1280 px.
+
 ## Aggiornamento: il pulsante play/pausa sparisce durante la riproduzione
 
 Correzione: il cerchio con l'icona play/pausa ora si nasconde

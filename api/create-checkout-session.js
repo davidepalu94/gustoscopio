@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { courseId, courseTitle, priceEur, userId, userEmail } = req.body || {};
+    const { courseId, courseTitle, priceEur, userId, userEmail, kind } = req.body || {};
 
     if (!courseId || !priceEur || !userId) {
       res.status(400).json({ error: 'Dati mancanti per creare il pagamento' });
@@ -17,6 +17,8 @@ export default async function handler(req, res) {
     }
 
     const origin = req.headers.origin || `https://${req.headers.host}`;
+    // 'guida' → pagina /guide/:id, altrimenti (comportamento di sempre) /corsi/:id
+    const basePath = kind === 'guida' ? 'guide' : 'corsi';
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -34,8 +36,8 @@ export default async function handler(req, res) {
       customer_email: userEmail,
       client_reference_id: userId,
       metadata: { course_id: courseId, user_id: userId },
-      success_url: `${origin}/corsi/${courseId}?acquisto=ok`,
-      cancel_url: `${origin}/corsi/${courseId}?acquisto=annullato`,
+      success_url: `${origin}/${basePath}/${courseId}?acquisto=ok`,
+      cancel_url: `${origin}/${basePath}/${courseId}?acquisto=annullato`,
     });
 
     res.status(200).json({ url: session.url });

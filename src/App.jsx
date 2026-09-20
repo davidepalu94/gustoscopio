@@ -7,6 +7,8 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Corsi from './pages/Corsi';
 import CorsoPage from './pages/CorsoPage';
+import Guide from './pages/Guide';
+import GuidaPage from './pages/GuidaPage';
 import Login from './pages/Login';
 import ValutazionePage from './pages/ValutazionePage';
 import FoodPage from './pages/FoodPage';
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/corsi" element={<Corsi />} />
           <Route path="/corsi/:slug" element={<CorsoPage />} />
+          <Route path="/guide" element={<Guide />} />
+          <Route path="/guide/:slug" element={<GuidaPage />} />
           <Route path="/accedi" element={<Login />} />
           <Route path="/valutazione" element={<ValutazionePage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
