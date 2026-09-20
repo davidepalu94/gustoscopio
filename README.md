@@ -1,3 +1,13 @@
+## Aggiornamento: il pulsante play/pausa sparisce durante la riproduzione
+
+Correzione: il cerchio con l'icona play/pausa ora si nasconde
+automaticamente non appena il video parte, e ricompare solo quando
+muovi il mouse sopra il video o quando è in pausa. Il pulsante resta
+comunque cliccabile in ogni momento (solo l'icona diventa invisibile),
+quindi il video si può sempre mettere in pausa cliccandoci sopra.
+
+Build verificata senza errori.
+
 ## Aggiornamento: tentativo di avvio in HD (720p)
 
 Aggiunto un tentativo di forzare la qualità a 720p all'avvio di ogni

@@ -421,7 +421,10 @@ export default function CorsoPage() {
                         onClick={toggleYtPlay}
                         aria-label={isYtPlaying ? 'Metti in pausa' : 'Riproduci'}
                       >
-                        <span className="corso-player-toggle-icon">
+                        <span
+                          className="corso-player-toggle-icon"
+                          style={{ opacity: isYtPlaying ? 0 : 1 }}
+                        >
                           {isYtPlaying ? (
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
                               <rect x="6" y="5" width="4" height="14" rx="1" />
