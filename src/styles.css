@@ -937,3 +937,11 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 
 .bonus-strike { font-size: 0.62em; font-weight: 600; color: #8a8d97; text-decoration-thickness: 2px; text-decoration-color: #C94B3C; margin-right: 4px; }
 .pm-strike { color: #8a8d97; text-decoration-color: #C94B3C; }
+
+/* prezzi dentro il blocco scuro finale */
+.percorsi-cta-inner.percorsi-cta-wide { max-width: 1040px; }
+.price-modality-dark { color: #FFFFFF; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); }
+.percorsi-cta-wide .price-grid { text-align: left; margin-top: 34px; }
+.percorsi-cta-wide .cta-note { max-width: 620px; margin-left: auto; margin-right: auto; }
+.percorsi-cta-wide h3 { color: #10131C; }
+.percorsi-cta-wide .price-card p { margin-top: 0; font-size: 13.5px; }

@@ -185,33 +185,6 @@ export default function PercorsiPage() {
         <p className="bonus-total">In tutto, <strong>{inc.totalValue}€</strong> di contenuti inclusi fin dalla prima visita.</p>
       </div>
 
-      <div className="section price-section" style={{ maxWidth: 1040 }}>
-        <div className="section-head" style={{ marginBottom: 8 }}>
-          <div className="percorsi-kicker">PERCORSI E PREZZI</div>
-          <h2 style={{ fontSize: 'clamp(30px, 5vw, 44px)' }}>Scegli da dove partire.</h2>
-          <p className="sub" style={{ maxWidth: 600, margin: '12px auto 0' }}>
-            Ogni opzione include videocorso, guide PDF e scheda di allenamento.
-            La prima visita è compresa in ogni percorso: non la paghi due volte.
-            Le guide PDF restano tue; il videocorso resta accessibile per il tempo indicato.
-          </p>
-          <div className="price-modality">📍 {MODALITA_LABEL}</div>
-        </div>
-
-        <div className="price-grid">
-          {PACKAGES.map((p) => (
-            <div className="price-card" key={p.id}>
-              <span className="price-icon">{p.icon}</span>
-              <h3>{p.label}</h3>
-              <div className="price-amount">{p.price}€</div>
-              <div className="price-sub">{perMonth(p) ? `≈ ${perMonth(p)}€ al mese` : 'una tantum'}</div>
-              <p className="price-desc">{p.desc}</p>
-              <div className="price-access">🎬 Videocorso: {p.months ? p.access : `${p.access} dalla visita`}</div>
-              <button className="add-btn price-btn" onClick={() => openModal(p.id)}>Richiedi informazioni</button>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="section" style={{ maxWidth: 1100, paddingLeft: 0, paddingRight: 0 }}>
         <div className="section-head" style={{ paddingLeft: 20, paddingRight: 20 }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 38px)' }}>Chi lo ha provato</h2>
@@ -243,22 +216,31 @@ export default function PercorsiPage() {
       </div>
 
       <div className="percorsi-cta-block">
-        <div className="percorsi-cta-inner">
-          <div className="kicker" style={{ color: 'rgba(255,255,255,0.6)' }}>VUOI PARLARNE?</div>
-          <h2 style={{ color: 'white' }}>Scopri qual è il percorso giusto per te.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.75)' }}>
+        <div className="percorsi-cta-inner percorsi-cta-wide">
+          <div className="kicker" style={{ color: 'rgba(255,255,255,0.6)' }}>PERCORSI E PREZZI</div>
+          <h2 style={{ color: 'white' }}>Scegli da dove partire.</h2>
+          <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 620, marginLeft: 'auto', marginRight: 'auto' }}>
             Fin dalla prima visita hai anche i videocorsi{inc.coursesValue ? ` (${inc.coursesValue})` : ''}, le guide PDF esclusive e la scheda di allenamento, senza costi aggiuntivi.
+            La prima visita è compresa in ogni percorso: non la paghi due volte.
           </p>
-          <div className="cta-perks">
-            <span>🎬 Videocorsi</span>
-            <span>📘 Guide PDF esclusive</span>
-            <span>🏋️ Scheda di allenamento</span>
-            <span>📍 A Roma o online</span>
+          <div className="price-modality price-modality-dark">📍 {MODALITA_LABEL}</div>
+
+          <div className="price-grid">
+            {PACKAGES.map((p) => (
+              <div className="price-card" key={p.id}>
+                <span className="price-icon">{p.icon}</span>
+                <h3>{p.label}</h3>
+                <div className="price-amount">{p.price}€</div>
+                <div className="price-sub">{perMonth(p) ? `≈ ${perMonth(p)}€ al mese` : 'una tantum'}</div>
+                <p className="price-desc">{p.desc}</p>
+                <div className="price-access">🎬 Videocorso: {p.months ? p.access : `${p.access} dalla visita`}</div>
+                <button className="add-btn price-btn" onClick={() => openModal(p.id)}>Richiedi informazioni</button>
+              </div>
+            ))}
           </div>
-          <button className="add-btn percorsi-cta-btn" onClick={() => openModal()}>
-            Richiedi informazioni →
-          </button>
-          <p className="cta-note">Nessun impegno: la prima richiesta serve solo a capire da dove partire.</p>
+          <p className="cta-note">
+            Nessun impegno: la richiesta serve solo a capire da dove partire. Le guide PDF restano tue; il videocorso resta accessibile per il tempo indicato.
+          </p>
         </div>
       </div>
 

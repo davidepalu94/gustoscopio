@@ -1,3 +1,9 @@
+## Aggiornamento: un solo punto di richiesta nella pagina Percorsi
+
+Prima c'erano due blocchi "Richiedi informazioni" (prezzi e CTA finale dopo le recensioni).
+Ora i prezzi stanno dentro il blocco scuro finale, dopo le recensioni: un solo punto,
+4 pulsanti (uno per opzione, ognuno apre il modulo con l'opzione già scelta).
+
 ## Aggiornamento: videocorso "99€ da solo, 29€ con il percorso"
 
 Con un percorso (o la prima visita) il videocorso costa 29€ ed è incluso nel prezzo
