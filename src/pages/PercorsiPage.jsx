@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 import PercorsiModal from '../components/PercorsiModal';
 import Footer from '../components/Footer';
 import { getIncludedContent } from '../percorsiBonus';
-import { PACKAGES, MODALITA_LABEL, perMonth } from '../percorsiData';
+import { PACKAGES, MODALITA_LABEL, perMonth, packageFeatures } from '../percorsiData';
 
 const TRUST_POINTS = [
   { icon: '🎯', label: 'Su misura per te' },
@@ -189,9 +189,10 @@ export default function PercorsiPage() {
             </div>
             <h3>Guide PDF esclusive</h3>
             <ul className="bonus-list">
-              {inc.guides.map((g) => (
+              {inc.guides.slice(0, 4).map((g) => (
                 <li key={g.id}><strong>{g.title}</strong> · {g.pages} pagine</li>
               ))}
+              {inc.guides.length > 4 && <li>…e altre guide di approfondimento</li>}
             </ul>
             <Link to="/guide" style={{ color: '#3155FF', fontWeight: 600, fontSize: 14, marginBottom: 18 }}>Scopri le guide →</Link>
             <div className="bonus-value">
@@ -239,7 +240,7 @@ export default function PercorsiPage() {
           <h2 style={{ color: 'white' }}>Scegli da dove partire.</h2>
           <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 620, marginLeft: 'auto', marginRight: 'auto' }}>
             Fin dalla prima visita hai anche i videocorsi{inc.coursesValue ? ` (${inc.coursesValue})` : ''}, le guide PDF esclusive e la scheda di allenamento, senza costi aggiuntivi.
-            La prima visita è compresa in ogni percorso: non la paghi due volte.
+            La prima visita è compresa in ogni percorso: non la paghi due volte. Qui sotto trovi tutto ciò che è incluso in ciascuna opzione.
           </p>
           <div className="price-modality price-modality-dark">📍 {MODALITA_LABEL}</div>
 
@@ -251,7 +252,17 @@ export default function PercorsiPage() {
                 <div className="price-amount">{p.price}€</div>
                 <div className="price-sub">{perMonth(p) ? `≈ ${perMonth(p)}€ al mese` : 'una tantum'}</div>
                 <p className="price-desc">{p.desc}</p>
-                <div className="price-access">🎬 Videocorso: {p.months ? p.access : `${p.access} dalla visita`}</div>
+                <ul className="price-features">
+                  {packageFeatures(p).map((f) => (
+                    <li key={f.label} className={f.on ? '' : 'off'}>
+                      <span className="pf-mark">{f.on ? '✓' : '–'}</span>
+                      <span>
+                        {f.label}
+                        {f.on && f.note ? <span className="pf-note">{f.note}</span> : null}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
                 <button className="add-btn price-btn" onClick={() => openModal(p.id)}>Richiedi informazioni</button>
               </div>
             ))}

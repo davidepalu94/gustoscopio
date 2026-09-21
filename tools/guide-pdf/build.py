@@ -17,6 +17,10 @@ MODULES = {
     'guida-proteine': 'guide_proteine',
     'guida-piatto-bilanciato': 'guide_piatto',
     'guida-spesa-etichette': 'guide_spesa',
+    'guida-fabbisogno': 'guide_fabbisogno',
+    'guida-colazione-spuntini': 'guide_colazione',
+    'guida-settimana': 'guide_settimana',
+    'guida-idratazione': 'guide_idratazione',
 }
 
 

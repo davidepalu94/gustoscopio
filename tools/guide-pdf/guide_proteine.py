@@ -109,7 +109,7 @@ def build_story(D):
     S += [
         Spacer(1, 4 * mm),
         Callout('tip', [P(f'<b>Come si calcola.</b> Peso in kg × grammi per kg = grammi al giorno. '
-                          f'Esempio: 75 kg, attività moderata (1,2–1,6 g/kg) → 75 × 1,2 = <b>{r75["low"]} g</b> e '
+                          f'Esempio: 75 kg, attività moderata (1,2–1,6 g/kg): 75 × 1,2 = <b>{r75["low"]} g</b> e '
                           f'75 × 1,6 = <b>{r75["high"]} g</b>. L\'intervallo è quindi <b>{r75["low"]}–{r75["high"]} g al giorno</b>. '
                           'Per iniziare, punta al centro dell\'intervallo, non a un estremo.', 'callout')]),
         Spacer(1, 3 * mm),
@@ -198,8 +198,8 @@ def build_story(D):
         Spacer(1, 2 * mm),
         HBar(items, label_w=56 * mm, max_val=max(i[1] for i in items)),
         Spacer(1, 1.5 * mm),
-        P("<font color='#3155FF'><b>■</b></font> origine animale &nbsp;&nbsp; "
-          "<font color='#A9B8FF'><b>■</b></font> origine vegetale (compresi cereali e frutta secca)", 'small'),
+        P("<font color='#3155FF' size='13'><b>•</b></font> origine animale &nbsp;&nbsp; "
+          "<font color='#A9B8FF' size='13'><b>•</b></font> origine vegetale (compresi cereali e frutta secca)", 'small'),
     ]))
     S.append(Spacer(1, 3 * mm))
     hidden = [('pasta', 80), ('pane', 50), ('avena', 40), ('mandorle', 30)]

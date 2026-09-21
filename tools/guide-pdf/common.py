@@ -22,7 +22,40 @@ CATALOG = {
         'cover': ['La spesa', 'intelligente'],
         'subtitle': 'Leggere le etichette, riempire la dispensa, uscire dal supermercato con le idee chiare.',
     },
+    'guida-fabbisogno': {
+        'number': '4', 'title': 'Il tuo fabbisogno', 'short': 'Il tuo fabbisogno',
+        'cover': ['Il tuo', 'fabbisogno'],
+        'subtitle': "Come si stima l'energia che ti serve, cosa cambia con l'attività e come usare il numero senza farne un'ossessione.",
+    },
+    'guida-colazione-spuntini': {
+        'number': '5', 'title': 'Colazione e spuntini', 'short': 'Colazione e spuntini',
+        'cover': ['Colazione', 'e spuntini'],
+        'subtitle': 'Idee bilanciate costruite su ricette reali: veloci, che saziano e facili da ripetere.',
+    },
+    'guida-settimana': {
+        'number': '6', 'title': 'Organizzare la settimana', 'short': 'Organizzare la settimana',
+        'cover': ['Organizzare', 'la settimana'],
+        'subtitle': 'Pianificare i pasti, cucinare in anticipo, fare una lista della spesa che regge.',
+    },
+    'guida-idratazione': {
+        'number': '7', 'title': 'Idratazione', 'short': 'Idratazione',
+        'cover': ['Idratazione,', 'senza', 'complicazioni'],
+        'subtitle': 'Quanta acqua serve davvero, come cambia con attività e caldo, cosa conta come liquido.',
+    },
 }
+
+# Ingredienti di MARCA presenti nel database: le guide non li usano mai (neutralità).
+BRAND_FOOD_IDS = {
+    'crackers-galbusera-magretti', 'gallette-fiorentini-super-protein', 'kefir-pro-high-protein',
+    'marmellata-light', 'mozzarella-protein', 'pasta-barilla-protein-plus', 'philadelphia-light',
+    'philadelphia-protein', 'ricotta-proteica-lidl', 'riso-soffiato-kelloggs', 'yogurt-hipro-danone',
+}
+
+
+def clean_recipes(D):
+    """Ricette senza ingredienti di marca."""
+    return [r for r in D.recipes.values() if not any(i['foodId'] in BRAND_FOOD_IDS for i in r['ingredients'])]
+
 
 DISCLAIMER = (
     'Le informazioni di questa guida hanno scopo divulgativo: non sono un parere medico e non sostituiscono '

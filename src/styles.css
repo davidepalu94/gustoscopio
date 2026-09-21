@@ -946,3 +946,14 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .percorsi-cta-wide h3 { color: #10131C; }
 .percorsi-cta-wide .price-card p { margin-top: 0; font-size: 13.5px; }
 .bonus-value-word { font-size: 26px !important; white-space: nowrap; }
+
+/* elenco "incluso" nelle schede dei prezzi */
+.percorsi-cta-inner.percorsi-cta-wide { max-width: 1180px; }
+.price-desc { flex: 0 0 auto; }
+.price-features { list-style: none; padding: 14px 0 0; margin: 0 0 18px; border-top: 1px solid rgba(16,19,28,0.08); display: flex; flex-direction: column; gap: 9px; font-size: 12.5px; line-height: 1.4; color: #10131C; flex: 1; }
+.price-features li { display: flex; gap: 8px; min-width: 0; }
+.price-features li > span:last-child { min-width: 0; }
+.pf-mark { flex-shrink: 0; width: 14px; font-weight: 800; color: #3155FF; }
+.price-features li.off { color: #a3a6b0; }
+.price-features li.off .pf-mark { color: #c8cad2; }
+.pf-note { display: block; margin-top: 1px; font-size: 11.5px; color: #6f7280; }

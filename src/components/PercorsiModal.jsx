@@ -106,7 +106,7 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
               <span className="pm-inc-icon">📘</span>
               <div className="pm-inc-text">
                 <div className="pm-inc-title">Guide PDF esclusive</div>
-                <div className="pm-inc-desc">{inc.guides.map((g) => g.title).join(' · ')}. Non in vendita: restano tue.</div>
+                <div className="pm-inc-desc">{inc.guides.slice(0, 3).map((g) => g.title).join(' · ')}{inc.guides.length > 3 ? ' e altre' : ''}. Non in vendita: restano tue.</div>
               </div>
               <div className="pm-inc-value">Valore {inc.guidesValue}€</div>
             </div>
@@ -119,13 +119,15 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
               </div>
             </div>
 
-            <div className="pm-inc-row">
-              <span className="pm-inc-icon">🤝</span>
-              <div className="pm-inc-text">
-                <div className="pm-inc-title">Un punto di riferimento diretto</div>
-                <div className="pm-inc-desc">Per le tue domande, lungo tutto il percorso.</div>
+            {(!pkg || pkg.isPath) && (
+              <div className="pm-inc-row">
+                <span className="pm-inc-icon">💬</span>
+                <div className="pm-inc-text">
+                  <div className="pm-inc-title">Supporto via WhatsApp</div>
+                  <div className="pm-inc-desc">Per le tue domande, con i percorsi, per tutta la loro durata.</div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="pm-step"><span className="pm-step-num">3</span> Raccontaci qualcosa <span className="pm-opt">(facoltativo)</span></div>

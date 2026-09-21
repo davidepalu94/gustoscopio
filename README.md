@@ -1,3 +1,27 @@
+## Aggiornamento: cosa è incluso in ogni opzione (schede prezzi)
+
+Ogni scheda mostra l'elenco completo: visita nutrizionale in sede o online con nutrizionista iscritto
+all'albo, infinite sostituzioni alimentari, visite di controllo (fino a 3/6/12 "se il piano le prevede"),
+scheda di allenamento, videocorso (30 giorni con la prima visita, per tutta la durata con i percorsi),
+guide PDF, supporto via WhatsApp. Le voci non incluse sono in grigio con "–".
+I dati stanno in `src/percorsiData.js` (`controls`, `whatsapp`, `access` per opzione e `packageFeatures`).
+Ipotesi da confermare: prima visita SENZA visite di controllo e SENZA WhatsApp.
+
+## Aggiornamento: quattro nuove guide PDF (in tutto sette)
+
+Nuove guide, con la stessa logica delle prime tre (dati reali del database, nessuna marca, capitoli,
+domande frequenti, scheda stampabile, chiusura soft): Il tuo fabbisogno, Colazione e spuntini,
+Organizzare la settimana, Idratazione. Sono generate da `tools/guide-pdf/` e registrate in
+`src/guide.js`. Per aggiungerne altre: modulo `guide_xxx.py`, riga in `CATALOG` (common.py) e in
+`MODULES` (build.py), voce in `src/guide.js`. `export_data.mjs` ora esporta anche le tabelle di
+fabbisogno energetico e idrico calcolate con le funzioni reali di `calculators.js`.
+
+Corretti anche due glifi mancanti nella guida Proteine (freccia e quadratini). Le schede mostrano
+al massimo 4 guide + "…e altre", così restano compatte quando ne aggiungi.
+
+ATTENZIONE: `GUIDE_BUNDLE_VALUE_EUR` (src/guide.js) è ancora 46€, il valore stimato per le prime tre
+guide: con sette guide va rivalutato.
+
 ## Aggiornamento: scheda di allenamento a vista
 
 Nella sezione "Il percorso, e tutto il resto" c'è ora una scheda dedicata alla scheda di allenamento

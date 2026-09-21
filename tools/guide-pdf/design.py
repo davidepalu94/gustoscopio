@@ -126,6 +126,8 @@ class Data:
         self.portion_ref = d['portionRef']
         self.activity_levels = d['activityLevels']
         self.protein_table = d['proteinTable']
+        self.energy_table = d['energyTable']
+        self.water_table = d['waterTable']
 
     def food(self, fid):
         if fid not in self.foods:

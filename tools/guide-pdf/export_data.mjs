@@ -35,12 +35,35 @@ for (const lvl of calcs.ACTIVITY_LEVELS) {
   gPerKg[lvl.id] = [r.low / 100, r.high / 100];
 }
 
+// Fabbisogno energetico e idrico calcolati con le funzioni REALI dello strumento.
+const profiles = [
+  { id: 'F60', sex: 'F', age: 35, heightCm: 165, weightKg: 60 },
+  { id: 'F70', sex: 'F', age: 35, heightCm: 165, weightKg: 70 },
+  { id: 'M75', sex: 'M', age: 40, heightCm: 178, weightKg: 75 },
+  { id: 'M85', sex: 'M', age: 40, heightCm: 178, weightKg: 85 },
+];
+const energyTable = { profiles, byProfile: {} };
+for (const pr of profiles) {
+  energyTable.byProfile[pr.id] = {};
+  for (const lvl of calcs.ACTIVITY_LEVELS) {
+    energyTable.byProfile[pr.id][lvl.id] = calcs.calculateEnergyNeeds({ ...pr, activityLevel: lvl.id });
+  }
+}
+const waterWeights = [55, 65, 75, 85];
+const waterTable = { weights: waterWeights, mild: {}, hot: {} };
+for (const lvl of calcs.ACTIVITY_LEVELS) {
+  waterTable.mild[lvl.id] = waterWeights.map((w) => calcs.calculateWaterNeeds({ weightKg: w, activityLevel: lvl.id, hotClimate: false }));
+  waterTable.hot[lvl.id] = waterWeights.map((w) => calcs.calculateWaterNeeds({ weightKg: w, activityLevel: lvl.id, hotClimate: true }));
+}
+
 const out = {
   foods: foods.FOODS,
   recipes: recipes.RECIPES.map((r) => ({ ...r, totals: recipes.calcRecipeTotals(r, 1) })),
   portionRef: calcs.PORTION_REFERENCE,
   activityLevels: calcs.ACTIVITY_LEVELS,
   proteinTable: { weights, byLevel: proteinTable, gPerKg },
+  energyTable,
+  waterTable,
 };
 fs.writeFileSync(path.join(here, 'data.json'), JSON.stringify(out));
 console.log(`data.json: ${out.foods.length} alimenti, ${out.recipes.length} ricette`);
