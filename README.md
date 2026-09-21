@@ -1,7 +1,7 @@
 ## Aggiornamento: cosa è incluso in ogni opzione (schede prezzi)
 
 Ogni scheda mostra l'elenco completo: visita nutrizionale in sede o online con nutrizionista iscritto
-all'albo, infinite sostituzioni alimentari, visite di controllo (fino a 3/6/12 "se il piano le prevede"),
+all'albo, infinite sostituzioni alimentari, visite di controllo (fino a 2/5/11, oltre alla prima visita: 3/6/12 visite in totale, "se il piano le prevede"),
 scheda di allenamento, videocorso (30 giorni con la prima visita, per tutta la durata con i percorsi),
 guide PDF, supporto via WhatsApp. Le voci non incluse sono in grigio con "–".
 I dati stanno in `src/percorsiData.js` (`controls`, `whatsapp`, `access` per opzione e `packageFeatures`).

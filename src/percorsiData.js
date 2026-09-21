@@ -19,11 +19,11 @@ export const MODALITA_LABEL = 'In presenza a Roma oppure online';
 export const PACKAGES = [
   { id: 'visita', icon: '🎯', label: 'Prima visita completa', price: 180, months: null, isPath: false, access: '30 giorni', controls: 0, whatsapp: false,
     desc: 'Un incontro per valutare la tua situazione e i tuoi obiettivi, con tutto il materiale incluso.' },
-  { id: '3m', icon: '🌱', label: 'Percorso 3 mesi', price: 330, months: 3, isPath: true, access: 'per tutta la durata del percorso', controls: 3, whatsapp: true,
+  { id: '3m', icon: '🌱', label: 'Percorso 3 mesi', price: 330, months: 3, isPath: true, access: 'per tutta la durata del percorso', controls: 2, whatsapp: true,
     desc: 'La base per costruire le prime abitudini sostenibili.' },
-  { id: '6m', icon: '🔄', label: 'Percorso 6 mesi', price: 550, months: 6, isPath: true, access: 'per tutta la durata del percorso', controls: 6, whatsapp: true,
+  { id: '6m', icon: '🔄', label: 'Percorso 6 mesi', price: 550, months: 6, isPath: true, access: 'per tutta la durata del percorso', controls: 5, whatsapp: true,
     desc: 'Il tempo per consolidare i risultati e adattare il percorso.' },
-  { id: '12m', icon: '🏆', label: 'Percorso 12 mesi', price: 990, months: 12, isPath: true, access: 'per tutta la durata del percorso', controls: 12, whatsapp: true,
+  { id: '12m', icon: '🏆', label: 'Percorso 12 mesi', price: 990, months: 12, isPath: true, access: 'per tutta la durata del percorso', controls: 11, whatsapp: true,
     desc: 'Un accompagnamento esteso, pensato per cambiamenti duraturi.' },
 ];
 
@@ -37,7 +37,7 @@ export function packageFeatures(pkg) {
     { label: "Visita nutrizionale in sede o online, con nutrizionista iscritto all'albo", on: true },
     { label: 'Infinite sostituzioni alimentari', on: true },
     pkg.controls > 0
-      ? { label: `Fino a ${pkg.controls} visite di controllo`, on: true, note: 'se il piano le prevede' }
+      ? { label: `Fino a ${pkg.controls} visite di controllo`, on: true, note: 'oltre alla prima visita, se il piano le prevede' }
       : { label: 'Visite di controllo', on: false },
     { label: 'Scheda di allenamento personalizzata', on: true },
     { label: 'Videocorso', on: true, note: `accesso ${pkg.months ? pkg.access : `per ${pkg.access}`}` },
