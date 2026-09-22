@@ -1,4 +1,35 @@
-## Aggiornamento: cosa è incluso in ogni opzione (schede prezzi)
+## Aggiornamento: 10 ricette gustose per rendere sfiziose le proteine magre (da 97 a 107)
+
+Richiesta: idee per rendere gustosi petto di pollo, albume, merluzzo e
+altri pesci magri, con salse/creme leggere invece delle solite cotture
+semplici. Aggiunti 7 ingredienti "sapore" mancanti (limone, basilico
+fresco, prezzemolo fresco, pinoli, olive, capperi, curry in polvere) per
+poter fare davvero salse e marinate, non solo cotture al vapore.
+
+Le 10 ricette:
+
+- **Petto di pollo con pesto di zucchine** — zucchine, mandorle,
+  Parmigiano e basilico frullati, l'idea "pesto di zucchine" che avevi
+  suggerito come esempio
+- **Merluzzo in crosta di mandorle e limone**
+- **Nasello con salsa di yogurt, curry e limone**
+- **Petto di pollo con salsa di avocado e limone**
+- **Albume strapazzato con pomodorini piccanti**
+- **Sogliola con salsa di capperi e olive**
+- **Petto di pollo alla gremolata** (prezzemolo, limone, aglio)
+- **Orata con salsa al basilico e pinoli**
+- **Spigola con salsa di yogurt e cetriolo** (stile tzatziki)
+- **Merluzzo al curry con cipolla e yogurt**
+
+Copertura: petto di pollo (3 ricette), merluzzo (2), albume (1), nasello
+(1), sogliola (1), orata (1), spigola (1) — tutte le proteine magre
+richieste, con salse/marinate diverse così da non ripetere mai lo stesso
+abbinamento.
+
+Nessun ID duplicato tra i 187 alimenti né tra le 107 ricette, nessun
+foodId rotto. Build verificata senza errori.
+
+
 
 Ogni scheda mostra l'elenco completo: visita nutrizionale in sede o online con nutrizionista iscritto
 all'albo, infinite sostituzioni alimentari, visite di controllo (fino a 2/5/11, oltre alla prima visita: 3/6/12 visite in totale, "se il piano le prevede"),

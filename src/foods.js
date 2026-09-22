@@ -232,6 +232,15 @@ export const FOODS = [
   { id: 'marmellata-light', name: 'Marmellata Hero Light', emoji: '🍯', kcal: 42, protein: 0.4, carbs: 9.5, fat: 0.2, fiber: 1, category: 'Dolci & snack' },
   { id: 'dolcificante', name: 'Dolcificante (senza calorie)', emoji: '🥄', kcal: 8, protein: 0, carbs: 2, fat: 0, fiber: 0, category: 'Condimenti' },
   { id: 'cacao-amaro', name: 'Cacao amaro in polvere', emoji: '🍫', kcal: 228, protein: 19.6, carbs: 11.5, fat: 13.7, fiber: 33, category: 'Dolci & snack' },
+
+  // INGREDIENTI SAPORE (per salse, marinate, condimenti)
+  { id: 'limone', name: 'Limone', emoji: '🍋', kcal: 29, protein: 1.1, carbs: 9.3, fat: 0.3, fiber: 2.8, category: 'Frutta' },
+  { id: 'basilico', name: 'Basilico fresco', emoji: '🌿', kcal: 23, protein: 3.2, carbs: 2.7, fat: 0.6, fiber: 1.6, category: 'Verdura' },
+  { id: 'prezzemolo', name: 'Prezzemolo fresco', emoji: '🌿', kcal: 36, protein: 3, carbs: 6.3, fat: 0.8, fiber: 3.3, category: 'Verdura' },
+  { id: 'pinoli', name: 'Pinoli', emoji: '🌰', kcal: 673, protein: 13.7, carbs: 13.1, fat: 61, fiber: 3.7, category: 'Frutta secca' },
+  { id: 'olive', name: 'Olive', emoji: '🫒', kcal: 145, protein: 1, carbs: 3.8, fat: 15.3, fiber: 3.3, category: 'Condimenti' },
+  { id: 'capperi', name: 'Capperi', emoji: '🫒', kcal: 23, protein: 2.4, carbs: 4.9, fat: 0.9, fiber: 3.2, category: 'Condimenti' },
+  { id: 'curry', name: 'Curry in polvere', emoji: '🍛', kcal: 325, protein: 12.7, carbs: 55.8, fat: 14, fiber: 33.2, category: 'Condimenti' },
 ];
 
 export function calc(food, grams) {
