@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getIncludedContent } from '../percorsiBonus';
-import { PACKAGES, MODALITA_LABEL, ACCESSO_GENERICO, perMonth } from '../percorsiData';
+import { PACKAGES, MODALITA_LABEL, perMonth } from '../percorsiData';
 
 // Indirizzo a cui arriva la richiesta.
 const CONTACT_EMAIL = 'davidepalumbo.nutrizione@gmail.com';
@@ -10,11 +9,19 @@ const MODES = [
   { id: 'online', label: '💻 Online' },
 ];
 
+const TRAINING_FREQ = [
+  { id: 'no', label: 'Non mi alleno' },
+  { id: '1-2', label: '1-2 volte a settimana' },
+  { id: '3-4', label: '3-4 volte a settimana' },
+  { id: '5+', label: '5+ volte a settimana' },
+];
+
 export default function PercorsiModal({ isOpen, onClose, initialPackage = null }) {
   const [selectedPackage, setSelectedPackage] = useState(initialPackage);
   const [mode, setMode] = useState(null);
   const [name, setName] = useState('');
   const [goal, setGoal] = useState('');
+  const [trainingFreq, setTrainingFreq] = useState(null);
 
   useEffect(() => {
     if (isOpen) setSelectedPackage(initialPackage);
@@ -29,15 +36,16 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
 
   if (!isOpen) return null;
 
-  const inc = getIncludedContent();
   const pkg = PACKAGES.find((p) => p.id === selectedPackage);
   const modeObj = MODES.find((m) => m.id === mode);
+  const freqObj = TRAINING_FREQ.find((f) => f.id === trainingFreq);
 
   const subject = 'Richiesta informazioni - Percorsi personalizzati';
   const body =
     `Nome: ${name.trim() || '(da specificare)'}\n` +
     `Percorso di interesse: ${pkg ? `${pkg.label} (${pkg.price}€)` : '(da specificare)'}\n` +
     `Modalità preferita: ${modeObj ? modeObj.label.replace(/^\S+\s/, '') : '(da specificare)'}\n` +
+    `Si allena: ${freqObj ? freqObj.label : '(da specificare)'}\n` +
     `Il mio obiettivo: ${goal.trim() || '(da specificare)'}\n\n` +
     `Scrivi qui eventuali domande o dettagli aggiuntivi:\n`;
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -79,58 +87,7 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
           </div>
           <p className="pm-price-note">La prima visita è inclusa in ogni percorso: non la paghi due volte.</p>
 
-          <div className="pm-step"><span className="pm-step-num">2</span> Cosa ricevi</div>
-          <div className="pm-included">
-            <div className="pm-included-head">
-              <span>Fin dalla prima visita, in più hai</span>
-              <span className="pm-included-tag">INCLUSO</span>
-            </div>
-
-            <div className="pm-inc-row">
-              <span className="pm-inc-icon">🎬</span>
-              <div className="pm-inc-text">
-                <div className="pm-inc-title">Accesso ai videocorsi</div>
-                <div className="pm-inc-desc">{inc.courses.map((c) => c.title).join(' · ')}</div>
-                <div className="pm-inc-desc">Accesso: {pkg ? (pkg.months ? pkg.access : `${pkg.access} dalla prima visita`) : ACCESSO_GENERICO}</div>
-              </div>
-              {inc.coursesValue && (
-                <div className="pm-inc-value">
-                  {inc.strike ? (
-                    <><s className="pm-strike">{inc.coursesTotal}€</s> <span>{inc.coursesPathTotal}€ con il percorso</span></>
-                  ) : inc.coursesValue}
-                </div>
-              )}
-            </div>
-
-            <div className="pm-inc-row">
-              <span className="pm-inc-icon">📘</span>
-              <div className="pm-inc-text">
-                <div className="pm-inc-title">Guide PDF esclusive</div>
-                <div className="pm-inc-desc">{inc.guides.slice(0, 3).map((g) => g.title).join(' · ')}{inc.guides.length > 3 ? ' e altre' : ''}. Non in vendita: restano tue.</div>
-              </div>
-              <div className="pm-inc-value">Valore {inc.guidesValue}€</div>
-            </div>
-
-            <div className="pm-inc-row">
-              <span className="pm-inc-icon">🏋️</span>
-              <div className="pm-inc-text">
-                <div className="pm-inc-title">Scheda di allenamento personalizzata</div>
-                <div className="pm-inc-desc">Costruita sui tuoi obiettivi, insieme al piano nutrizionale.</div>
-              </div>
-            </div>
-
-            {(!pkg || pkg.isPath) && (
-              <div className="pm-inc-row">
-                <span className="pm-inc-icon">💬</span>
-                <div className="pm-inc-text">
-                  <div className="pm-inc-title">Supporto via WhatsApp</div>
-                  <div className="pm-inc-desc">Per le tue domande, con i percorsi, per tutta la loro durata.</div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="pm-step"><span className="pm-step-num">3</span> Raccontaci qualcosa <span className="pm-opt">(facoltativo)</span></div>
+          <div className="pm-step"><span className="pm-step-num">2</span> Raccontaci qualcosa <span className="pm-opt">(facoltativo)</span></div>
           <div className="pm-mode-row" role="group" aria-label="Modalità">
             {MODES.map((m) => (
               <button
@@ -148,7 +105,7 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
             <span>Come ti chiami?</span>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} autoComplete="given-name" />
           </label>
-          <label className="pm-field" style={{ marginBottom: 22 }}>
+          <label className="pm-field" style={{ marginBottom: 14 }}>
             <span>Il tuo obiettivo, in una riga</span>
             <input
               type="text"
@@ -157,6 +114,21 @@ export default function PercorsiModal({ isOpen, onClose, initialPackage = null }
               placeholder="Es. mangiare meglio con i turni di lavoro"
             />
           </label>
+
+          <div className="pm-field-label">Ti alleni? Quante volte a settimana?</div>
+          <div className="pm-mode-row" role="group" aria-label="Frequenza di allenamento" style={{ marginBottom: 22 }}>
+            {TRAINING_FREQ.map((f) => (
+              <button
+                type="button"
+                key={f.id}
+                className={`pm-mode ${trainingFreq === f.id ? 'active' : ''}`}
+                aria-pressed={trainingFreq === f.id}
+                onClick={() => setTrainingFreq(trainingFreq === f.id ? null : f.id)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
 
           <a
             href={mailtoHref}

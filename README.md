@@ -1,4 +1,19 @@
-## Aggiornamento: 10 ricette gustose per rendere sfiziose le proteine magre (da 97 a 107)
+## Aggiornamento: modale "Richiedi informazioni" più snello + nuovo campo allenamento
+
+Come richiesto: tolto dal modale il blocco "Cosa ricevi" (era ridondante,
+l'utente lo vede già nella pagina Percorsi prima di cliccare "Richiedi
+informazioni"). Ora il modale va dritto dalla scelta del percorso al
+modulo da compilare.
+
+Aggiunto un nuovo campo al modulo: **"Ti alleni? Quante volte a
+settimana?"**, con quattro opzioni a scelta rapida (Non mi alleno / 1-2
+volte / 3-4 volte / 5+ volte a settimana) — stesso stile a pillola già
+usato per la modalità (In presenza/Online). La risposta viene inclusa
+nell'email precompilata insieme agli altri campi.
+
+Build verificata senza errori.
+
+
 
 Richiesta: idee per rendere gustosi petto di pollo, albume, merluzzo e
 altri pesci magri, con salse/creme leggere invece delle solite cotture

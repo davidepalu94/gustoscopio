@@ -899,6 +899,7 @@ footer.foot { text-align: center; padding: 40px 24px; color: #8a8d97; font-size:
 .pm-included-note { margin: 4px 0 0; padding-top: 10px; border-top: 1px solid rgba(49,85,255,0.14); font-size: 12.5px; line-height: 1.45; color: #575a68; }
 .pm-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
 .pm-field span { font-size: 13px; font-weight: 600; color: #3d4152; }
+.pm-field-label { font-size: 13px; font-weight: 600; color: #3d4152; margin-bottom: 8px; }
 .pm-field input { min-width: 0; width: 100%; font-family: inherit; font-size: 15px; padding: 12px 14px; border-radius: 12px; border: 1.5px solid rgba(16,19,28,0.12); background: #FFFFFF; color: #10131C; transition: border-color 140ms ease, box-shadow 140ms ease; }
 .pm-field input:focus { outline: none; border-color: #3155FF; box-shadow: 0 0 0 3px rgba(49,85,255,0.14); }
 .pm-check { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; padding: 4px 0 20px; cursor: pointer; }
