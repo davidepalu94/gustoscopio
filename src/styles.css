@@ -52,6 +52,10 @@ button { font-family: inherit; cursor: pointer; }
   .hero p.sub { font-size: 15.5px; margin-top: 18px; }
 }
 
+.hero-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 720px; margin: 48px auto 0; }
+.hero-photos img { width: 100%; height: clamp(160px, 22vw, 260px); object-fit: cover; border-radius: 18px; box-shadow: 0 12px 28px rgba(16,19,28,0.1); }
+@media (max-width: 560px) { .hero-photos { gap: 10px; margin-top: 32px; } .hero-photos img { border-radius: 14px; } }
+
 .search-wrap { max-width: 640px; margin: 44px auto 0; position: relative; }
 .search-box {
   display: flex; align-items: center; gap: 12px;

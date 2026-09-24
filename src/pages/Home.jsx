@@ -125,6 +125,19 @@ export default function Home() {
             );
           })}
         </div>
+
+        <div className="hero-photos">
+          <img
+            src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&w=900&q=80"
+            alt="Verdure fresche assortite"
+            loading="lazy"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80"
+            alt="Ciotola di insalata colorata"
+            loading="lazy"
+          />
+        </div>
       </header>
 
       <section className="section" id="kcal-section">

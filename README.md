@@ -1,4 +1,28 @@
-## Aggiornamento: modale "Richiedi informazioni" più snello + nuovo campo allenamento
+## Aggiornamento: 2 foto vere nella homepage (prova pilota)
+
+Come discusso: parto in piccolo prima di considerare foto per tutti gli
+alimenti/ricette. Aggiunte 2 foto sotto i chip dell'hero della homepage,
+da Unsplash (licenza libera, uso commerciale consentito, nessuna
+attribuzione obbligatoria):
+
+- "Assorted fresh vegetables..." di Nathan Dumlao
+- "Bowl of vegetable salads" di Anna Pelzer
+
+Scelte per lo sfondo chiaro e i colori naturali, coerenti con la palette
+del sito. Caricate con `loading="lazy"` per non rallentare il primo
+caricamento della pagina, e con parametri Unsplash (`w=900&q=80`) per
+scaricare una versione già ottimizzata invece dell'originale a piena
+risoluzione.
+
+Nota sul processo: ho provato prima a usare il connettore Unsplash
+collegato, ma ha dato un errore di approvazione lato integrazione — sono
+quindi passato a recuperare le stesse foto (libere, non "Plus") tramite
+il sito pubblico di Unsplash, ugualmente coperte dalla licenza gratuita.
+
+Se il risultato ti piace, il prossimo passo naturale sarebbe le foto di
+copertina per gli 8 articoli del Lab. Build verificata senza errori.
+
+
 
 Come richiesto: tolto dal modale il blocco "Cosa ricevi" (era ridondante,
 l'utente lo vede già nella pagina Percorsi prima di cliccare "Richiedi
