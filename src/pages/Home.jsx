@@ -22,7 +22,18 @@ export default function Home() {
   const currentMealItems = mealItems[selectedMeal];
   const currentMealTotals = mealTotals[selectedMeal];
 
-  const suggestions = ['Banana', 'Avocado', 'Pasta di semola', 'Cioccolato fondente', 'Uovo'];
+  // Un alimento a caso per categoria, diverso ad ogni caricamento della
+  // pagina: dà un'idea più ampia del database (187+ alimenti) invece di
+  // mostrare sempre gli stessi 5. Le categorie sono fisse (frutta, verdura,
+  // proteina, carboidrato, dolce/snack) per garantire varietà; l'alimento
+  // dentro ciascuna è casuale.
+  const CHIP_CATEGORIES = ['Frutta', 'Verdura', 'Carne', 'Cereali & derivati', 'Dolci & snack'];
+  const suggestions = useMemo(() => {
+    return CHIP_CATEGORIES.map((cat) => {
+      const options = FOODS.filter((f) => f.category === cat);
+      return options[Math.floor(Math.random() * options.length)];
+    }).filter(Boolean);
+  }, []);
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
@@ -116,14 +127,11 @@ export default function Home() {
           )}
         </div>
         <div className="chips">
-          {suggestions.map((s) => {
-            const f = FOODS.find((x) => x.name === s);
-            return (
-              <button key={s} className="chip" onClick={() => { setExpandedId(f.id); document.getElementById('kcal-section')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                {f.emoji} {s}
-              </button>
-            );
-          })}
+          {suggestions.map((f) => (
+            <button key={f.id} className="chip" onClick={() => navigate(`/alimenti/${f.id}`)}>
+              {f.emoji} {f.name}
+            </button>
+          ))}
         </div>
 
         <div className="hero-photos">

@@ -1,4 +1,25 @@
-## Correzione: link "Apri il frigo" invisibile sull'hero scuro
+## Aggiornamento: chip della home casuali per categoria (non più 5 fissi)
+
+Prima erano sempre gli stessi 5 (Banana, Avocado, Pasta di semola,
+Cioccolato fondente, Uovo), scelti mesi fa e mai cambiati. Ora ogni volta
+che si apre la home vengono estratti 5 alimenti a caso, uno per ciascuna
+di 5 categorie fisse (Frutta, Verdura, Carne, Cereali & derivati, Dolci &
+snack) — così c'è sempre varietà ma sempre un buon mix, mai ad esempio 3
+frutti di fila.
+
+Correzione tecnica necessaria: i vecchi chip funzionavano solo perché
+agganciati a una lista fissa di 8 "alimenti in evidenza" mostrata sotto
+(cliccandoli si espandeva la scheda lì). Con la scelta casuale, un chip
+può pescare un alimento qualsiasi tra i 187 — quindi ora il click porta
+alla scheda alimento completa (`/alimenti/:id`), che funziona sempre,
+invece di provare a espandere una card che potrebbe non esistere in quella
+lista ristretta.
+
+Verificato che tutte e 5 le categorie scelte abbiano alimenti a
+sufficienza per garantire varietà reale (da 9 a 45 alimenti ciascuna).
+Build verificata senza errori.
+
+
 
 Bug introdotto dall'allineamento precedente: il pulsante "Apri il frigo"
 usava lo stile `ghost-link-btn` pensato per sfondi chiari (testo e bordo
