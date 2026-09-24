@@ -1,4 +1,32 @@
-## Aggiornamento: 2 foto vere nella homepage (prova pilota)
+## Correzione: link "Apri il frigo" invisibile sull'hero scuro
+
+Bug introdotto dall'allineamento precedente: il pulsante "Apri il frigo"
+usava lo stile `ghost-link-btn` pensato per sfondi chiari (testo e bordo
+scuri), ma ora si trova dentro l'hero scuro di `/ricette` — quindi testo
+scuro su sfondo scuro, praticamente invisibile a riposo (si vedeva solo
+al passaggio del mouse). Aggiunta una variante `ghost-link-btn--on-dark`
+(testo e bordo chiari) applicata solo a questo link — gli altri 4 punti
+del sito che usano `ghost-link-btn` sono su sfondo chiaro e restano
+invariati. Build verificata senza errori.
+
+
+
+Come richiesto: la pagina `/ricette` aveva un header diverso (vecchio
+stile `section-head`, solo h2+paragrafo) rispetto a Lab, Strumenti e
+Corsi, che condividono tutte lo stesso "hero" con kicker (RICETTE, LAB,
+STRUMENTI, CORSI), titolo in serif e testo di presentazione. Ora anche
+Ricette usa lo stesso blocco.
+
+Aggiunta anche l'animazione a cascata delle card all'apertura della
+pagina (stessa già usata per le card di Lab/Strumenti/Corsi) — con un
+tetto massimo al ritardo, perché con 107 ricette in lista un ritardo
+proporzionale a ogni card avrebbe fatto aspettare secondi interi per le
+ultime.
+
+Nessuna modifica alla logica di ricerca/filtri, solo allineamento visivo.
+Build verificata senza errori.
+
+
 
 Come discusso: parto in piccolo prima di considerare foto per tutti gli
 alimenti/ricette. Aggiunte 2 foto sotto i chip dell'hero della homepage,

@@ -40,10 +40,14 @@ export default function RecipesPage() {
     <div>
       <Nav />
       <div className="section">
-        <div className="section-head">
-          <h2>Mangia bene. Davvero.</h2>
-          <p>Ricette semplici, valori nutrizionali chiari e zero terrorismo alimentare.</p>
-          <Link to="/apri-il-frigo" className="ghost-link-btn" style={{ display: 'inline-flex', marginTop: 18 }}>
+        <div className="corso-hero corsi-hub-hero">
+          <span className="corso-hero-kicker">RICETTE</span>
+          <h1 className="corso-hero-title">Mangia bene. Davvero.</h1>
+          <p className="corso-hero-hook">
+            Ricette semplici, valori nutrizionali chiari e zero terrorismo
+            alimentare.
+          </p>
+          <Link to="/apri-il-frigo" className="ghost-link-btn ghost-link-btn--on-dark" style={{ display: 'inline-flex', marginTop: 18 }}>
             🧊 Non sai cosa cucinare? Apri il frigo →
           </Link>
         </div>
@@ -91,8 +95,8 @@ export default function RecipesPage() {
           </div>
         ) : (
           <div className="recipe-grid">
-            {filtered.map((r) => (
-              <Link to={`/ricette/${r.id}`} key={r.id} className="recipe-card">
+            {filtered.map((r, i) => (
+              <Link to={`/ricette/${r.id}`} key={r.id} className="recipe-card" style={{ '--card-i': i }}>
                 <div className="recipe-card-emoji-banner">{r.emoji}</div>
                 <div className="recipe-card-body">
                   <div className="recipe-card-name">{r.name}</div>
