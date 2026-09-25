@@ -1,4 +1,31 @@
-## Aggiornamento: chip della home casuali per categoria (non più 5 fissi)
+## Aggiornamento: 8 nuovi articoli nel Lab (da 8 a 16)
+
+Raddoppiati gli articoli, stesso formato a blocchi già usato (quickAnswer,
+paragraph, quiz, foodLink, toolLink) e stesso tono (diretto, mai
+paternalistico, niente giudizi sugli alimenti):
+
+- **Quanta acqua devi bere davvero al giorno** (Idratazione) — collegato
+  al nuovo strumento fabbisogno idrico
+- **Zucchero naturale e zucchero aggiunto: la differenza che conta**
+  (Zuccheri)
+- **Cosa mangiare dopo l'allenamento** (Sport) — completa l'articolo
+  già esistente sul pre-allenamento
+- **Il digiuno intermittente funziona davvero?** (Dimagrimento)
+- **Quante calorie ha davvero un piatto di pasta** (Calorie) — completa
+  l'articolo sulla banana con un esempio salato
+- **Le uova alzano davvero il colesterolo?** (Miti alimentari)
+- **BMI: cosa dice davvero (e cosa no)** (Peso) — collegato allo
+  strumento BMI
+- **Intolleranza al lattosio: cosa sapere** (Intestino)
+
+Durante la scrittura ho introdotto per errore un doppio escape sugli
+apostrofi (`\\'` invece di `\'`) che ha rotto la build al primo tentativo
+— trovato e corretto su tutte le 17 occorrenze prima di consegnare.
+
+Nessun ID articolo duplicato tra i 16 totali, nessun foodId rotto. Build
+verificata senza errori.
+
+
 
 Prima erano sempre gli stessi 5 (Banana, Avocado, Pasta di semola,
 Cioccolato fondente, Uovo), scelti mesi fa e mai cambiati. Ora ogni volta
