@@ -1,4 +1,18 @@
-## Aggiornamento: 8 nuovi articoli nel Lab (da 8 a 16)
+## Aggiornamento: barra di ricerca in "Apri il frigo"
+
+Come richiesto: la griglia con tutti i 187 ingredienti selezionabili non
+aveva modo di essere filtrata — bisognava scorrerla tutta per trovare un
+ingrediente specifico. Aggiunta una ricerca per nome sopra la griglia,
+stesso stile già usato altrove nel sito.
+
+Un dettaglio a cui ho fatto attenzione: se filtri la lista dopo aver già
+selezionato alcuni ingredienti, quelli restano selezionati anche se
+spariscono dalla vista (con un piccolo avviso che lo spiega) — così non
+si perde per sbaglio una selezione già fatta continuando a cercare altro.
+
+Build verificata senza errori.
+
+
 
 Raddoppiati gli articoli, stesso formato a blocchi già usato (quickAnswer,
 paragraph, quiz, foodLink, toolLink) e stesso tono (diretto, mai

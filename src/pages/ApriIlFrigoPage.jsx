@@ -15,10 +15,17 @@ const KCAL_OPTIONS = [
 export default function ApriIlFrigoPage() {
   const [selected, setSelected] = useState([]);
   const [maxKcal, setMaxKcal] = useState(null);
+  const [query, setQuery] = useState('');
 
   function toggleFood(id) {
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
+
+  const filteredFoods = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return FOODS;
+    return FOODS.filter((f) => f.name.toLowerCase().includes(q));
+  }, [query]);
 
   const matches = useMemo(() => {
     if (selected.length === 0) return [];
@@ -54,8 +61,26 @@ export default function ApriIlFrigoPage() {
           <p>Seleziona quello che hai. Al resto pensiamo noi.</p>
         </div>
 
+        <div className="search-wrap" style={{ marginTop: 0, marginBottom: 16 }}>
+          <div className="search-box">
+            <span>🔎</span>
+            <input
+              placeholder="Cerca un ingrediente..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {selected.length > 0 && (
+          <p style={{ fontSize: 13.5, color: '#8a8d97', marginBottom: 20 }}>
+            {selected.length} ingrediente{selected.length > 1 ? 'i' : ''} selezionat{selected.length > 1 ? 'i' : 'o'}
+            {query.trim() ? ' (restano selezionati anche se non sono nei risultati della ricerca)' : ''}.
+          </p>
+        )}
+
         <div className="fridge-grid">
-          {FOODS.map((f) => (
+          {filteredFoods.map((f) => (
             <button
               key={f.id}
               className={`fridge-chip ${selected.includes(f.id) ? 'active' : ''}`}
@@ -65,6 +90,11 @@ export default function ApriIlFrigoPage() {
               <span>{f.name}</span>
             </button>
           ))}
+          {filteredFoods.length === 0 && (
+            <div className="stub-card" style={{ textAlign: 'center', gridColumn: '1 / -1' }}>
+              Nessun ingrediente corrisponde a "{query}".
+            </div>
+          )}
         </div>
 
         {selected.length > 0 && (
