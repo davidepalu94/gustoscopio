@@ -1,4 +1,31 @@
-## Aggiornamento: barra di ricerca in "Apri il frigo"
+## Aggiornamento: 12 ricette di polpette fit (da 107 a 119)
+
+Richiesta: almeno 10 ricette di polpette, carne/pesce/vegane/formaggio,
+non troppo grasse. Ne ho fatte 12 (3 per categoria), tutte **al forno**
+invece che fritte, con albume o avena come legante al posto del
+pangrattato classico, per tenere i grassi bassi senza rinunciare al
+sapore. Ho calcolato i grassi reali sommando gli ingredienti — tutte tra
+7.4g e 15.2g:
+
+| Ricetta | Categoria | Grassi |
+|---|---|---|
+| Polpette di pollo e zucchine al forno | Carne | 14.0g |
+| Polpette di tacchino e carote | Carne | 8.1g |
+| Polpette di manzo magro e spinaci | Carne | 14.6g |
+| Polpette di merluzzo e patate | Pesce | 7.6g |
+| Polpette di tonno e piselli | Pesce | 8.3g |
+| Polpette di gamberi e zucchine | Pesce | 7.4g |
+| Polpette di ceci e carote | Vegane | 12.8g |
+| Polpette di lenticchie e quinoa | Vegane | 8.8g |
+| Polpette di tofu e spinaci | Vegane | 13.7g |
+| Polpette di ricotta e spinaci | Formaggio | 15.2g |
+| Polpette di melanzane e parmigiano | Formaggio | 12.5g |
+| Polpette di seitan con cuore di mozzarella | Formaggio | 13.9g |
+
+Nessun ID duplicato tra le 119 ricette, nessun foodId rotto. Build
+verificata senza errori.
+
+
 
 Come richiesto: la griglia con tutti i 187 ingredienti selezionabili non
 aveva modo di essere filtrata — bisognava scorrerla tutta per trovare un
